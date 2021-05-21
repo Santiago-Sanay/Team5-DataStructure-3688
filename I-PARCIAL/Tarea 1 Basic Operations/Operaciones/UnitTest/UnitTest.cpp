@@ -1,0 +1,29 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*TEMA: CREACION DE UN PROGRAMA DE OPERACIONES BASICAS(SUMA, RESTA, MULTIPLICAION, DIVISION) CON TEMPLATES<>
+*FECHA DE CREACION : 19 DE MAYO DEL 2021
+*FECHA DE MODIFICACION: 20 DE MAYO 2021
+*/
+#include "pch.h"
+#include "CppUnitTest.h"
+#include "../Operaciones/Calculator.h"
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace UnitTest
+{
+	TEST_CLASS(UnitTest)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)
+		{
+		}
+	};
+}
