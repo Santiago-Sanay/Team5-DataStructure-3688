@@ -114,4 +114,96 @@ namespace UnitTest
 			Assert::AreEqual(0, Calculator<int>::subtract(op));
 		}
 	};
+	/------------------------------Multiply----------------------------/
+
+	TEST_CLASS(multiply1)
+	{
+	public:
+		TEST_METHOD(method_multiply1)
+		{
+			int x = 5;
+			int y = 5;
+			Number<int> op(x, y);
+			Assert::AreEqual(25, Calculator<int>::multiply(op));
+		}
+	};
+	TEST_CLASS(multiply2)
+	{
+	public:
+		TEST_METHOD(method_multiply2)
+		{
+			int x = 18854896;
+			int y = 0;
+			Number<int> op(x, y);
+			Assert::AreEqual(0, Calculator<int>::multiply(op));
+		}
+	};
+	TEST_CLASS(multiply3)
+	{
+	public:
+		TEST_METHOD(method_multiply3)
+		{
+			int x = 189654;
+			int y = 1;
+			Number<int> op(x, y);
+			Assert::AreEqual(189654, Calculator<int>::multiply(op));
+		}
+	};
+	TEST_CLASS(multiply4)
+	{
+	public:
+		TEST_METHOD(method_multiply4)
+		{
+			int x = -4;
+			int y = 10;
+			Number<int> op(x, y);
+			Assert::AreEqual(-40, Calculator<int>::multiply(op));
+		}
+	};
+
+	/------------------------------Divide---------------------------/
+	TEST_CLASS(divide1)
+	{
+	public:
+		TEST_METHOD(method_divide1)
+		{
+			int x = 50;
+			int y = 0;
+			Number<int> op(x, y);
+			Assert::AreEqual(0, Calculator<int>::divide(op));
+		}
+	};
+	TEST_CLASS(divide2)
+	{
+	public:
+		TEST_METHOD(method_divide2)
+		{
+			int x = 50;
+			int y = 10;
+			Number<int> op(x, y);
+			Assert::AreEqual(5, Calculator<int>::divide(op));
+		}
+	};
+	TEST_CLASS(divide3)
+	{
+	public:
+		TEST_METHOD(method_divide3)
+		{
+			int x = 3598;
+			int y = 1;
+			Number<int> op(x, y);
+			Assert::AreEqual(3598, Calculator<int>::divide(op));
+		}
+	};
+	TEST_CLASS(divide4)
+	{
+	public:
+		TEST_METHOD(method_divide4)
+		{
+			int x = 59687598;
+			int y = 59687598;
+			Number<int> op(x, y);
+			Assert::AreEqual(1, Calculator<int>::divide(op));
+		}
+	};
 }
