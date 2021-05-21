@@ -66,7 +66,7 @@ namespace UnitTest
 		}
 	};
 
-	/-----------------------------Test Subtract---------------------/
+	/*---------------------------- - Test Subtract-------------------- -*/
 	TEST_CLASS(subtract1)
 	{
 	public:
@@ -114,7 +114,7 @@ namespace UnitTest
 			Assert::AreEqual(0, Calculator<int>::subtract(op));
 		}
 	};
-	/------------------------------Multiply----------------------------/
+	/*------------------------------Multiply----------------------------*/
 
 	TEST_CLASS(multiply1)
 	{
@@ -161,7 +161,7 @@ namespace UnitTest
 		}
 	};
 
-	/------------------------------Divide---------------------------/
+	/*------------------------------Divide-------------------------- - */
 	TEST_CLASS(divide1)
 	{
 	public:
