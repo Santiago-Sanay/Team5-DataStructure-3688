@@ -18,12 +18,18 @@
     <ClCompile Include="Operaciones.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="OperacionesBasicas.cpp">
+    <ClCompile Include="Number.cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OperacionesBasicas.h">
+    <ClInclude Include="Number.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
