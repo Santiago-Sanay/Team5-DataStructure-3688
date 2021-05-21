@@ -18,12 +18,100 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest
 {
-	TEST_CLASS(UnitTest)
+	TEST_CLASS(add1)
 	{
 	public:
-
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(method_add1)
 		{
+			int x = 5;
+			int y = 10;
+			Number<int> op(x, y);
+			Assert::AreEqual(15, Calculator<int>::add(op));
+		}
+	};
+
+	TEST_CLASS(add2)
+	{
+	public:
+		TEST_METHOD(method_add1)
+		{
+			double a = 10.15;
+			double b = 10.0;
+			Number<double> op(a, b);
+			Assert::AreEqual(20.15, Calculator<double>::add(op));
+		}
+	};
+
+	TEST_CLASS(add3)
+	{
+	public:
+		TEST_METHOD(method_add1)
+		{
+			float x = 0.36F;
+			float y = 10.0F;
+			Number<float> op(x, y);
+			Assert::AreEqual(10.36F, Calculator<float>::add(op));
+		}
+	};
+
+	TEST_CLASS(add4)
+	{
+	public:
+		TEST_METHOD(method_add1)
+		{
+			int x = -1'000'000;
+			int y = 10'000;
+			Number<int> op(x, y);
+			Assert::AreEqual(-990'000, Calculator<int>::add(op));
+		}
+	};
+
+	/-----------------------------Test Subtract---------------------/
+	TEST_CLASS(subtract1)
+	{
+	public:
+		TEST_METHOD(method_subtract1)
+		{
+			int x = -3;
+			int y = -2;
+			Number<int> op(x, y);
+			Assert::AreEqual(-1, Calculator<int>::subtract(op));
+		}
+	};
+
+	TEST_CLASS(subtract2)
+	{
+	public:
+		TEST_METHOD(method_subtract2)
+		{
+			double a = 19.56;
+			double b = 21.06;
+			Number<double> op(a, b);
+			Assert::AreEqual(-1.5, Calculator<double>::subtract(op));
+		}
+	};
+
+	TEST_CLASS(subtract3)
+	{
+	public:
+		TEST_METHOD(method_subtract3)
+		{
+			float x = 100.0F;
+			float y = 10.0F;
+			Number<float> op(x, y);
+			Assert::AreEqual(90.0F, Calculator<float>::subtract(op));
+		}
+	};
+
+	TEST_CLASS(subtract4)
+	{
+	public:
+		TEST_METHOD(method_subtract4)
+		{
+			int x = 10;
+			int y = 10;
+			Number<int> op(x, y);
+			Assert::AreEqual(0, Calculator<int>::subtract(op));
 		}
 	};
 }
