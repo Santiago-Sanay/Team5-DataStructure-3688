@@ -1,19 +1,38 @@
-// ConsoleApplication1.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::regex pattern("^\\(([0-9]+),([0-9]+),([0-9]+)\\)$");
+    std::string input;
+
+    std::cout << "ingrese las coordenadas en formato (#,#,#): ";
+    getline(std::cin, input);
+
+    // remove all spaces
+    input.erase(std::remove_if(
+        input.begin(),
+        input.end(),
+        ::isspace
+    ), input.end());
+
+    std::cout << input << std::endl;
+    std::smatch sm;
+
+    if (!std::regex_match(input, sm, pattern)) {
+        std::cout << "formato incorrecto (#,#,#)" << std::endl;
+        exit(0);
+    }
+
+    float x = std::atoi(sm[1].str().c_str());
+    float y = std::atoi(sm[2].str().c_str());
+    float z = std::atoi(sm[3].str().c_str());
+
+    std::cout << "x: " << x << std::endl;
+    std::cout << "y: " << y << std::endl;
+    std::cout << "z: " << z << std::endl;
+
+    Vector vector(x, y, z);
+
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
