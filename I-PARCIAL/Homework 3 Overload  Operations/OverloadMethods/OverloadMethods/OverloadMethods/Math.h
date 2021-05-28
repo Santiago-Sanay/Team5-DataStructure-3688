@@ -21,7 +21,7 @@ public:
 	//Alex
 	static bool operator==(Vector&, Vector&);
 	static Vector operator^(Vector&, int&);
-	static Vector operator!=(Vector&, Vector&);
+	static bool operator!=(Vector&, Vector&);
 	//Junior
 	static int operator<=(Vector&, Vector&);
 	static Vector operator>=(Vector&, Vector&);
