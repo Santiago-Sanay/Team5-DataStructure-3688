@@ -37,7 +37,6 @@ Vector<int> Math::subtract(Vector<int>&u, Vector<int>&v)
 
 	return result_vector;
 }
-
 Vector<float> Math::subtract(Vector<float>&u, Vector<int>&v)
 {
 	Vector<float> result_vector{};
