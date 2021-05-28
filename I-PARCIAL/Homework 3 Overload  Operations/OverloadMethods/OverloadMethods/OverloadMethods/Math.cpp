@@ -1,69 +1,49 @@
 #include "Math.h"
 
-Vector Math::operator+(Vector& a, Vector& b)
+
+Vector Math::operator+(Vector* v)
 {
-	double v_x = a.get_x()+b.get_x();
-	double v_y = a.get_y() + b.get_y();
-	double v_z = a.get_z() + b.get_z();
-	Vector v(v_x,v_y,v_z);
-	return v;
+	return Vector((v[0].get_x() + v[1].get_x()), (v[0].get_y() + v[1].get_y()), (v[0].get_z() + v[1].get_z()));
 }
 
-Vector Math::operator-(Vector& a, Vector& b)
+
+Vector Math::operator-(Vector* v)
 {
-	double v_x = a.get_x() - b.get_x();
-	double v_y = a.get_y() - b.get_y();
-	double v_z = a.get_z() - b.get_z();
-	Vector v(v_x, v_y, v_z);
-	return v;
+	return Vector((v[0].get_x() - v[1].get_x()), (v[0].get_y() - v[1].get_y()), (v[0].get_z() - v[1].get_z()));
 }
 
-double Math::operator*(Vector& a, Vector& b)
+double Math::operator*(Vector* a)
 {
-	double v_x = a.get_x() * b.get_x();
-	double v_y = a.get_y() * b.get_y();
-	double v_z = a.get_z() * b.get_z();
-	double r = v_x + v_y + v_z;
-	return r;
+	return (a[0].get_x() * a[1].get_x()) + (a[0].get_y() * a[1].get_y()) + (a[0].get_z() * a[1].get_z());
 }
 
-Vector Math::operator++(Vector& v)
-{
-	double x = v.get_x() + 1;
-	double y = v.get_y() + 1;
-	double z = v.get_z() + 1;
-	Vector u(x, y, z);
 
-	return u;
+int Math::operator++(int a)
+{
+	return (a + 1);
 }
 
-Vector Math::operator--(Vector& v)
+int Math::operator--(int a)
 {
-	double x = v.get_x() - 1;
-	double y = v.get_y() - 1;
-	double z = v.get_z() - 1;
-	Vector u(x, y, z);
 
-	return u;
+	return (a - 1);
 }
 
-double Math::operator/=(Vector& v, Vector& u)
+double Math::operator/=(Vector* v)
 {
-	double module_v = sqrt(pow(v.get_x(), 2) + (v.get_y(), 2) + (v.get_z(), 2));
-	double module_u = sqrt(pow(u.get_x(), 2) + (u.get_y(), 2) + (u.get_z(), 2));
+	double module_v = sqrt(pow(v[0].get_x(), 2) + (v[0].get_y(), 2) + (v[0].get_z(), 2));
+	double module_u = sqrt(pow(v[1].get_x(), 2) + (v[1].get_y(), 2) + (v[1].get_z(), 2));
 
-	return (module_v)/(module_u);
+	return (module_v) / (module_u);
 }
 
-Vector Math::operator~(Vector& vector)
+std::ostream& operator<<(std::ostream& os, Vector* v)
 {
-	double x = -1 * (vector.get_x());
-	double y = -1 * (vector.get_y(), );
-	double z = -1 * (vector.get_z());
-	Vector vector1(x, y, z);
-	return vector1;
+	os << "(" << v[0].get_x() << ', ' << v[0].get_y() << ', ' << v[0].get_y() << ')' << "\n";
+	os << "(" << v[1].get_x() << ', ' << v[1].get_y() << ', ' << v[1].get_y() << ')' << "\n";
+	return os;
 }
-
+/*
 Vector Math::operator>(Vector& vector1, Vector& vector2)
 {
 	double mod1 = pow(pow(vector1.get_x(), 2) + pow(vector1.get_y(), 2) + pow(vector1.get_z(), 2), 0.5);
@@ -94,7 +74,7 @@ Vector Math::operator<(Vector& vector1, Vector& vector2)
 
 bool Math::operator==(Vector& vector1, Vector& vector2)
 {
-	if (vector1.get_x() == vector2.get_x() && vector1.get_y() == vector2.get_y() && vector1.get_z() == vector2.get_z()) 
+	if (vector1.get_x() == vector2.get_x() && vector1.get_y() == vector2.get_y() && vector1.get_z() == vector2.get_z())
 	{
 		return true;
 	}
@@ -102,7 +82,7 @@ bool Math::operator==(Vector& vector1, Vector& vector2)
 	{
 		return false;
 	}
-	
+
 }
 
 Vector Math::operator^(Vector& vector, int& n)
@@ -144,3 +124,5 @@ Vector Math::operator<<=(Vector&, Vector&)
 {
 	return Vector();
 }
+*/
+

@@ -1,8 +1,6 @@
 #include "Vector.h"
 
-Vector::Vector(double x, double y) : _coord_x(x), _coord_y(y)
-{
-}
+
 
 Vector::Vector(double x, double y, double z) : _coord_x(x), _coord_y(y), _coord_z(z)
 {

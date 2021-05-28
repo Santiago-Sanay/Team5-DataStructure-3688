@@ -10,7 +10,6 @@ private:
 
 public:
 	Vector() = default;
-	Vector(double, double);
 	Vector(double, double, double);
 	void set_x(double&);
 	void set_y(double&);

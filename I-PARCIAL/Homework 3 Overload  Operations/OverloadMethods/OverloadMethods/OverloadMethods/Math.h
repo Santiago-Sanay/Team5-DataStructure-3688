@@ -2,30 +2,31 @@
 #include "Vector.h"
 #include <cmath>
 #include <iomanip>
+#include <iostream>
 class Math
 {
 
 public:
 	//Theo
-	static Vector operator+(Vector&, Vector&);
-	static Vector operator-(Vector&, Vector&);
-	static double operator*(Vector&, Vector&);
+	Vector operator+(Vector*);
+	Vector operator-(Vector*);
+	double operator*(Vector*);
 	//Yuli
-	static Vector operator++(Vector&);
-	static Vector operator--(Vector&);
-	static double operator/=(Vector&, Vector&);
+	int operator++(int);
+	int operator--(int);
+	double operator/=(Vector*);
 	//Santiago
-	static Vector operator~(Vector&);
-	static Vector operator>(Vector&, Vector&);
-	static Vector operator<(Vector&, Vector&);
+	std::ostream& operator<<(std::ostream&, Vector*);
+	Vector operator>(Vector&);
+	Vector operator<(Vector&);
 	//Alex
-	static bool operator==(Vector&, Vector&);
-	static Vector operator^(Vector&, int&);
-	static bool operator!=(Vector&, Vector&);
+	bool operator==(Vector&);
+	Vector operator^(Vector&);
+	bool operator!=(Vector&);
 	//Junior
-	static int operator<=(Vector&, Vector&);
-	static Vector operator>=(Vector&, Vector&);
-	static Vector operator<<=(Vector&, Vector&);
+	int operator<=(Vector&);
+	Vector operator>=(Vector&);
+	Vector operator<<=(Vector&);
 
 
 };
