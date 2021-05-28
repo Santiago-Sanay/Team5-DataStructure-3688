@@ -27,19 +27,32 @@ double Math::operator*(Vector& a, Vector& b)
 	return r;
 }
 
-Vector Math::operator++(Vector&)
+Vector Math::operator++(Vector& v)
 {
-	return Vector();
+	double x = v.get_x() + 1;
+	double y = v.get_y() + 1;
+	double z = v.get_z() + 1;
+	Vector u(x, y, z);
+
+	return u;
 }
 
-Vector Math::operator--(Vector&)
+Vector Math::operator--(Vector& v)
 {
-	return Vector();
+	double x = v.get_x() - 1;
+	double y = v.get_y() - 1;
+	double z = v.get_z() - 1;
+	Vector u(x, y, z);
+
+	return u;
 }
 
-double Math::operator/=(Vector&, Vector&)
+double Math::operator/=(Vector& v, Vector& u)
 {
-	return 0.0;
+	double module_v = sqrt(pow(v.get_x(), 2) + (v.get_y(), 2) + (v.get_z(), 2));
+	double module_u = sqrt(pow(u.get_x(), 2) + (u.get_y(), 2) + (u.get_z(), 2));
+
+	return (module_v)/(module_u);
 }
 
 Vector Math::operator~(Vector&)
