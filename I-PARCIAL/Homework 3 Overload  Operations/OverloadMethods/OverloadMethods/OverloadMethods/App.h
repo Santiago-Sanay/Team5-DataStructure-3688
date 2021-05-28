@@ -1,4 +1,3 @@
-#include "App.h"
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -11,8 +10,9 @@
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
 */
-int main()
+#pragma once
+class Aplication
 {
-	Aplication::run();
-	return 0;
-}
+public:
+	static void run();
+};

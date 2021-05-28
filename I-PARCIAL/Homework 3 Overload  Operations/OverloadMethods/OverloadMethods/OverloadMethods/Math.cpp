@@ -1,3 +1,15 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*TEMA: SOBRECARGA DE OPERADORES
+*FECHA DE CREACION : 26 DE MAYO DEL 2021
+*FECHA DE MODIFICACION: 28 DE MAYO 2021
+*/
 #include "Math.h"
 
 
@@ -37,12 +49,13 @@ double Math::operator/=(Vector* v)
 	return (module_v) / (module_u);
 }
 
-std::ostream& operator<<(std::ostream& os, Vector* v)
+/*std::ostream& operator<<(std::ostream& os, Vector* v)
 {
 	os << "(" << v[0].get_x() << ', ' << v[0].get_y() << ', ' << v[0].get_y() << ')' << "\n";
 	os << "(" << v[1].get_x() << ', ' << v[1].get_y() << ', ' << v[1].get_y() << ')' << "\n";
 	return os;
-}
+}*/
+
 /*
 Vector Math::operator>(Vector& vector1, Vector& vector2)
 {
