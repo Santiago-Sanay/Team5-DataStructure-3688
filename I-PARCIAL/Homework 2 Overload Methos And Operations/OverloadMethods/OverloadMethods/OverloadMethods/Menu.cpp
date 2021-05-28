@@ -43,9 +43,9 @@ void Menu::menu_vector()
 	Vector<int> vectors_int[2]{};
 	size_t j{ 0 };
 	size_t k{ 0 };
-	for (size_t i = 0; i < 2; i++)
+	for (size_t i = 1; i < 3; ++i)
 	{
-		std::cout << "Ingrese el " << (i + 1) << " vector en el formato(#, #, #) : ";
+		std::cout << "Ingrese el " << i << " vector en el formato(#, #, #) : ";
 		getline(std::cin, coords);
 		bool match = std::regex_match(coords, matches, pattern);
 		int data_type = Menu::data_type(coords);
@@ -72,6 +72,14 @@ void Menu::menu_vector()
 				++j;
 			}
 		}
+		else
+		{
+			std::cout << "El formato ingresado es incorrecto! (#,#,#)";
+			i = 0;
+			std::cin.ignore(1000000, '\n');
+			system("exit");
+		}
+
 	}
 	if (k == 2)
 		Menu::print_results(vectors_float[0], vectors_float[1]);
