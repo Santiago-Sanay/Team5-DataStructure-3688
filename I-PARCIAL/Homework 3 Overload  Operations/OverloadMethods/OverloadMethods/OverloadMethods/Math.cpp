@@ -55,19 +55,41 @@ double Math::operator/=(Vector& v, Vector& u)
 	return (module_v)/(module_u);
 }
 
-Vector Math::operator~(Vector&)
+Vector Math::operator~(Vector& vector)
 {
-	return Vector();
+	double x = -1 * (vector.get_x());
+	double y = -1 * (vector.get_y(), );
+	double z = -1 * (vector.get_z());
+	Vector vector1(x, y, z);
+	return vector1;
 }
 
-Vector Math::operator>(Vector&, Vector&)
+Vector Math::operator>(Vector& vector1, Vector& vector2)
 {
-	return Vector();
+	double mod1 = pow(pow(vector1.get_x(), 2) + pow(vector1.get_y(), 2) + pow(vector1.get_z(), 2), 0.5);
+	double mod2 = pow(pow(vector2.get_x(), 2) + pow(vector2.get_y(), 2) + pow(vector2.get_z(), 2), 0.5);
+	if (mod1 >= mod2)
+	{
+		return vector1;
+	}
+	else
+	{
+		return vector2;
+	}
 }
 
-Vector Math::operator<(Vector&, Vector&)
+Vector Math::operator<(Vector& vector1, Vector& vector2)
 {
-	return Vector();
+	double mod1 = pow(pow(vector1.get_x(), 2) + pow(vector1.get_y(), 2) + pow(vector1.get_z(), 2), 0.5);
+	double mod2 = pow(pow(vector2.get_x(), 2) + pow(vector2.get_y(), 2) + pow(vector2.get_z(), 2), 0.5);
+	if (mod1 <= mod2)
+	{
+		return vector1;
+	}
+	else
+	{
+		return vector2;
+	}
 }
 
 bool Math::operator==(Vector& vector1, Vector& vector2)
