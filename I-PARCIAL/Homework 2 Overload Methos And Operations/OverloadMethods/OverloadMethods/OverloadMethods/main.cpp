@@ -4,7 +4,6 @@
 #include "Vector.h"
 int main()
 {
-	
-	
+	Menu::menu_vector();
 	return EXIT_SUCCESS;
 }

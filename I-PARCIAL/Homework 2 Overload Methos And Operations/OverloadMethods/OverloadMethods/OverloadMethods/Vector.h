@@ -10,7 +10,6 @@ private:
 
 public:
 	Vector() = default;
-	Vector(T, T);
 	Vector(T, T, T);
 	void set_x(T&);
 	void set_y(T&);
@@ -20,10 +19,6 @@ public:
 	T get_z() const noexcept;
 };
 
-template <typename T>
-Vector<T>::Vector(T x, T y) : _coord_x(x), _coord_y(y)
-{
-}
 
 template <typename T>
 Vector<T>::Vector(T x, T y, T z) : _coord_x(x), _coord_y(y), _coord_z(z)
