@@ -35,14 +35,27 @@ Vector<double> Math::subtract(Vector<double>&, Vector<float>&)
 }
 
 //Overload Scalar Product
-int Math::scalar_product(Vector<int>&, Vector<int>&)
+int Math::scalar_product(Vector<int>& u, Vector<int>& v)
 {
+	
+	int x = u.get_x() * v.get_x();
+	int y = u.get_y() * v.get_y();
+	int z = u.get_z() * v.get_z();
+	return x+y+z;
 }
-float Math::scalar_product(Vector<float>&, Vector<int>&)
+float Math::scalar_product(Vector<float>& u, Vector<int>& v)
 {
+	float x = u.get_x() * static_cast<float>(v.get_x());
+	float y = u.get_y() * static_cast<float>(v.get_y());
+	float z = u.get_z() * static_cast<float>(v.get_z());
+	return x + y + z;
 }
-double Math::scalar_product(Vector<double>&, Vector<float>&)
+double Math::scalar_product(Vector<double>& u, Vector<float>& v)
 {
+	double x = u.get_x() * static_cast<double>(v.get_x());
+	double y = u.get_y() * static_cast<double>(v.get_y());
+	double z = u.get_z() * static_cast<double>(v.get_z());
+	return x + y + z;
 }
 
 //Overload vector product..
