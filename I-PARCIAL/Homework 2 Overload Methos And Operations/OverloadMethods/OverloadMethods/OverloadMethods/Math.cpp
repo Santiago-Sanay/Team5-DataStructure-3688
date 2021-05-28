@@ -153,14 +153,38 @@ Vector<double> vector_product(Vector<double>& a, Vector<float>& b)
 	return r;
 }
 
-Vector<int> Math::scalar_by_a_vector(Vector<int>&, Vector<int>&)
-{
+Vector<int> Math::scalar_by_a_vector(Vector<int>& u, Vector<int>& v)
+{	
+	int module = sqrt(pow(u.get_x(), 2) + pow(u.get_y(), 2) + pow(u.get_z(), 2));
+
+	int x = module * (v.get_x());
+	int y = module * (v.get_y());
+	int z = module * (v.get_z());
+
+	Vector <int > r(x, y, z);
+	return r;
 }
-Vector<float> Math::scalar_by_a_vector(Vector<float>&, Vector<int>&)
+Vector<float> Math::scalar_by_a_vector(Vector<float>& u, Vector<int>& v)
 {
 
+	float module = sqrt(pow(u.get_x(), 2) + pow(u.get_y(), 2) + pow(u.get_z(), 2));
+
+	float x = module * static_cast<float>(v.get_x());
+	float y = module * static_cast<float>(v.get_y());
+	float z = module * static_cast<float>(v.get_z());
+
+	Vector <float > r(x, y, z);
+	return r;
 }
-Vector<double> Math::scalar_by_a_vector(Vector<double>&, Vector<float>&)
+Vector<double> Math::scalar_by_a_vector(Vector<double>& u, Vector<float>& v)
 {
 
+	double module = sqrt(pow(u.get_x(), 2) + pow(u.get_y(), 2) + pow(u.get_z(), 2));
+
+	double x = module * static_cast<double>(v.get_x());
+	double y = module * static_cast<double>(v.get_y());
+	double z = module * static_cast<double>(v.get_z());
+
+	Vector <double > r(x, y, z);
+	return r;
 }
