@@ -1,3 +1,15 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*TEMA: SOBRECARGA DE METODOS
+*FECHA DE CREACION : 26 DE MAYO DEL 2021
+*FECHA DE MODIFICACION: 28 DE MAYO 2021
+*/
 #pragma once
 
 template <typename T>
@@ -10,7 +22,6 @@ private:
 
 public:
 	Vector() = default;
-	Vector(T, T);
 	Vector(T, T, T);
 	void set_x(T&);
 	void set_y(T&);
@@ -20,10 +31,6 @@ public:
 	T get_z() const noexcept;
 };
 
-template <typename T>
-Vector<T>::Vector(T x, T y) : _coord_x(x), _coord_y(y)
-{
-}
 
 template <typename T>
 Vector<T>::Vector(T x, T y, T z) : _coord_x(x), _coord_y(y), _coord_z(z)
