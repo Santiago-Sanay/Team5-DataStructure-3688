@@ -1,0 +1,28 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES :
+*THEO ROSERO
+*YULLIANA ROMAN
+*JUNIOR JURADO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*TEMA: PARAMETRO POR REFERENCIA
+*FECHA DE CREACION : 28 DE MAYO DE 2021
+*FECHA DE MODIFICACION: 29 DE MAYO 2021
+*/
+#pragma once
+class Vector
+{
+private:
+	int v1[10];
+public:
+	Vector(int[10]);
+	Vector() =default;
+	
+public:
+	int* getV1();
+	void setV1(int[10]);
+	~Vector();
+};
+
