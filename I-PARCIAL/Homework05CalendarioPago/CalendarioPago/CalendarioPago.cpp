@@ -9,8 +9,18 @@ using namespace std;
 
 int main()
 {
-    
-   
+    Operaciones op;
+
+    string fecha = "01-01-2021";
+
+
+    string vect[100];
+
+
+
+    Calendario calendario(vect);
+    op.llenar_vector_fechas(fecha, 36, calendario);
+    op.print_calendar(36, calendario.get_fecha());
     std::cout << "Hello World!\n";
     
 
