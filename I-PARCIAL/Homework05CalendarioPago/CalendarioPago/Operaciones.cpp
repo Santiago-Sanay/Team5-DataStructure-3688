@@ -169,4 +169,64 @@ bool Operaciones::verificar_fds(string date)
 	return fds;
 }
 
+void Operaciones::ajustar_fds(int cuotas, string vect[100])
+{
+	bool state = false;
+	for (int i = 0; i < cuotas; i++) {
+
+		while (verificar_fds(vect[i])) {
+			vect[i] = sumar_dia(vect[i]);
+
+		}
+
+	}
+
+}
+
+bool Operaciones::verificar_feriado(string fecha)
+{
+	int day = stoi(fecha.substr(0, 2));
+	int month = stoi(fecha.substr(3, 2));
+	string day1;
+	string month1;
+	string feriado[14];
+	feriado[0] = "01-01";
+	feriado[1] = "15-02";
+	feriado[2] = "16-02";
+	feriado[3] = "02-04";
+	feriado[4] = "01-05";
+	feriado[5] = "28-05";
+	feriado[6] = "25-07";
+	feriado[7] = "10-08";
+	feriado[8] = "09-10";
+	feriado[9] = "02-11";
+	feriado[10] = "03-11";
+	feriado[11] = "06-12";
+	feriado[12] = "24-12";
+	feriado[13] = "25-12";
+	bool state = false;
+
+	if (month < 10) {
+		month1 = "0" + to_string(month);
+	}
+	else {
+		month1 = to_string(month);
+	}
+	if (day < 10) {
+		day1 = "0" + to_string(day);
+	}
+	else {
+		day1 = to_string(day);
+	}
+	string date_verify = day1 + "-" + month1;
+	cout << date_verify << "si entra aca" << endl;
+	for (int i = 0; i < 20; i++) {
+		if (date_verify == feriado[i]) {
+			state = true;
+
+		}
+	}
+	return false;
+}
+
  
