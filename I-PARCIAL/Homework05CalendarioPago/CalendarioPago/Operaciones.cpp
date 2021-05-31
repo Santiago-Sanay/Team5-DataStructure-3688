@@ -168,7 +168,16 @@ bool Operaciones::verificar_fds(string date)
 	}
 	return fds;
 }
+bool Operaciones::verificar_fds(string date)
+{
+	bool fds = false;
+	if (calcular_dia(date) == 6 || calcular_dia(date) == 0) {
+		fds = true;
+	}
+	return fds;
+}
 
+<<<<<<< HEAD
 void Operaciones::ajustar_fds(int cuotas, string vect[100])
 {
 	bool state = false;
@@ -206,6 +215,49 @@ bool Operaciones::verificar_feriado(string fecha)
 	feriado[13] = "25-12";
 	bool state = false;
 
+=======
+string Operaciones::sumar_dia(string fecha)
+{
+	int day = stoi(fecha.substr(0, 2));
+	int month = stoi(fecha.substr(3, 2));
+	int year = stoi(fecha.substr(6, 9));
+	string day1;
+	string month1;
+	string year1;
+	day = day + 1;
+
+
+	if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31) {
+		day = 1;
+		month = month + 1;
+
+
+	}
+	else {
+		if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
+			day = 1;
+			month = month + 1;
+		}
+		else {
+			if (year % 4 == 0 && day > 29 && month == 2) {
+				day = 1;
+				month = month + 1;
+			}
+			else {
+				if (year % 4 != 0 && day > 28 && month == 2) {
+					day = 1;
+					month = month + 1;
+				}
+			}
+		}
+
+	}
+	if (month > 12) {
+		month = 1;
+		year = year + 1;
+
+	}
+>>>>>>> 4cf23ebeb07ac40c403211f1c2a32558719e226e
 	if (month < 10) {
 		month1 = "0" + to_string(month);
 	}
@@ -218,6 +270,7 @@ bool Operaciones::verificar_feriado(string fecha)
 	else {
 		day1 = to_string(day);
 	}
+<<<<<<< HEAD
 	string date_verify = day1 + "-" + month1;
 	cout << date_verify << "si entra aca" << endl;
 	for (int i = 0; i < 20; i++) {
@@ -229,4 +282,9 @@ bool Operaciones::verificar_feriado(string fecha)
 	return false;
 }
 
+=======
+	string date = day1 + "-" + month1 + "-" + to_string(year);
+	return date;
+}
+>>>>>>> 4cf23ebeb07ac40c403211f1c2a32558719e226e
  
