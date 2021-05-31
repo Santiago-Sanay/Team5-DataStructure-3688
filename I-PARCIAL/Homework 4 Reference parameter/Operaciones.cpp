@@ -1,12 +1,12 @@
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
-*AUTORES :
-*THEO ROSERO
-*YULLIANA ROMAN
-*JUNIOR JURADO
-*ALEX PAGUAY
-*SANTIAGO SAÑAY
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAï¿½AY
 *TEMA: PARAMETRO POR REFERENCIA
 *FECHA DE CREACION : 28 DE MAYO DE 2021
 *FECHA DE MODIFICACION: 29 DE MAYO 2021
@@ -22,28 +22,30 @@ Operaciones::Operaciones()
 void Operaciones::encerar(Vector &vect)
 {
 	printf("ENCERAR\n");
-	int* a = vect.getV1();
+	int *a = vect.getV1();
 	for (int i = 0; i < 10; i++)
 	{
 		a[i] = 0;
 	}
 }
 
-void Operaciones::ingresar(Vector& vect)
+void Operaciones::ingresar(Vector &vect)
 {
 	printf("INGRESAR\n");
-	int* a = vect.getV1();
-	for (int i = 0; i < 10; i++) {
+	int *a = vect.getV1();
+	for (int i = 0; i < 10; i++)
+	{
 		a[i] = rand() % 10 + 1;
 	}
 }
 
-float Operaciones::procesar(Vector& vect)
+float Operaciones::procesar(Vector &vect)
 {
 	printf("PROCESAR\n");
-	int* a = vect.getV1();
+	int *a = vect.getV1();
 	float promedio = 0.0f;
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++)
+	{
 		promedio += a[i];
 	}
 	return promedio / 10;
@@ -51,11 +53,9 @@ float Operaciones::procesar(Vector& vect)
 
 void Operaciones::imprimir(Vector &vect)
 {
-	int* a = vect.getV1();
+	int *a = vect.getV1();
 	for (int i = 0; i < 10; i++)
 	{
 		cout << a[i] << endl;
 	}
 }
-
-

@@ -1,12 +1,12 @@
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
-*AUTORES :
-*THEO ROSERO
-*YULLIANA ROMAN
-*JUNIOR JURADO
-*ALEX PAGUAY
-*SANTIAGO SAÑAY
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAï¿½AY
 *TEMA: PARAMETRO POR REFERENCIA
 *FECHA DE CREACION : 28 DE MAYO DE 2021
 *FECHA DE MODIFICACION: 29 DE MAYO 2021
@@ -21,8 +21,7 @@ Vector::Vector(int v[10])
 	}
 }
 
-
-int* Vector::getV1() 
+int *Vector::getV1()
 {
 	return this->v1;
 }
@@ -38,6 +37,3 @@ void Vector::setV1(int v[10])
 Vector::~Vector()
 {
 }
-
-
-
