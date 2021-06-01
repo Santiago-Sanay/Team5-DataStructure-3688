@@ -139,13 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Calendario.cpp" />
+    <ClCompile Include="Calendar.cpp" />
     <ClCompile Include="CalendarioPago.cpp" />
-    <ClCompile Include="Operaciones.cpp" />
+    <ClCompile Include="Operation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calendario.h" />
-    <ClInclude Include="Operaciones.h" />
+    <ClInclude Include="Calendar.h" />
+    <ClInclude Include="Operation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

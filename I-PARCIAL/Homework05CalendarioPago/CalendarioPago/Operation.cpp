@@ -1,20 +1,20 @@
-#include "Operaciones.h"
+#include "Operation.h"
 #include <string>
 using namespace std;
-void Operaciones::encerar(Calendario calendario)
+void Operation::wax(Calendar calendar)
 {
 	string vect[100];
 	for (int i = 0; i < 100; i++) 
 	{
 		vect[i] = "0";
 	}
-	calendario.set_fecha(vect);
+	calendar.set_date(vect);
 }
-int Operaciones::calcular_dia(string fecha)
+int Operation::calculate_day(string date)
 {
-	int day = stoi(fecha.substr(0, 2));
-	int month = stoi(fecha.substr(3, 2));
-	int year = stoi(fecha.substr(6, 9));
+	int day = stoi(date.substr(0, 2));
+	int month = stoi(date.substr(3, 2));
+	int year = stoi(date.substr(6, 9));
 
 	int month1 = 0;
 	if (month == 1 || month == 10) 
@@ -65,13 +65,13 @@ int Operaciones::calcular_dia(string fecha)
 	int day_week = zeller_sum % 7;
 	return day_week;
 }
-void Operaciones::llenar_vector_fechas(string fecha, int cuotas, Calendario& calendario)
+void Operation::date_vector(string date, int dues, Calendar& calendar)
 {
-	string* vect = calendario.get_fecha();
+	string* vect = calendar.get_date();
 
-	int day = stoi(fecha.substr(0, 2));
-	int month = stoi(fecha.substr(3, 2));
-	int year = stoi(fecha.substr(6, 9));
+	int day = stoi(date.substr(0, 2));
+	int month = stoi(date.substr(3, 2));
+	int year = stoi(date.substr(6, 9));
 	string day1;
 	string month1;
 	string year1;
@@ -81,7 +81,7 @@ void Operaciones::llenar_vector_fechas(string fecha, int cuotas, Calendario& cal
 	else {
 		day1 = to_string(day);
 	}
-	for (int i = 0; i < cuotas; i++) {
+	for (int i = 0; i < dues; i++) {
 		if (month < 10) {
 			month1 = "0" + to_string(month);
 		}
@@ -96,19 +96,19 @@ void Operaciones::llenar_vector_fechas(string fecha, int cuotas, Calendario& cal
 			month = 1;
 		}
 	}
-	for (int i = 0; i < cuotas; i++) {
-		vect[i] = ajustar_fecha_valida(vect[i]);
+	for (int i = 0; i < dues; i++) {
+		vect[i] = set_valid_date(vect[i]);
 	}
-	ajustar_fds(cuotas, vect);
+	set_weekend(dues, vect);
 }
 
 
 
-string Operaciones::ajustar_fecha_valida(string fecha)
+string Operation::set_valid_date(string date)
 {
-	int day = stoi(fecha.substr(0, 2));
-	int month = stoi(fecha.substr(3, 2));
-	int year = stoi(fecha.substr(6, 9));
+	int day = stoi(date.substr(0, 2));
+	int month = stoi(date.substr(3, 2));
+	int year = stoi(date.substr(6, 9));
 	string day1;
 	string month1;
 	string year1;
@@ -149,21 +149,21 @@ string Operaciones::ajustar_fecha_valida(string fecha)
 	else {
 		day1 = to_string(day);
 	}
-	string date = day1 + "-" + month1 + "-" + to_string(year);
+	date = day1 + "-" + month1 + "-" + to_string(year);
 	return date;
 }
 
-void Operaciones::print_calendar(int cuotas, string vect[100])
+void Operation::print_calendar(int dues, string vect[100])
 {
-	for (int i = 0; i < cuotas; i++) {
+	for (int i = 0; i < dues; i++) {
 		cout << i + 1 << " " << vect[i] << endl;
 	}
 }
 
-bool Operaciones::verificar_fds(string date)
+bool Operation::check_fds(string date)
 {
 	bool fds = false;
-	if (calcular_dia(date) == 6 || calcular_dia(date) == 0) {
+	if (calculate_day(date) == 6 || calculate_day(date) == 0) {
 		fds = true;
 	}
 	return fds;
@@ -171,13 +171,13 @@ bool Operaciones::verificar_fds(string date)
 
 
 
-void Operaciones::ajustar_fds(int cuotas, string vect[100])
+void Operation::set_weekend(int dues, string vect[100])
 {
 	bool state = false;
-	for (int i = 0; i < cuotas; i++) {
+	for (int i = 0; i < dues; i++) {
 
-		while (verificar_fds(vect[i]) || verificar_feriado(vect[i])) {
-			vect[i] = sumar_dia(vect[i]);
+		while (check_fds(vect[i]) || check_holiday(vect[i])) {
+			vect[i] = add_day(vect[i]);
 
 		}
 
@@ -185,27 +185,27 @@ void Operaciones::ajustar_fds(int cuotas, string vect[100])
 
 }
 
-bool Operaciones::verificar_feriado(string fecha)
+bool Operation::check_holiday(string date)
 {
-	int day = stoi(fecha.substr(0, 2));
-	int month = stoi(fecha.substr(3, 2));
+	int day = stoi(date.substr(0, 2));
+	int month = stoi(date.substr(3, 2));
 	string day1;
 	string month1;
-	string feriado[14];
-	feriado[0] = "01-01";
-	feriado[1] = "15-02";
-	feriado[2] = "16-02";
-	feriado[3] = "02-04";
-	feriado[4] = "01-05";
-	feriado[5] = "28-05";
-	feriado[6] = "25-07";
-	feriado[7] = "10-08";
-	feriado[8] = "09-10";
-	feriado[9] = "02-11";
-	feriado[10] = "03-11";
-	feriado[11] = "06-12";
-	feriado[12] = "24-12";
-	feriado[13] = "25-12";
+	string holiday[14];
+	holiday[0] = "01-01";
+	holiday[1] = "15-02";
+	holiday[2] = "16-02";
+	holiday[3] = "02-04";
+	holiday[4] = "01-05";
+	holiday[5] = "28-05";
+	holiday[6] = "25-07";
+	holiday[7] = "10-08";
+	holiday[8] = "09-10";
+	holiday[9] = "02-11";
+	holiday[10] = "03-11";
+	holiday[11] = "06-12";
+	holiday[12] = "24-12";
+	holiday[13] = "25-12";
 	bool state = false;
 
 	if (month < 10) {
@@ -223,7 +223,7 @@ bool Operaciones::verificar_feriado(string fecha)
 	string date_verify = day1 + "-" + month1;
 
 	for (int i = 0; i < 20; i++) {
-		if (date_verify == feriado[i]) {
+		if (date_verify == holiday[i]) {
 			state = true;
 
 
@@ -232,11 +232,11 @@ bool Operaciones::verificar_feriado(string fecha)
 
 	return state;
 }
-string Operaciones::sumar_dia(string fecha)
+string Operation::add_day(string date)
 {
-	int day = stoi(fecha.substr(0, 2));
-	int month = stoi(fecha.substr(3, 2));
-	int year = stoi(fecha.substr(6, 9));
+	int day = stoi(date.substr(0, 2));
+	int month = stoi(date.substr(3, 2));
+	int year = stoi(date.substr(6, 9));
 	string day1;
 	string month1;
 	string year1;
@@ -285,7 +285,7 @@ string Operaciones::sumar_dia(string fecha)
 	else {
 		day1 = to_string(day);
 	}
-	string date = day1 + "-" + month1 + "-" + to_string(year);
+	date = day1 + "-" + month1 + "-" + to_string(year);
 	return date;
 }
 

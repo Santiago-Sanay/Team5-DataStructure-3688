@@ -3,13 +3,13 @@
 
 #include <iostream>
 #include <string>
-#include "Calendario.h"
-#include "Operaciones.h"
+#include "Calendar.h"
+#include "Operation.h"
 using namespace std;
 
 int main()
 {
-    Operaciones op;
+    Operation op;
 
     string fecha = "01-01-2021";
 
@@ -18,9 +18,9 @@ int main()
 
 
 
-    Calendario calendario(vect);
-    op.llenar_vector_fechas(fecha, 36, calendario);
-    op.print_calendar(36, calendario.get_fecha());
+    Calendar calendario(vect);
+    op.date_vector(fecha, 36, calendario);
+    op.print_calendar(36, calendario.get_date());
     std::cout << "Hello World!\n";
     
 
