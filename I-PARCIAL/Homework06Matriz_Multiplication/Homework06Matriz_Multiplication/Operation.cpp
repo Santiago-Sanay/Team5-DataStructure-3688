@@ -38,7 +38,7 @@ void Operation::multiply(int m1[10][10], int m2[10][10], int mr[10][10])
 
 }
 
-void Operation::encerar(int matriz[10][10])
+void Operation::wax(int matriz[10][10])
 {
 	for (int i = 0; i < 10;i++) {
 		for (int j = 0; j < 10; j++) {
@@ -49,9 +49,9 @@ void Operation::encerar(int matriz[10][10])
 	}
 }
 
-void Operation::leer(int matriz[10][10], int row, int column)
+void Operation::read(int matriz[10][10], int row, int column)
 {
-	encerar(matriz);
+	wax(matriz);
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
 			cout << "ingrese datos a la fila " << i+1 << " columna: " << j+1<<" :";
@@ -64,7 +64,7 @@ void Operation::leer(int matriz[10][10], int row, int column)
 
 }
 
-void Operation::imprimir(int matriz[10][10],int row, int column)
+void Operation::print(int matriz[10][10],int row, int column)
 {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {

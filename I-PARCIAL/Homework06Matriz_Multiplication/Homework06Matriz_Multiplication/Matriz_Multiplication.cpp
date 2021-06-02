@@ -37,9 +37,9 @@ int main()
     cin >> column2;
 
     Operation op;
-    op.leer(m1,row1,column1);
-    op.leer(m2, row2, column2);
+    op.read(m1,row1,column1);
+    op.read(m2, row2, column2);
     op.multiply(m1, m2, mr);
-    op.imprimir(mr, row1, column2);
+    op.print(mr, row1, column2);
    
 }
