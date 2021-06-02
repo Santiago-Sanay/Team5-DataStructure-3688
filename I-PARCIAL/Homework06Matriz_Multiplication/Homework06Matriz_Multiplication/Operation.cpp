@@ -1,3 +1,19 @@
+﻿/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: PARAMETRO POR REFERENCIA
+*FECHA DE CREACION : 29 DE MAYO DE 2021
+*FECHA DE MODIFICACION: 1 DE MAYO 2021
+*/
+// Homework06Matriz_Multiplication.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
 #include "Operation.h"
 using namespace std;
 Operation::Operation()
@@ -38,7 +54,7 @@ void Operation::leer(int matriz[10][10], int row, int column)
 	encerar(matriz);
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
-			cout << "ingrese datos a la fila: " << i << " columna: " << j<<" ";
+			cout << "ingrese datos a la fila " << i+1 << " columna: " << j+1<<" :";
 			cin>>matriz[i][j];
 			cout << endl;
 
@@ -52,9 +68,8 @@ void Operation::imprimir(int matriz[10][10],int row, int column)
 {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
-			
-			cout << matriz[i][j]<<"  ";
-
+			cout << "\nColumna " << i + 1 << " Fila " << j + 1 << ": ";
+			cout << matriz[i][j] << endl;
 		}
 		cout << endl;
 

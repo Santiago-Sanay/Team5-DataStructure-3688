@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Homework06Matriz_Multiplication.cpp">
+    <ClCompile Include="Matriz_Multiplication.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Operation.cpp">

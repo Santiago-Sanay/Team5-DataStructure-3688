@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Homework06Matriz_Multiplication.cpp" />
+    <ClCompile Include="Matriz_Multiplication.cpp" />
     <ClCompile Include="Operation.cpp" />
   </ItemGroup>
   <ItemGroup>
