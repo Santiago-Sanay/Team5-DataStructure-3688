@@ -204,7 +204,7 @@ bool Operation::check_holiday(string date)
 	int month = stoi(date.substr(3, 2));
 	string day1;
 	string month1;
-	string holiday[14];
+	string holiday[15];
 	holiday[0] = "01-01";
 	holiday[1] = "15-02";
 	holiday[2] = "16-02";
@@ -219,6 +219,7 @@ bool Operation::check_holiday(string date)
 	holiday[11] = "06-12";
 	holiday[12] = "24-12";
 	holiday[13] = "25-12";
+	holiday[14] = "31-12";
 	bool state = false;
 
 	if (month < 10) {

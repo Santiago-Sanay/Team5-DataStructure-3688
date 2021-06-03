@@ -24,21 +24,17 @@ using namespace std;
 int main()
 {
     Operation op;
-
-    string fecha = "01-01-2021";
-
-
+    string fecha;
+    int quota;
     string vect[100];
-
-
-
     Calendar calendario(vect);
-    op.date_vector(fecha, 36, calendario);
-    op.print_calendar(36, calendario.get_date());
-    std::cout << "Hello World!\n";
-    
 
-
+    cout << "Ingrese una fecha (dd-mm-yyyy):";
+    cin >> fecha;
+    cout << "Ingrese el numero de cuotas:";
+    cin >> quota;
+    op.date_vector(fecha, quota, calendario);
+    op.print_calendar(quota, calendario.get_date());    
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
