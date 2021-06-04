@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{970e77e9-df84-4a79-9682-29e6734c0b62}</ProjectGuid>
-    <RootNamespace>CalendarioPago</RootNamespace>
+    <ProjectGuid>{6b6ca48b-41b7-4504-a1d1-d8166e1a1e3e}</ProjectGuid>
+    <RootNamespace>Calculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Calendar.cpp" />
-    <ClCompile Include="CalendarioPago.cpp" />
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Operation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calendar.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Operation.h" />
   </ItemGroup>
   <ItemGroup>
