@@ -24,8 +24,16 @@ using namespace std;
 int main()
 {
     Operation op;
+<<<<<<< Updated upstream
     string fecha;
     int quota;
+=======
+
+    string fecha = "31-01-2023";
+
+
+
+>>>>>>> Stashed changes
     string vect[100];
     Calendar calendario(vect);
 
