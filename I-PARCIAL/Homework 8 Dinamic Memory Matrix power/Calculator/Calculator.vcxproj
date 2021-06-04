@@ -144,6 +144,7 @@
     <ClCompile Include="Operation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Downloads\Matrix.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Operation.h" />
   </ItemGroup>
