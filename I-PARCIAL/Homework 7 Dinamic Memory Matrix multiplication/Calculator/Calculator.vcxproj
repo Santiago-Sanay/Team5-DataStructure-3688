@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Downloads\Calculator.cpp" />
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Operation.cpp" />

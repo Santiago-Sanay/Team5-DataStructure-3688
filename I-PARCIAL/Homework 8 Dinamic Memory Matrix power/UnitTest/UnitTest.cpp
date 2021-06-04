@@ -11,7 +11,7 @@ namespace UnitTest
 	TEST_CLASS(UnitTest)
 	{
 	public:
-		
+
 		TEST_METHOD(Segmentar)
 		{
 			Operation op;
