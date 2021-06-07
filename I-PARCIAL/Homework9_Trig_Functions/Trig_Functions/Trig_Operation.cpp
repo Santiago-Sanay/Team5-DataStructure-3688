@@ -59,6 +59,13 @@ double Trig_Operation::cos(Angle a)
     return result;
 }
 
+double Trig_Operation::tan(Angle angle)
+{
+    double tan;
+    tan = Trig_Operation::sin(angle) / Trig_Operation::cos(angle);
+    return tan;
+}
+
 long Trig_Operation::factorial(int n)
 {
     //Funciona hasta 16! 

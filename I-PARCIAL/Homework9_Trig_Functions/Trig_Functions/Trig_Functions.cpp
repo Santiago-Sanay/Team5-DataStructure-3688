@@ -17,11 +17,18 @@
 using namespace std;
 int main()
 {
-    Trig_Operation op;
-    double x = 3.14159;
-    Angle angle(x);
-    //cout << sin(x) << endl;
-    //cout << op.sin(angle)<< endl;
-    cout << cos(x) << endl;
-    cout<<op.cos(x)<<endl;
+    int opt;
+    do {
+        Trig_Operation op;
+        double x;
+        cout << "Ingrese el angulo: ";
+        cin >> x;        
+        Angle angle(x);
+        cout << "seno:" << op.sin(angle) <<" "<<sin(x)<< endl;
+        cout << "coseno:"<< op.cos(x) << " "<<cos(x)<<endl;
+        cout << "tangente:" << op.tan(x) <<" "<<tan(x)<< endl;
+        cout<<"Desean continuar con el programa Si-1/No-0:";
+        cin >> opt;
+    } while (opt != 0);
+    
 }

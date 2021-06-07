@@ -19,7 +19,7 @@ public:
 	double sin(Angle);
 	double csc(Angle);
 	double cos(Angle);
+	double tan(Angle);
 	long factorial(int);
-
 };
 
