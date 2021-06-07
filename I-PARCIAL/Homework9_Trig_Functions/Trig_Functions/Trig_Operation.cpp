@@ -47,8 +47,21 @@ double Trig_Operation::csc(Angle)
     return 0.0;
 }
 
-int Trig_Operation::factorial(int n)
+double Trig_Operation::cos(Angle a)
 {
+    double angle = a.get_grade_angle();
+    double result = 0; 
+    int presicion = 8; 
+    for (int i = 0; i < presicion; i++)
+    {
+        result += ((pow(-1, i)) / factorial(2 * i)) * pow(angle, 2 * i);
+    }
+    return result;
+}
+
+long Trig_Operation::factorial(int n)
+{
+    //Funciona hasta 16! 
     if (n < 1) {
         return 1;
     }

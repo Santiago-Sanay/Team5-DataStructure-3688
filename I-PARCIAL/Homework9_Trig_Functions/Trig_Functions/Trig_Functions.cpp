@@ -20,6 +20,8 @@ int main()
     Trig_Operation op;
     double x = 3.14159;
     Angle angle(x);
-    cout << sin(x)<<endl;
-    cout << op.sin(angle);
+    //cout << sin(x) << endl;
+    //cout << op.sin(angle)<< endl;
+    cout << cos(x) << endl;
+    cout<<op.cos(x)<<endl;
 }

@@ -18,7 +18,8 @@ class Trig_Operation
 public:
 	double sin(Angle);
 	double csc(Angle);
-	int factorial(int);
+	double cos(Angle);
+	long factorial(int);
 
 };
 
