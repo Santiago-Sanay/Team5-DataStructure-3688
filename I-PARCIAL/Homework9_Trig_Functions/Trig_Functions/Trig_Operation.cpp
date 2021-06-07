@@ -1,3 +1,17 @@
+﻿/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: FUNCIONES TRIGONOMETRICAS
+*FECHA DE CREACION : 5 DE JUNIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
+
 #include "Trig_Operation.h"
 #include "Math.h"
 #include <iostream>
@@ -30,7 +44,6 @@ double Trig_Operation::sin(Angle angle )
 
 double Trig_Operation::csc(Angle)
 {
-    
     return 0.0;
 }
 
