@@ -129,7 +129,7 @@ void Operation::semi_magic_square(Matrix matriz_a, int longitud)
         
         
     }
-   permutate(matriz_a, longitud);
+ //  permutate(matriz_a, longitud);
 }
 
 void Operation::permutate(Matrix matriz_a, int longitud)
