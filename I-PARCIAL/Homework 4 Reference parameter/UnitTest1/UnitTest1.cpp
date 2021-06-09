@@ -1,7 +1,22 @@
+﻿/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: PARAMETRO POR REFERENCIA
+*FECHA DE CREACION : 28 DE MAYO DE 2021
+*FECHA DE MODIFICACION: 29 DE MAYO 2021
+*/
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../Operaciones.h"
 #include "../Vector.h"
+#include "../Operaciones.cpp"
+#include "../Vector.cpp"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest1
