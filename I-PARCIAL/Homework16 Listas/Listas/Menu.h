@@ -15,10 +15,22 @@ using namespace std;
 void menu_principal();
 void menu_agregar(Lista&);
 void menu_eliminar(Lista&);
+void Color(int Background, int Text);
 
 void gotoxy(USHORT x, USHORT y) {
     COORD cp = { x,y };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cp);
+}
+void Color(int Background, int Text) { // Función para cambiar el color del fondo y/o pantalla
+
+    HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE); // Tomamos la consola.
+
+    // Para cambiar el color, se utilizan números desde el 0 hasta el 255.
+    // Pero, para convertir los colores a un valor adecuado, se realiza el siguiente cálculo.
+    int    New_Color = Text + (Background * 16);
+
+    SetConsoleTextAttribute(Console, New_Color); // Guardamos los cambios en la Consola.
+
 }
 
 
@@ -34,10 +46,7 @@ void menu_principal()
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Agregar", "Eliminar","Imprimir", "Salir" };
     int n = 4;  // Numero de opciones
-<<<<<<< HEAD
-=======
- 
->>>>>>> ef86f6a7c92aed10c709676bd22567584538aa66
+
     do {
         opcion = menu(titulo, opciones, n);
 
@@ -49,10 +58,9 @@ void menu_principal()
             menu_eliminar(lista);
             break;
         case 3:
-<<<<<<< HEAD
+
             system("cls");
-=======
->>>>>>> ef86f6a7c92aed10c709676bd22567584538aa66
+
             lista.mostrar();
             system("pause>nul");
             break;
@@ -147,8 +155,8 @@ int menu(const char titulo[], const char* opciones[], int n)
     do {
         system("cls");
         //  system("color ");
-        gotoxy(5, 3 + opcionSeleccionada); cout << "==>" << endl;
-
+        gotoxy(5, 3 + opcionSeleccionada);  Color(1, 2); cout << "==>" << endl;
+        Color(0, 15);
         // Imprime el título del menú
         gotoxy(15, 2); cout << titulo;
 
