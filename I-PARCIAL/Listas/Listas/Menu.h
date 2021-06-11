@@ -30,11 +30,14 @@ void menu_principal()
     bool repite = true;
     int opcion;
     Lista lista;
-
     // Titulo del menú y nombres de las opciones
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Agregar", "Eliminar","Imprimir", "Salir" };
     int n = 4;  // Numero de opciones
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> ef86f6a7c92aed10c709676bd22567584538aa66
     do {
         opcion = menu(titulo, opciones, n);
 
@@ -46,7 +49,10 @@ void menu_principal()
             menu_eliminar(lista);
             break;
         case 3:
+<<<<<<< HEAD
             system("cls");
+=======
+>>>>>>> ef86f6a7c92aed10c709676bd22567584538aa66
             lista.mostrar();
             system("pause>nul");
             break;
