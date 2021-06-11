@@ -59,10 +59,6 @@ void menu_principal()
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Agregar", "Eliminar","Imprimir", "Salir" };
     int n = 4;  // Numero de opciones
-<<<<<<< HEAD:I-PARCIAL/Homeworl 16 Linked Lists/Listas/Menu.h
-=======
-
->>>>>>> a9409474b0f221e1f9dfd0c941244ff6b7a573d1:I-PARCIAL/Homework16 Listas/Listas/Menu.h
     do {
         opcion = menu(titulo, opciones, n);
 
@@ -74,13 +70,8 @@ void menu_principal()
             menu_eliminar(lista);
             break;
         case 3:
-<<<<<<< HEAD:I-PARCIAL/Homeworl 16 Linked Lists/Listas/Menu.h
-            system("cls");
-=======
 
             system("cls");
-
->>>>>>> a9409474b0f221e1f9dfd0c941244ff6b7a573d1:I-PARCIAL/Homework16 Listas/Listas/Menu.h
             lista.mostrar();
             system("pause>nul");
             break;
