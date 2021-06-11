@@ -7,9 +7,7 @@
 
 int main()
 {
-    Lista lista;
-    menu_principal();
-    
+    menu_principal();   
    /* Lista lista;
     lista.insertar_por_la_cabeza(0);
     lista.insertar_por_la_cola(1);
