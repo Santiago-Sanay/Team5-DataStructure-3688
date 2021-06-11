@@ -31,11 +31,8 @@ void Lista::insertar_por_la_cabeza(int val)
 	}
 	else {
 		nuevo->set_siguiente(this->primero);
-		
-		//this->actual->set_siguiente(nuevo);
 	}
 	this->primero = nuevo;
-	
 }
 
 void Lista::borrar_por_la_cola()
@@ -48,11 +45,8 @@ void Lista::borrar_por_la_cola()
 		}
 		temp1->set_siguiente(NULL);
 		this->actual = temp1;
-
-
 		free(temp);
 	}
-	
 }
 
 void Lista::borrar_por_la_cabeza()

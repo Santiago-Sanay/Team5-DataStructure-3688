@@ -1,14 +1,16 @@
 // Listas.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-
+#include "Menu.h"
 #include <iostream>
-
 #include "Nodo.h"
 #include "Lista.h"
 
 int main()
 {
     Lista lista;
+    menu_principal();
+    
+   /* Lista lista;
     lista.insertar_por_la_cabeza(0);
     lista.insertar_por_la_cola(1);
     lista.insertar_por_la_cola(2);
@@ -18,10 +20,11 @@ int main()
     lista.insertar_por_la_cabeza(0);
     lista.insertar_por_la_cabeza(10);
     lista.borrar_por_la_cabeza();
-    //lista.borrar_por_la_cola();
+    lista.borrar_por_la_cola();
     lista.mostrar();
-    
     std::cout << "Hello World!\n";
+    */
+    
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
