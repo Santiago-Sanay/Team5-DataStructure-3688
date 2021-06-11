@@ -1,4 +1,3 @@
-#pragma warning(disable:4996)
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -6,11 +5,16 @@
 #include "Lista.h"
 #include "Nodo.h"
 
+#pragma warning(disable:4996)
 #define ARRIBA 72
 #define ABAJO 80
 #define ENTER 13
 
 using namespace std;
+
+void menu_principal();
+void menu_agregar(Lista&);
+void menu_eliminar(Lista&);
 
 void gotoxy(USHORT x, USHORT y) {
     COORD cp = { x,y };
@@ -19,10 +23,6 @@ void gotoxy(USHORT x, USHORT y) {
 
 
 int menu(const char titulo[], const char* opciones[], int n);
-
-void menu_principal();
-void menu_agregar(Lista);
-void menu_eliminar(Lista);
 
 
 void menu_principal()
@@ -35,7 +35,6 @@ void menu_principal()
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Agregar", "Eliminar","Imprimir", "Salir" };
     int n = 4;  // Numero de opciones
-    Lista lst;
     do {
         opcion = menu(titulo, opciones, n);
 
@@ -47,10 +46,12 @@ void menu_principal()
             menu_eliminar(lista);
             break;
         case 3:
-            Lista::mostrar;
+            system("cls");
+            lista.mostrar();
             system("pause>nul");
             break;
         case 4:
+            system("cls");
             cout << "\nGracias por utilizar nuestro programa" << endl;
             repite = false;
             system("pause>nul");
@@ -60,7 +61,7 @@ void menu_principal()
     } while (repite);
 }
 
-void menu_agregar(Lista lista)
+void menu_agregar(Lista &lista)
 {
     bool repite = true;
     int opcion;
@@ -81,7 +82,6 @@ void menu_agregar(Lista lista)
             cout << "Ingrese numero= ";
             cin >> num;
             lista.insertar_por_la_cabeza(num);
-            lista.mostrar();
             system("pause>nul");
             break;
         case 2:
@@ -99,7 +99,7 @@ void menu_agregar(Lista lista)
     } while (repite);
 }
 
-void menu_eliminar(Lista lista)
+void menu_eliminar(Lista &lista)
 {
     bool repite = true;
     int opcion;
@@ -129,8 +129,6 @@ void menu_eliminar(Lista lista)
 
     } while (repite);
 }
-
-
 
 int menu(const char titulo[], const char* opciones[], int n)
 {
