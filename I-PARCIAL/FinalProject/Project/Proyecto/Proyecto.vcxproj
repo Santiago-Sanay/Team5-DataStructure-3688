@@ -140,11 +140,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Doubt.cpp" />
+    <ClCompile Include="Due.cpp" />
+    <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Operation_person.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Proyect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Doubt.h" />
+    <ClInclude Include="Due.h" />
+    <ClInclude Include="Lista.h" />
+    <ClInclude Include="Nodo.h" />
     <ClInclude Include="Operation_person.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
