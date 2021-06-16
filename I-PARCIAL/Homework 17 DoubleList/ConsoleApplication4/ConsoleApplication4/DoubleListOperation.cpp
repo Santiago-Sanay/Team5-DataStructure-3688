@@ -3,23 +3,11 @@
 
 #include <iostream>
 #include "ListaDobleEnlazada.h"
+#include "Menu.h"
 
 int main()
 {
-    ListaDobleEnlazada lista;
-    lista.insertar(10);
-    lista.insertar(20);
-    lista.insertar(30);
-    lista.insertar(40);
-    lista.insertar(50);
-    lista.insertar_cabeza(70);
-    lista.recorrer([](int valor, int indice) {
-        cout << indice << " ";
-        cout << valor << " " << endl;
-    });
-    cout << lista.consultar(4) << endl;
-    
-    std::cout << "Hello World!\n"<<endl;
+    menu_principal();
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar

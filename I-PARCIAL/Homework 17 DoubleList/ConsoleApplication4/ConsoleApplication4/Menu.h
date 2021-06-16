@@ -1,33 +1,18 @@
-/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
-*			INGENIERIA SOFTWARE
-*
-*AUTORES : YULLIANA ROMAN
-*JUNIOR JURADO
-*TEHO ROSERO
-*ALEX PAGUAY
-*SANTIAGO SAÑAY
-*ENUNCIADO: CREACION DE UN PROGRAMA QUE UTILICE LISTAS
-*FECHA DE CREACION : 10 DE JUNIO DE 2021
-*FECHA DE MODIFICACION:  10 DE JUNIO DE 2021
-*/
-
+#pragma warning(disable:4996)
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
 #include <string>
-#include "Lista.h"
+#include "ListaDobleEnlazada.h"
 #include "Nodo.h"
-
-#pragma warning(disable:4996)
 #define ARRIBA 72
 #define ABAJO 80
 #define ENTER 13
-
 using namespace std;
 
 void menu_principal();
-void menu_agregar(Lista&);
-void menu_eliminar(Lista&);
+void menu_agregar(ListaDobleEnlazada&);
+void menu_eliminar(ListaDobleEnlazada&);
 void Color(int Background, int Text);
 
 void gotoxy(USHORT x, USHORT y) {
@@ -54,15 +39,11 @@ void menu_principal()
 {
     bool repite = true;
     int opcion;
-    Lista lista;
+    ListaDobleEnlazada lista;
     // Titulo del menú y nombres de las opciones
     const char* titulo = "MENU DE OPCIONES";
-    const char* opciones[] = { "Agregar", "Eliminar","Imprimir", "Salir" };
-    int n = 4;  // Numero de opciones
-<<<<<<< HEAD:I-PARCIAL/Homeworl 16 Linked Lists/Listas/Menu.h
-=======
-
->>>>>>> a9409474b0f221e1f9dfd0c941244ff6b7a573d1:I-PARCIAL/Homework16 Listas/Listas/Menu.h
+    const char* opciones[] = { "Agregar", "Eliminar","Imprimir","Buscar", "Salir" };
+    int n = 5;  // Numero de opciones
     do {
         opcion = menu(titulo, opciones, n);
 
@@ -74,17 +55,21 @@ void menu_principal()
             menu_eliminar(lista);
             break;
         case 3:
-<<<<<<< HEAD:I-PARCIAL/Homeworl 16 Linked Lists/Listas/Menu.h
             system("cls");
-=======
-
-            system("cls");
-
->>>>>>> a9409474b0f221e1f9dfd0c941244ff6b7a573d1:I-PARCIAL/Homework16 Listas/Listas/Menu.h
-            lista.mostrar();
+            lista.recorrer([](int valor, int indice) {
+                cout << indice+1 << " ";
+                cout << valor << " " << endl;
+            });
             system("pause>nul");
             break;
         case 4:
+            system("cls");
+            int index;
+            cout << "Ingrese el indice que desea buscar: ";
+            cin >> index;
+            lista.consultar(index);
+            break;
+        case 5:
             system("cls");
             cout << "\nGracias por utilizar nuestro programa" << endl;
             repite = false;
@@ -95,37 +80,38 @@ void menu_principal()
     } while (repite);
 }
 
-void menu_agregar(Lista &lista)
+void menu_agregar(ListaDobleEnlazada& lista)
 {
     bool repite = true;
     int opcion;
-
-    
     const char* titulo = "MENU PARA AGREGAR A UNA LISTA";
-    const char* opciones[] = { "Por la cabeza","Por la cola","Regresar" };
-    int n = 3;  // Numero de opciones
-
+    const char* opciones[] = { "Por la cabeza","Por la cola","Por indice","Regresar" };
+    int n = 4;  // Numero de opciones
     int num;
-    Lista lst;
     do {
         opcion = menu(titulo, opciones, n);
 
         system("cls");
         switch (opcion) {
         case 1:
-            cout << "Ingrese numero= ";
+            cout << "Ingrese numero: ";
             cin >> num;
-            lista.insertar_por_la_cabeza(num);
-            system("pause>nul");
+            lista.insertar_cabeza(num);
             break;
         case 2:
-            cout << "Ingrese numero= ";
+            cout << "Ingrese numero: ";
             cin >> num;
-            lista.insertar_por_la_cola(num);
-            system("pause>nul");
+            lista.insertar(num);
             break;
-
         case 3:
+            int indice;
+            cout << "Ingrese numero: ";
+            cin >> num;
+            cout << "Ingrese el indice: ";
+            cin >> indice;
+            lista.insertar_por_indice(indice, num);
+            break;
+        case 4:
             repite = false;
             break;
         }
@@ -133,30 +119,34 @@ void menu_agregar(Lista &lista)
     } while (repite);
 }
 
-void menu_eliminar(Lista &lista)
+void menu_eliminar(ListaDobleEnlazada& lista)
 {
     bool repite = true;
     int opcion;
 
     // Titulo del menú y nombres de las opciones
     const char* titulo = "MENU PARA ELIMINAR ELEMENTO EN LISTAS";
-    const char* opciones[] = { "Por la Cabeza", "Por la Cola", "Regresar" };
-    int n = 3;  // Numero de opciones
+    const char* opciones[] = { "Por la Cabeza", "Por la Cola","Por indice","Regresar" };
+    int n = 4;  // Numero de opciones
 
     do {
         opcion = menu(titulo, opciones, n);
         system("cls");
         switch (opcion) {
         case 1:
-            lista.mostrar();
-            lista.borrar_por_la_cabeza();
+            lista.eliminar_cabeza();
             system("pause>nul");
             break;
         case 2:
-            lista.borrar_por_la_cola();
+            lista.eliminar_cola();
             system("pause>nul");
             break;
         case 3:
+            int indice;
+            cout << "Ingrese el indice: ";
+            cin >> indice;
+            lista.eliminar_por_indice(indice);
+        case 4:
             repite = false;
             break;
         }
