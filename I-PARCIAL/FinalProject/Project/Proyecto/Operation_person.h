@@ -20,10 +20,10 @@
 class Operation_person
 {
 public:
-	static Person data_entry();
+	/*static Person data_entry();
 	static string get_actual_date();
 	static int calculate_age(string);
 	static void create_email(Person);
-	static bool validate_id(string);
+	static bool validate_id(string);*/
 };
 
