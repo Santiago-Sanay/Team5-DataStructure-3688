@@ -10,10 +10,11 @@
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
 */
+
 #include "Math.h"
 #include <iostream>
-//theo :v
-// overload add
+
+
 Vector<int> Math::add(Vector<int>& u, Vector<int>& v)
 {
 	return Vector<int>{(u.get_x() + v.get_x()), (u.get_y() + v.get_y()), (u.get_z() + v.get_z())};

@@ -10,8 +10,8 @@
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
 */
-#pragma once
 
+#pragma once
 template <typename T>
 class Vector
 {

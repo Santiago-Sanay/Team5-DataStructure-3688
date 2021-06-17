@@ -1,6 +1,3 @@
-#pragma once
-#include "Vector.h"
-#include <cmath>
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -13,6 +10,11 @@
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
 */
+
+#pragma once
+#include "Vector.h"
+#include <cmath>
+
 #include <iomanip>
 class Math
 {
