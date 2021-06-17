@@ -24,6 +24,7 @@
     <ProjectGuid>{6e1f29c4-54a1-43af-9e55-f18c5d7f54fc}</ProjectGuid>
     <RootNamespace>OverloadMethods</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>OverloadOperations</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

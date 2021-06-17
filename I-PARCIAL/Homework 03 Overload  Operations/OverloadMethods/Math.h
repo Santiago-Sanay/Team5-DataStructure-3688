@@ -12,20 +12,14 @@
 */
 #pragma once
 #include "Vector.h"
-<<<<<<< HEAD
-//#include <cmath>
-//#include <iomanip>
-=======
 #include <cmath>
 #include <iomanip>
 #include <iostream>
->>>>>>> 66b778ea95aedbf91826d178f9ccfc090cfc139c
 class Math
 {
 
 public:
 	//Theo
-<<<<<<< HEAD
 	//static Vector operator+(Vector&, Vector&);
 	//static Vector operator-(Vector&, Vector&);
 	//static double operator*(Vector&, Vector&);
@@ -45,7 +39,6 @@ public:
 	//static int operator<=(Vector&, Vector&);
 	//static Vector operator>=(Vector&, Vector&);
 	//static Vector operator<<=(Vector&, Vector&);
-=======
 	Vector operator+(Vector*);
 	Vector operator-(Vector*);
 	double operator*(Vector*);
@@ -65,7 +58,5 @@ public:
 	int operator<=(Vector&);
 	Vector operator>=(Vector&);
 	Vector operator<<=(Vector&);
->>>>>>> 66b778ea95aedbf91826d178f9ccfc090cfc139c
-
 
 };
