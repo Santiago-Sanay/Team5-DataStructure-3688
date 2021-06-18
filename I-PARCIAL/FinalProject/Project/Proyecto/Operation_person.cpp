@@ -14,7 +14,7 @@
 
 #include "Operation_person.h"
 #include <time.h>
-bool Operation_person::validate_id(string _id) {
+/*bool Operation_person::validate_id(string _id) {
 	int tam = _id.size();
 	for (int i = 0; i < tam; i++)
 	{
@@ -24,7 +24,7 @@ bool Operation_person::validate_id(string _id) {
 	}
 	return false;
 }
-string Operation_person::get_actual_date()
+/*string Operation_person::get_actual_date()
 {
 	time_t now = time(0);
 	struct tm tstruct;
@@ -52,8 +52,8 @@ int Operation_person::calculate_age(string birth_date_) {
 	}
 	age = year_actual - year;
 	return age;
-}
-Person Operation_person::data_entry() {
+}*/
+/*Person Operation_person::data_entry() {
 	string _name;
 	string _last_name;
 	string _birth_date;
@@ -79,6 +79,6 @@ Person Operation_person::data_entry() {
 	_age = Operation_person::calculate_age(_birth_date);
 	Person person(_name, _last_name, _id1,_birth_date, _age, _address, "email");
 	return person;
-}
+}*/
 
 

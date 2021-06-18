@@ -1,19 +1,14 @@
 
 #include "Doubt.h"
-double initial_amount;
-int payment_time;
-string rate_of_interest;
-double interest;
-Lista<Due> dues;
-double final_amount;
+
 Doubt::Doubt(double new_initial_amount, int new_payment_time, string new_rate_of_interest, double new_interest)
 {
 	this->initial_amount = new_initial_amount;
 	this->payment_time = new_payment_time;
 	this->rate_of_interest = new_rate_of_interest;
-	this->interest = new_interest;
+	/*this->interest = new_interest;
 	this->dues =
-		this->
+		this->/*/
 }
 
 double Doubt::get_initial_amount()

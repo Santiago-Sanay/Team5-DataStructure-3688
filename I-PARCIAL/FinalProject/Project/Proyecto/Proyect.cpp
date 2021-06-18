@@ -16,13 +16,28 @@
 
 #include <iostream>
 #include "Person.h"
+#include "Due.h"
 #include "Operation_person.h"
 
 int main()
 {
-    Person person = Operation_person::data_entry();  
-    cout << person.get_age();
+    Due due;
+    Due due2;
+    due.set_date("12-12-2021");
+    due.set_weekday("domingo");
+    due.set_mounthly_amount(25);
+    cout << due.to_string1() << endl;
+    string data = due.to_string1();
+
+    due2 = due2.from_string_to_due(data);
+    cout << due2.to_string1() << endl;
+    due2.set_weekday("lunes");
+    cout << due2.to_string1() << endl;
 }
+
+   // Person person = Operation_person::data_entry();  
+   // cout << person.get_age();
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
