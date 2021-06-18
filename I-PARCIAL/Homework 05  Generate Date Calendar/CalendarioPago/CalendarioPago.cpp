@@ -23,18 +23,21 @@ int main()
 {
     Operation op;
     int quota;
-
-    string fecha = "31-01-2023";
-
-
-
     string vect[100];
     Calendar calendario(vect);
 
-    cout << "Ingrese una fecha (dd-mm-yyyy):";
-    cin >> fecha;
-    cout << "Ingrese el numero de cuotas:";
-    cin >> quota;
+    string fecha = "-";
+    string cuotas = "-";
+    while (!op.valid_date(fecha)) {
+        cout << "Ingrese una fecha (dd-mm-yyyy):";
+        cin >> fecha;
+    }
+
+    while (!op.isNumber(cuotas)) {
+        cout << "Ingrese el numero de cuotas:";
+        cin >> cuotas;
+    }
+    quota = stoi(cuotas);
     op.date_vector(fecha, quota, calendario);
     op.print_calendar(quota, calendario.get_date());    
 }

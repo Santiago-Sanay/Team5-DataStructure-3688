@@ -72,6 +72,13 @@ public:
 	 * @return the next date as string.
 	 */
 	string add_day(string);
+	/**
+	 * @brief verify if a string is a date
+	 *
+	 * @return true or false.
+	 */
+	bool valid_date(string);
+	bool isNumber(const string& str);
 
 };
 
