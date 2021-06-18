@@ -148,6 +148,7 @@
     <ClInclude Include="ListaDobleEnlazada.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
