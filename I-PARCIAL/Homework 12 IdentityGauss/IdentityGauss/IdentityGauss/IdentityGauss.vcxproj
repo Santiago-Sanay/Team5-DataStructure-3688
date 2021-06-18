@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b3d0695f-bec7-48b1-98a9-b87733e0462e}</ProjectGuid>
-    <RootNamespace>TrigFunctions</RootNamespace>
+    <ProjectGuid>{f86d7784-9413-445f-a5e9-17898315e9a5}</ProjectGuid>
+    <RootNamespace>IdentityGauss</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Angle.cpp" />
-    <ClCompile Include="Trig_Functions.cpp" />
-    <ClCompile Include="Trig_Operation.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Angle.h" />
-    <ClInclude Include="Trig_Operation.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="MatrixMath.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

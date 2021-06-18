@@ -14,6 +14,9 @@
 #include <iostream>
 #include "Math.h"
 #include "Vector.h"
+#include <regex>
+
+
 void Aplication::run()
 {
 	Vector* v = new Vector[]{ {7,4,5 }, { 6,7,8 } };

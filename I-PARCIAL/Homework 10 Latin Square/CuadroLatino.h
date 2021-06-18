@@ -18,6 +18,10 @@ class CuadroLatino
 {
 private:
 public:
+	/**
+	 * @brief makes the Latin picture from matrix class
+	 * 
+	 */
 	void hacerCuadroLatino(Matrix);
 };
 

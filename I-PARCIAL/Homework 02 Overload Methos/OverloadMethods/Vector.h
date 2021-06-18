@@ -5,7 +5,7 @@
 *JUNIOR JURADO
 *TEHO ROSERO
 *ALEX PAGUAY
-*SANTIAGO SAÑAY
+*SANTIAGO SAï¿½AY
 *TEMA: SOBRECARGA DE METODOS
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
@@ -21,16 +21,63 @@ private:
 	T _coord_z;
 
 public:
+	/**
+	 * @brief Construct a new Vector object
+	 * 
+	 */
 	Vector() = default;
-	Vector(T, T, T);
-	void set_x(T&);
-	void set_y(T&);
-	void set_z(T&);
+
+	/**
+	 * @brief Construct a new Vector object
+	 * 
+	 * @param x 
+	 * @param y 
+	 * @param z 
+	 */
+	Vector(T x, T y, T z);
+
+	/**
+	 * @brief Set the x object
+	 * 
+	 * @param x 
+	 */
+	void set_x(T &x);
+
+	/**
+	 * @brief Set the y object
+	 * 
+	 * @param y 
+	 */
+	void set_y(T &y);
+
+	/**
+	 * @brief Set the z object
+	 * 
+	 * @param z 
+	 */
+	void set_z(T &z);
+
+	/**
+	 * @brief Get the x object
+	 * 
+	 * @return T 
+	 */
 	T get_x() const noexcept;
+
+	/**
+	 * @brief Get the y object
+	 * 
+	 * @return T 
+	 */
 	T get_y() const noexcept;
+
+	/**
+	 * @brief Get the z object
+	 * 
+	 * @return T 
+	 */
 	T get_z() const noexcept;
 };
-
 
 template <typename T>
 Vector<T>::Vector(T x, T y, T z) : _coord_x(x), _coord_y(y), _coord_z(z)
@@ -38,19 +85,19 @@ Vector<T>::Vector(T x, T y, T z) : _coord_x(x), _coord_y(y), _coord_z(z)
 }
 
 template <typename T>
-void Vector<T>::set_x(T& x)
+void Vector<T>::set_x(T &x)
 {
 	(*this)._coord_x = x;
 }
 
 template <typename T>
-void Vector<T>::set_y(T& y)
+void Vector<T>::set_y(T &y)
 {
 	(*this)._coord_y = y;
 }
 
 template <typename T>
-void Vector<T>::set_z(T& z)
+void Vector<T>::set_z(T &z)
 {
 	(*this)._coord_z = z;
 }

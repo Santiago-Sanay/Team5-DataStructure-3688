@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include "Trig_Operation.h"
+#include "Utils.h"
 using namespace std;
 const double pi = 3.141592654;
 
@@ -24,8 +25,7 @@ int main()
         Trig_Operation op;
         double x;
         do {
-            cout << "Ingrese el angulo: ";
-            cin >> x;
+            x = Utils::Validation::validation_numbers<double>("Ingrese el angulo: ");
         } while (x >= pi || x <= -pi);
         Angle angle(x);
         cout << "Seno:" << op.sin(angle) <<" "<<sin(x)<< endl;
