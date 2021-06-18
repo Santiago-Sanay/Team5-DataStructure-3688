@@ -19,26 +19,7 @@ class Math
 {
 
 public:
-	//Theo
-	//static Vector operator+(Vector&, Vector&);
-	//static Vector operator-(Vector&, Vector&);
-	//static double operator*(Vector&, Vector&);
-	////Yuli
-	//static Vector operator++(Vector&);
-	//static Vector operator--(Vector&);
-	//static double operator/=(Vector&, Vector&);
-	//Santiago
-	/*static Vector operator~(Vector&);*/
-	/*static Vector operator>(Vector&, Vector&);*/
-	//static Vector operator<(Vector&, Vector&);
-	////Alex
-	//static bool operator==(Vector&, Vector&);
-	//static Vector operator^(Vector&, int&);
-	//static bool operator!=(Vector&, Vector&);
-	//Junior
-	//static int operator<=(Vector&, Vector&);
-	//static Vector operator>=(Vector&, Vector&);
-	//static Vector operator<<=(Vector&, Vector&);
+
 	Vector operator+(Vector*);
 	Vector operator-(Vector*);
 	double operator*(Vector*);
@@ -48,7 +29,7 @@ public:
 	double operator/=(Vector*);
 	//Santiago
 	//std::ostream& operator<<(std::ostream&, Vector*);
-	Vector operator>(Vector&);
+	Vector operator>(Vector*);
 	Vector operator<(Vector&);
 	//Alex
 	bool operator==(Vector&);

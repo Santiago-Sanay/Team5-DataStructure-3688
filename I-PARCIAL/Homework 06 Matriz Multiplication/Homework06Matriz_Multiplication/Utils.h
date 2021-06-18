@@ -17,6 +17,8 @@
 #include <exception>
 #include <limits>
 #include <ios>
+#include <cstring>
+#include <conio.h>
 namespace Utils
 {
     class Validation
@@ -71,6 +73,7 @@ namespace Utils
          */
         template <typename T>
         static T validation_numbers(std::string);
+        static char* ingreso();
     };
 
     bool Validation::validate_string(const std::string &str)
@@ -139,12 +142,17 @@ namespace Utils
         char error = 'a';
         T number;
         int again = 1;
+        char *datos;
+        int number1;
         while (again == 1)
         {
             try
             {
                 std::cout << str << " : ";
-                std::cin >> number;
+                number1 = atoi(Validation::ingreso());
+                number=T(number1);
+                std::cout << std::endl;
+
                 if (!std::cin)
                 {
                     throw error = -1;
@@ -160,6 +168,35 @@ namespace Utils
             }
         }
         return number;
+    }
+   
+
+    char* Validation::ingreso() {
+        char dato[5];
+        char c;
+        int i = 0;
+        int bandera = 0;
+        int puntos= 0;
+        std::cout << std::endl;
+        while (i < 5 && bandera==0) {
+            while ((c = _getch()) != 13 ) {
+                if (c >= '0' && c <= '9' || c== '.') {
+                    if (c == '.') {
+                        puntos++;
+                    }
+                    if (puntos < 2 || c != '.'&& puntos>= 2) {
+                        printf("%c", c);
+                        dato[i++] = c;
+                    }
+                   
+                }
+            }
+            bandera = 1;
+
+        }
+        
+        dato[i] = '\0';
+        return dato;
     }
 
     class Generator
