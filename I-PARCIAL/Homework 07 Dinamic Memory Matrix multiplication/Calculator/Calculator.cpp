@@ -15,6 +15,7 @@
 #include <iostream>
 #include "Operation.h"
 #include "Matrix.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -24,7 +25,9 @@ int main()
     Matrix matrix_1, matrix_2, matrix_r;
     std::cout << "Multiplicacion de matrices\n";
     cout << "Ingrese la dimension:";
-    cin >> size;
+    size = Utils::Validation::validation_numbers<int>("ingrese la dimension de las matrices");
+
+    
     matrix_1.set_matrix(op.segmentar(size));
     matrix_2.set_matrix(op.segmentar(size));
     matrix_r.set_matrix(op.segmentar(size));

@@ -146,7 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListaDobleEnlazada.h" />
-    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuFlechas.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

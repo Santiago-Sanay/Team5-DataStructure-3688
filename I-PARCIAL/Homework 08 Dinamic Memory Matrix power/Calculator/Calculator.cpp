@@ -15,6 +15,7 @@
 #include <iostream>
 #include "OperationMatrix.h"
 #include "Matrix.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -23,10 +24,9 @@ int main()
     Operation op;
     Matrix matrix_1, matrix_r;
     std::cout << "Potencia de matriz\n";
-    cout << "Ingrese la dimension:";
-    cin >> size;
-    cout << "Ingrese la potencia:";
-    cin >> pot;
+    size = Utils::Validation::validation_numbers<int>("ingrese la dimension de la matriz");
+    pot = Utils::Validation::validation_numbers<int>("ingrese la potencia a la que desea elevar la matriz");
+
     matrix_1.set_matrix(op.segmentar(size));
     matrix_r.set_matrix(op.segmentar(size));
     op.encerar(matrix_1, size);

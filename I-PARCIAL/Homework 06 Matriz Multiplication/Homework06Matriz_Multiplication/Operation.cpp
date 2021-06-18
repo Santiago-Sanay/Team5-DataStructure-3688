@@ -58,32 +58,10 @@ void Operation::print(int matriz[10][10],int row, int column)
 {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
-			cout << "\nColumna " << i + 1 << " Fila " << j + 1 << ": ";
-			cout << matriz[i][j] << endl;
+			//cout << "\nColumna " << i + 1 << " Fila " << j + 1 << ": ";
+			cout << matriz[i][j] << "\t ";
 		}
 		cout << endl;
 	}
 }
 
-/*bool Operation::isNumber(const string& str)
-{
-	for (char const& c : str) {
-		if (std::isdigit(c) == 0) return false;
-	}
-	return true;
-}
-
-/*bool Operation::isNumber(const string& str)
-{
-	for (char const& c : str) {
-		if (std::isdigit(c) == 0) return false;
-	}
-	return true;
-}
-/*bool Operation::isNumber(const string& str)
-{
-	for (char const& c : str) {
-		if (std::isdigit(c) == 0) return false;
-	}
-	return true;
-}*/
