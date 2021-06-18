@@ -30,7 +30,7 @@ double Trig_Operation::sin(Angle angle )
         final_sign = final_sign + 1;
     }
     for (int i = 1; i <= 11; i = i + 2) {
-        precission = pow(-1, sign)*(pow(x,i) / factorial(i));
+        precission = pow(-1, sign)*(potencia(x,i) / factorial(i));
 
         result = result + precission;
         sign = sign + 1;
@@ -41,6 +41,7 @@ double Trig_Operation::sin(Angle angle )
     }
     return result;
 }
+
 
 double Trig_Operation::cos(Angle a)
 {
@@ -54,7 +55,7 @@ double Trig_Operation::cos(Angle a)
     }
     for (int i = 0; i < presicion; i++)
     {
-        result += ((pow(-1, i)) / factorial(2 * i)) * pow(angle, 2 * i);
+        result += ((pow(-1, i)) / factorial(2 * i)) * potencia(angle, 2 * i);
     }
     return result;
 }
@@ -90,4 +91,19 @@ long Trig_Operation::factorial(int n)
     else {
         return n * factorial(n - 1);
     }
+}
+
+double Trig_Operation::potencia(double num, int pot)
+{
+    double result=1;
+    if (pot == 0) {
+        return 1;
+    }
+    if (pot == 1) {
+        return num;
+    }
+    for (int i = 0; i < pot; i++) {
+        result = result * num;
+    }
+    return result;
 }

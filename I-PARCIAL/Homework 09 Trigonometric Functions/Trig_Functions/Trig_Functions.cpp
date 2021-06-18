@@ -20,9 +20,11 @@ const double pi = 3.141592654;
 
 int main()
 {
+    Trig_Operation op;
     int opt;
+    //cout << op.potencia(-2, 5) << endl;
     do {
-        Trig_Operation op;
+        
         double x;
         do {
             x = Utils::Validation::validation_numbers<double>("Ingrese el angulo: ");
