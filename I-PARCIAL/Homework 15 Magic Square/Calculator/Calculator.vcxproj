@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Operation.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

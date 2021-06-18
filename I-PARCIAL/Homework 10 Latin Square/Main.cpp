@@ -25,7 +25,7 @@ int main()
 	Utils::Validation valiation;
 	do {		
 		dimension = Utils::Validation::validation_numbers<double>("Ingrese la dimension: ");
-	} while (dimension < 0 );
+	} while (dimension < 1 );
 	
 	Matrix m(dimension);
 	CuadroLatino cuadro;
