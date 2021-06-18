@@ -15,6 +15,7 @@
 #include <iostream>
 #include "OperationMatrix.h"
 #include "Matrix.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -24,10 +25,10 @@ int main()
     Matrix matrix_1;
     std::cout << "CUADRADO SEMI MAGICO\n";
     cout << "Ingrese la dimension impar:";
-    cin >> size;
+    size = Utils::Validation::validation_numbers<int>("");
     while(size%2==0){
         cout << "Ingrese la dimension impar:";
-        cin >> size;
+        size = Utils::Validation::validation_numbers<int>("");
     }
     
     matrix_1.set_matrix(op.segmentar(size));

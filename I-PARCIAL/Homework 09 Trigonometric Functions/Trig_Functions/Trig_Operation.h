@@ -57,5 +57,6 @@ public:
 	 * @return long 
 	 */
 	long factorial(int);
+	double potencia(double, int);
 };
 
