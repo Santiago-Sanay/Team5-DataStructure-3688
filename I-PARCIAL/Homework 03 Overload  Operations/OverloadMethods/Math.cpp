@@ -49,6 +49,42 @@ double Math::operator/=(Vector* v)
 	return (module_v) / (module_u);
 }
 
+Vector Math::operator>(Vector* v)
+{
+
+	double mod1 = pow(pow(v[0].get_x(), 2) + pow(v[0].get_y(), 2) + pow(v[0].get_z(), 2), 0.5);
+	double mod2 = pow(pow(v[1].get_x(), 2) + pow(v[1].get_y(), 2) + pow(v[1].get_z(), 2), 0.5);
+	if (mod1 >= mod2)
+	{
+		return v[0];
+	}
+	else
+	{
+		return v[1];
+	}
+	return Vector();
+}
+
+Vector Math::operator<(Vector&)
+{
+	return Vector();
+}
+
+bool Math::operator==(Vector&)
+{
+	return false;
+}
+
+Vector Math::operator^(Vector&)
+{
+	return Vector();
+}
+
+bool Math::operator!=(Vector&)
+{
+	return false;
+}
+
 /*std::ostream& operator<<(std::ostream& os, Vector* v)
 {
 	os << "(" << v[0].get_x() << ', ' << v[0].get_y() << ', ' << v[0].get_y() << ')' << "\n";

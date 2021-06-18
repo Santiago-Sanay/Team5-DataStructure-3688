@@ -18,8 +18,24 @@
 class Operation
 {
 public:
+	/**
+	 * @brief calculate the factorial of number
+	 * 
+	 * @return int 
+	 */
 	int factorial(int);
+	
+	/**
+	 * @brief calculate the combinatorial of numbers
+	 * 
+	 * @return int 
+	 */
 	int combinatorial(int, int);
+	
+	/**
+	 * @brief print pascal triangle
+	 * 
+	 */
 	void print(Data);
 };
 

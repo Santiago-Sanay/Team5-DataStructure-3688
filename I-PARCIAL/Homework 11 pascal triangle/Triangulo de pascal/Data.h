@@ -18,8 +18,24 @@ class Data
 private:
 	int exp;
 public:
+
+	/**
+	 * @brief Construct a new Data object
+	 * 
+	 */
 	Data() = default;
+	
+	/**
+	 * @brief Get the exp object
+	 * 
+	 * @return int 
+	 */
 	int get_exp();
+	
+	/**
+	 * @brief Set the exp object
+	 * 
+	 */
 	void set_exp(int);
 };
 
