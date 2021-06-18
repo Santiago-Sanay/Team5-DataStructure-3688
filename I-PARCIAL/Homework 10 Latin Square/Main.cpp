@@ -15,13 +15,18 @@
 #include <iostream>
 #include "CuadroLatino.h"
 #include "Matrix.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
 {
-	int dimension;
 	cout << "\nCUADRO LATINO" << endl;
-	cout << "Ingrese dimension: "; cin >> dimension;
+	int dimension;
+	Utils::Validation valiation;
+	do {		
+		dimension = Utils::Validation::validation_numbers<double>("Ingrese la dimension: ");
+	} while (dimension < 0 );
+	
 	Matrix m(dimension);
 	CuadroLatino cuadro;
 	m.segmentar();m.encerar();

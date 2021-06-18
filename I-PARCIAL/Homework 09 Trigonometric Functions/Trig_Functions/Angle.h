@@ -17,9 +17,26 @@ class Angle
 private:
 	double grade_angle;
 public:
-	Angle(double);
+	/**
+	 * @brief Construct a new Angle object
+	 * 
+	 */
+	Angle(double);	
+	/**
+	 * @brief Set the grade angle object
+	 * 
+	 */
 	void set_grade_angle(double);
+	/**
+	 * @brief Get the grade angle object
+	 * 
+	 * @return double 
+	 */
 	double get_grade_angle();
+	/**
+	 * @brief Destroy the Angle object
+	 * 
+	 */
 	~Angle();
 };
 
