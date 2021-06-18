@@ -16,10 +16,46 @@
 class Trig_Operation
 {
 public:
+	/**
+ 	* @brief calculate sine with taylor series
+ 	* 
+ 	* @return double 
+ 	*/
 	double sin(Angle);
-	double csc(Angle);
+	
+	/**
+	 * @brief calculate contangent with taylor series
+	 * 
+	 * @return double 
+	 */
+	double cot(Angle);
+	
+	/**
+	 * @brief calculate cosine with taylor series
+	 * 
+	 * @return double 
+	 */
 	double cos(Angle);
+	
+	/**
+	 * @brief calculate tangent with taylor series
+	 * 
+	 * @return double 
+	 */
 	double tan(Angle);
+	
+	/**
+	 * @brief calculate tangent with taylor series
+	 * 
+	 * @return double 
+	 */
+	double sec(Angle);
+	
+	/**
+	 * @brief calculate factorial with recursive function 
+	 * 
+	 * @return long 
+	 */
 	long factorial(int);
 };
 
