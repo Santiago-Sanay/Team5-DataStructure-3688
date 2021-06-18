@@ -10,6 +10,7 @@
 *FECHA DE CREACION : 26 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 28 DE MAYO 2021
 */
+
 #include "Menu.h"
 
 Menu::Menu(unsigned int number, const std::string text, Menu_Processing_Function_Ptr p_processing_function)
@@ -88,7 +89,7 @@ void Menu::menu_vector()
 		{
 			std::cout << "El formato ingresado es incorrecto! (#,#,#)";
 			i = 0;
-			std::cin.ignore(1000000, '\n');
+			std::cin.ignore(9999, '\n');
 			system("exit");
 		}
 
