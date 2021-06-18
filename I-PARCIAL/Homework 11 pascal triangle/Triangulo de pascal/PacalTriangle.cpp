@@ -17,6 +17,7 @@
 #include <iostream>
 #include "Data.h"
 #include "Operation.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -27,8 +28,7 @@ int main()
 		int n;
 		Operation op;
 		do {
-			cout << "Ingrese el exponente:";
-			cin >> n;
+			n = Utils::Validation::validation_numbers<int>("Ingrese la dimension:");
 		} while (n <= 0);
 		_data.set_exp(n);
 		op.print(_data);
