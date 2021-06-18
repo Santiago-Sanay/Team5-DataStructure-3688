@@ -14,7 +14,9 @@
 
 
 #include <iostream>
+#include <string>
 #include "Operation.h"
+#include "Utils.h"
 using namespace std;
 
 int main()
@@ -26,19 +28,26 @@ int main()
     int column1=0;
     int row2 = 0;
     int column2 = 0;
-    cout << "ingrese el numero de filas de la primera matriz" << endl;
-    cin >> row1;
-    cout << "ingrese el numero de columnas de la primera matriz" << endl;
-    cin >> column1;
-    cout << "ingrese el numero de filas de la segunda matriz" << endl;
-    cin >> row2;
-    cout << "ingrese el numero de columnas de la segunda matriz" << endl;
-    cin >> column2;
-
     Operation op;
-    op.read(m1,row1,column1);
+    
+    
+    row1=Utils::Validation::validation_numbers<int>("ingrese el numero de filas de la primera matriz");
+    column1 = Utils::Validation::validation_numbers<int>("ingrese el numero de columnas de la primera matriz");
+    row2 = Utils::Validation::validation_numbers<int>("ingrese el numero de filas de la segunda matriz");
+    column2 = Utils::Validation::validation_numbers<int>("ingrese el numero de columnas de la segunda matriz");
+
+    
+   
+
+    
+    op.read(m1,row1, column1);
     op.read(m2, row2, column2);
     op.multiply(m1, m2, mr);
+    cout << "MATRIX 1" << endl;
+    op.print(m1, row1, column1);
+    cout << "MATRIX 2" << endl;
+    op.print(m2, row2, column2);
+    cout << "MATRIX Resultante" << endl;
     op.print(mr, row1, column2);
    
 }

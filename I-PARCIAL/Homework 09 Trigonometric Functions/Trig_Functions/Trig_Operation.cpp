@@ -29,7 +29,7 @@ double Trig_Operation::sin(Angle angle )
         x = x - pi;
         final_sign = final_sign + 1;
     }
-    for (int i = 1; i <= 7; i = i + 2) {
+    for (int i = 1; i <= 11; i = i + 2) {
         precission = pow(-1, sign)*(pow(x,i) / factorial(i));
 
         result = result + precission;
@@ -42,16 +42,16 @@ double Trig_Operation::sin(Angle angle )
     return result;
 }
 
-double Trig_Operation::csc(Angle)
-{
-    return 0.0;
-}
-
 double Trig_Operation::cos(Angle a)
 {
     double angle = a.get_grade_angle();
     double result = 0; 
     int presicion = 8; 
+    const double pi = 3.141592654;
+    while (angle > pi) {
+        angle = angle - pi;
+ 
+    }
     for (int i = 0; i < presicion; i++)
     {
         result += ((pow(-1, i)) / factorial(2 * i)) * pow(angle, 2 * i);
@@ -64,6 +64,21 @@ double Trig_Operation::tan(Angle angle)
     double tan;
     tan = Trig_Operation::sin(angle) / Trig_Operation::cos(angle);
     return tan;
+}
+
+
+double Trig_Operation::cot(Angle angle)
+{
+    double cot;
+    cot = 1 / Trig_Operation::tan(angle);
+    return cot;
+}
+
+double Trig_Operation::sec(Angle angle)
+{
+    double sec;
+    sec = 1 / Trig_Operation::sin(angle);
+    return sec;
 }
 
 long Trig_Operation::factorial(int n)

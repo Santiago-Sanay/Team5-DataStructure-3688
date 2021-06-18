@@ -303,5 +303,42 @@ string Operation::add_day(string date)
 	return date;
 }
 
+bool Operation::valid_date(string date1)
+{
+	int cont = 0;
+	if (date1.length() != 10) {
+		return false;
+	}
+	if (stoi(date1.substr(3, 2))>12) {
+		return false;
+	}
+	if (date1.substr(2, 1).find('-', 0) == 0) {
+		cont++;
+	}
+	if (date1.substr(5, 1).find('-', 0) == 0) {
+		cont++;
+	}
+	if (isNumber(date1.substr(0, 2))) {
+		cont++;
+	}
+	if (isNumber(date1.substr(3, 2))) {
+		cont++;
+	}
+	if (isNumber(date1.substr(6, 4))) {
+		cont++;
+	}
+	if (cont == 5) {
+		return true;
+	}
+	return false;
+}
+bool Operation::isNumber(const string& str)
+{
+	for (char const& c : str) {
+		if (std::isdigit(c) == 0) return false;
+	}
+	return true;
+}
+
 
  
