@@ -14,6 +14,7 @@
 
 
 #include <iostream>
+#include <string>
 #include "Operation.h"
 using namespace std;
 
@@ -26,19 +27,31 @@ int main()
     int column1=0;
     int row2 = 0;
     int column2 = 0;
-    cout << "ingrese el numero de filas de la primera matriz" << endl;
-    cin >> row1;
-    cout << "ingrese el numero de columnas de la primera matriz" << endl;
-    cin >> column1;
-    cout << "ingrese el numero de filas de la segunda matriz" << endl;
-    cin >> row2;
-    cout << "ingrese el numero de columnas de la segunda matriz" << endl;
-    cin >> column2;
-
     Operation op;
-    op.read(m1,row1,column1);
-    op.read(m2, row2, column2);
+    string row_1="-", row_2 = "-", column_1 = "-", column_2 = "-";/*
+    while (!op.isNumber(row_1)) {
+        cout << "ingrese el numero de filas de la primera matriz" << endl;
+        cin >> row_1;
+    }
+    while (!op.isNumber(column_1)) {
+        cout << "ingrese el numero de columnas de la primera matriz" << endl;
+        cin >> column_1;
+    }
+    while (!op.isNumber(row_2)) {
+        cout << "ingrese el numero de filas de la segunda matriz" << endl;
+        cin >> row_2;
+    }
+    while (!op.isNumber(column_2)) {
+        cout << "ingrese el numero de columnas de la segunda matriz" << endl;
+        cin >> column_2;
+    }
+    
+   
+
+    
+    op.read(m1,stoi(row_1), stoi(column_1));
+    op.read(m2, stoi(row_2), stoi(column_2));
     op.multiply(m1, m2, mr);
-    op.print(mr, row1, column2);
+    op.print(mr, stoi(row_1), stoi(column_2));*/
    
 }

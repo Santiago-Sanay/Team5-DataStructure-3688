@@ -14,6 +14,7 @@
 
 #pragma once
 #include <iostream>
+#include <string>
 class Operation
 {
 public:
@@ -22,5 +23,8 @@ public:
 	void wax(int[10][10]);
 	void read(int[10][10],int,int);
 	void print(int[10][10],int,int);
+
+	bool isNumber(const string&);
+	
 };
 
