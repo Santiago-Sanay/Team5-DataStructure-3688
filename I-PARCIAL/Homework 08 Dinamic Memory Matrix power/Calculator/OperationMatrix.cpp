@@ -7,12 +7,13 @@
 *@author JUNIOR JURADO
 *@author ALEX PAGUAY
 *@author SANTIAGO SA�AY
-*TEMA: PARAMETRO POR REFERENCIA
-*FECHA DE CREACION : 1 DE JUNIO DE 2021
-*FECHA DE MODIFICACION: 3 DE JUNIO 2021
+*TEMA: Potencia de matriz dinamica
+*FECHA DE CREACION : 2 DE JUNIO DE 2021
+*FECHA DE MODIFICACION: 4 DE JUNIO 2021
 */
 
-#include "Operation.h"
+#pragma once
+#include "OperationMatrix.h"
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,8 +61,7 @@ void Operation::imprimir(Matrix matrix, int dim) {
     for (i = 0; i < dim; i++) {
         for (j = 0; j < dim; j++) {
             printf("%d", *(*(matrix.get_matrix() + i) + j));
-            cout << "\t";
-            //printf("%*s", j + 5, "");
+            printf("%*s", j + 5, "");
         }
         printf("\n");
     }
@@ -97,54 +97,6 @@ void Operation::calcular_potencia(Matrix m1, Matrix mr, int dim, int potencia) {
 
 
 
-}
-
-void Operation::semi_magic_square(Matrix matriz_a, int longitud)
-{
-    int limit = longitud * longitud;
-    int column = longitud / 2;
-    int row = 0;
-    
-    for (int i = 1; i <= limit; i++) {
-        if (*(*(matriz_a.get_matrix() + row) + column) != 0) {
-            //row = row + 2;
-            row = row + 2;
-            if (row >= longitud) {
-                row = row-longitud;
-            }
-            column = column - 1;
-            if (column == -1) {
-                column = longitud-1;
-            }
-        }
-        *(*(matriz_a.get_matrix() + row) + column) = i;
-        row = row - 1;
-        if (row == -1) {
-            row = longitud - 1;
-        }
-        column = column + 1;
-        if (column == longitud) {
-            column = 0;
-        }
-        
-        
-    }
- //  permutate(matriz_a, longitud);
-}
-
-void Operation::permutate(Matrix matriz_a, int longitud)
-{
-    int aux = 0;
-    for (int i = 0; i < longitud; i++) {
-        aux=*(*(matriz_a.get_matrix() + 0) + i);
-        *(*(matriz_a.get_matrix() + 0) + i) = *(*(matriz_a.get_matrix() + 1) + i);
-        *(*(matriz_a.get_matrix() + 1) + i) = aux;
-    }
-   for (int i = 0; i < longitud; i++) {
-        aux = *(*(matriz_a.get_matrix() + i) + 0);
-        *(*(matriz_a.get_matrix() + i) + 0) = *(*(matriz_a.get_matrix() + i) + 1);
-        *(*(matriz_a.get_matrix() + i) + 1) = aux;
-    }
 }
 
 

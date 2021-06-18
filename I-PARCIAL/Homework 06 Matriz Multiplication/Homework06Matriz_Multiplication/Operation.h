@@ -11,8 +11,6 @@
 *FECHA DE CREACION : 29 DE MAYO DE 2021
 *FECHA DE MODIFICACION: 1 DE MAYO 2021
 */
-// Homework06Matriz_Multiplication.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
 
 #pragma once
 #include <iostream>

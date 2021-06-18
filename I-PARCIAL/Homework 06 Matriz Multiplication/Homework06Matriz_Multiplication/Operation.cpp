@@ -11,8 +11,7 @@
 *FECHA DE CREACION : 29 DE MAYO DE 2021
 *FECHA DE MODIFICACION: 1 DE MAYO 2021
 */
-// Homework06Matriz_Multiplication.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+
 
 #include "Operation.h"
 using namespace std;
@@ -30,12 +29,8 @@ void Operation::multiply(int m1[10][10], int m2[10][10], int mr[10][10])
 				mr[i][j] = mr[i][j] + (m1[i][k] * m2[k][j]);
 
 			}
-			
-
 		}
-
 	}
-
 }
 
 void Operation::wax(int matriz[10][10])
@@ -43,9 +38,7 @@ void Operation::wax(int matriz[10][10])
 	for (int i = 0; i < 10;i++) {
 		for (int j = 0; j < 10; j++) {
 			matriz[i][j] = 0;
-
 		}
-
 	}
 }
 
@@ -57,11 +50,8 @@ void Operation::read(int matriz[10][10], int row, int column)
 			cout << "ingrese datos a la fila " << i+1 << " columna: " << j+1<<" :";
 			cin>>matriz[i][j];
 			cout << endl;
-
 		}
-
 	}
-
 }
 
 void Operation::print(int matriz[10][10],int row, int column)
@@ -72,6 +62,5 @@ void Operation::print(int matriz[10][10],int row, int column)
 			cout << matriz[i][j] << endl;
 		}
 		cout << endl;
-
 	}
 }

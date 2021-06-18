@@ -27,6 +27,4 @@ int main()
 	m.segmentar();m.encerar();
 	cuadro.hacerCuadroLatino(m);
 	m.imprimir();
-	
-
 }

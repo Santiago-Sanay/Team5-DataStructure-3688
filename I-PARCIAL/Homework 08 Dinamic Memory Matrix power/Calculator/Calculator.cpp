@@ -13,7 +13,7 @@
 */
 
 #include <iostream>
-#include "Operation.h"
+#include "OperationMatrix.h"
 #include "Matrix.h"
 using namespace std;
 
@@ -21,7 +21,7 @@ int main()
 {
     int size, pot;
     Operation op;
-    Matrix matrix_1, matrix_2, matrix_r;
+    Matrix matrix_1, matrix_r;
     std::cout << "Potencia de matriz\n";
     cout << "Ingrese la dimension:";
     cin >> size;

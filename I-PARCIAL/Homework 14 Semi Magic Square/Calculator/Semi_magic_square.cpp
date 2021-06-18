@@ -13,15 +13,15 @@
 */
 
 #include <iostream>
-#include "Operation.h"
+#include "OperationMatrix.h"
 #include "Matrix.h"
 using namespace std;
 
 int main()
 {
-    int size, pot;
+    int size;
     Operation op;
-    Matrix matrix_1, matrix_2, matrix_r;
+    Matrix matrix_1;
     std::cout << "CUADRADO SEMI MAGICO\n";
     cout << "Ingrese la dimension impar:";
     cin >> size;

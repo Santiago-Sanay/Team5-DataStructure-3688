@@ -16,8 +16,9 @@
 #include "CppUnitTest.h"
 #include "../Calculator/Matrix.h"
 #include "../Calculator/Matrix.cpp"
-#include "../Calculator/Operation.h"
-#include "../Calculator/Operation.cpp"
+#include "../Calculator/OperationMatrix.h"
+#include "../Calculator/OperationMatrix.cpp"
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest
