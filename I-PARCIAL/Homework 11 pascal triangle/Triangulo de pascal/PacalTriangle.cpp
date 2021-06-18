@@ -32,8 +32,7 @@ int main()
 		} while (n <= 0);
 		_data.set_exp(n);
 		op.print(_data);
-		cout << "Desea contiuar con el programa Si-1/No-0: ";
-		cin >> opc;
+		opc = Utils::Validation::validation_numbers<int>("Desea contiuar con el programa Si-1/No-0: ");
 	} while (opc != 0);
 	
 	
