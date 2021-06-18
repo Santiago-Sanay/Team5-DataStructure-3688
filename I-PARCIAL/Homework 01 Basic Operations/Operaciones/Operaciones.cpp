@@ -3,7 +3,7 @@
 *
 *AUTORES : YULLIANA ROMAN
 *JUNIOR JURADO
-*TEHO ROSERO
+*THEO ROSERO
 *ALEX PAGUAY
 *SANTIAGO SAÑAY
 *TEMA: CREACION DE UN PROGRAMA DE OPERACIONES BASICAS(SUMA, RESTA, MULTIPLICAION, DIVISION) CON TEMPLATES<>
@@ -13,12 +13,14 @@
 #include <iostream>
 #include "Number.h"
 #include "Calculator.h"
+#include "Utils.h"
 
 int32_t main()
 {
 
-	double number_one = 7;
-	double number_two = 8;
+	
+	double number_one = Utils::Validation::validation_numbers<double>("Ingrese el 1 numero");
+	double number_two = Utils::Validation::validation_numbers<double>("Ingrese el 2 numero");
 	Number<double> op(number_one, number_two);
 
 	std::cout << "La suma entre "
