@@ -92,11 +92,7 @@ void Operation::calcular_potencia(Matrix m1, Matrix mr, int dim, int potencia) {
         encerar(mr, dim);
         calcular(m2, m1, mr, dim);
         copiar_matriz(m2, mr, dim);
-
     }
-
-
-
 }
 
 

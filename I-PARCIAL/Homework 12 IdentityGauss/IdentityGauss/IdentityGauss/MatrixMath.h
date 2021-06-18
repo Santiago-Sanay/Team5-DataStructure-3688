@@ -50,14 +50,14 @@ static void inline MatrixMath::gauss_jordan(Matrix<T> &_matrix)
 
     for (int k = 0; k < n; k++)
     { //recorrer columnas de la matriz reducida
-        may = abs(_matrix_ptr[k][k]);
+        may = abs(*(*(_matrix_ptr + k) + k));
         ind = k;
         //recorrer filas de la columna k para buscar el indice del mayor
         for (int l = k + 1; l < n; l++)
         {
-            if (may < abs(_matrix_ptr[l][k]))
+            if (may < abs(*(*(_matrix_ptr + l) + k)))
             {
-                may = abs(_matrix_ptr[l][k]);
+                may = abs(*(*(_matrix_ptr + l) + k));
                 ind = l;
             }
         }
@@ -69,19 +69,19 @@ static void inline MatrixMath::gauss_jordan(Matrix<T> &_matrix)
             {
                 for (int j = 0; j < n; ++j)
                 {
-                    std::cout << "[" << _matrix_ptr[i][j] << "]";
+                    std::cout << "[" << *(*(_matrix_ptr + i) + j) << "]";
                 }
                 std::cout << std::endl;
             }
             std::cout << std::endl;
             for (int i = 0; i < n; i++)
             {
-                aux = _matrix_ptr[k][i];
-                _matrix_ptr[k][i] = _matrix_ptr[ind][i];
-                _matrix_ptr[ind][i] = aux;
+                aux = *(*(_matrix_ptr + k) + i);
+                *(*(_matrix_ptr + k) + i) = *(*(_matrix_ptr + ind) + i);
+                *(*(_matrix_ptr + ind) + i) = aux;
             }
         }
-        if (_matrix_ptr[k][k] == 0)
+        if (*(*(_matrix_ptr + k) + k) == 0)
         {
             std::cout << "no tiene solucion" << std::endl;
             break;
@@ -93,26 +93,26 @@ static void inline MatrixMath::gauss_jordan(Matrix<T> &_matrix)
             { //recorrer fila
                 if (i != k)
                 {
-                    pivote = -_matrix_ptr[i][k];
+                    pivote = -*(*(_matrix_ptr + i) + k);
                     for (int j = k; j < n; j++)
                     { //recorrer elementos de una fila
 
-                        _matrix_ptr[i][j] = _matrix_ptr[i][j] + pivote * _matrix_ptr[k][j] / _matrix_ptr[k][k];
+                        *(*(_matrix_ptr + i) + j) = *(*(_matrix_ptr + i) + j) + pivote * *(*(_matrix_ptr + k) + j) / *(*(_matrix_ptr + k) + k);
                     }
                 }
                 else
                 {
-                    pivote = _matrix_ptr[k][k];
+                    pivote = *(*(_matrix_ptr + k) + k);
                     for (int j = k; j < n; j++)
                     {
-                        _matrix_ptr[i][j] = _matrix_ptr[i][j] / pivote;
+                        *(*(_matrix_ptr + i) + j) = *(*(_matrix_ptr + i) + j) / pivote;
                     }
                 }
                 for (int i = 0; i < n; ++i)
                 {
                     for (int j = 0; j < n; ++j)
                     {
-                        std::cout << "[" << _matrix_ptr[i][j] << "]";
+                        std::cout << "[" << *(*(_matrix_ptr + i) + j) << "]";
                     }
                     std::cout << std::endl;
                 }

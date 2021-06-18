@@ -23,14 +23,36 @@ public:
 	/**
 	 * @brief Construct a new Operaciones object
 	 *
+	 */
+	Number() = default;
+	/**
+	 * @brief Construct a new Operaciones object
+	 *
+	 */
+	Number(T, T);
+
+	/**
+	 * @brief Construct a new Operaciones object
+	 *
 	 * @param x receives the first generic data
 	 * @param y receives the second generic data
 	 */
-	Number() = default;
-	Number(T, T);
 	void set_number_one(T);
+	/**
+	 * @brief Construct a new Operaciones object
+	 *
+	 * @param  receives the second generic data
+	 */
 	void set_number_two(T);
+	/**
+	 * @brief 
+	 *
+	 */
 	T get_number_one() const noexcept;
+	/**
+	 * @brief 
+	 *
+	 */
 	T get_number_two() const noexcept;
 };
 

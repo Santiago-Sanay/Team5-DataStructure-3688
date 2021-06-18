@@ -132,7 +132,6 @@ string Operation::set_valid_date(string date)
 
 	if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31) {
 		day = 31;
-
 	}
 	else {
 		if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
@@ -191,11 +190,8 @@ void Operation::set_weekend(int dues, string vect[100])
 
 		while (check_fds(vect[i]) || check_holiday(vect[i])) {
 			vect[i] = add_day(vect[i]);
-
 		}
-
 	}
-
 }
 
 bool Operation::check_holiday(string date)
