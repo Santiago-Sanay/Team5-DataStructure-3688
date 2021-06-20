@@ -1,45 +1,80 @@
 #pragma once
-//#pragma once
 #include "Nodo.h"
+#include "Due.h"
 #include <ctime>
 #include <random>
+#include <functional>
+#include <iostream>
 using namespace std;
-template <typename T>
-class Lista
+template <class T>
+class List
 {
 private:
 	Nodo<T>* primero;
 	Nodo<T>* actual;
 public:
 	bool listaVacia();
-	Lista();
+	List<T>() ;
 	void insertar_por_la_cola(T);
+	void set_primero(Nodo<T>*);
+	Nodo<T>* get_primero();
+	void set_actual(Nodo<T>*);
+	Nodo<T>* get_actual();
 	void insertar_por_la_cabeza(T);
 	void borrar_por_la_cola();
 	void borrar_por_la_cabeza();
 	void mostrar();
+	void mostrar_due();
 	void llenar_aleatorio_lista();
+	void vaciar_lista();
 	T maximo_comun_divisor(T);
 	T contar_elementos();
-
-
-
 };
-//#include "Lista.cpp"
 template<class T>
-bool Lista<T>::listaVacia()
+void List<T>::mostrar()
+{
+	Nodo<T>* temporal = this->primero;
+	//la direccion le apunta a primero
+	while (temporal) {
+		cout << temporal->get_dato() << "->";
+		temporal = temporal->get_siguiente();
+
+	}
+	cout << "NULL\n";
+}
+template<class T>
+void List<T>::vaciar_lista() {
+	while (listaVacia()) {
+		borrar_por_la_cola();
+	}
+}
+template<class T>
+void List<T>::mostrar_due()
+{
+	Nodo<Due>* temporal = this->primero;
+	//la direccion le apunta a primero
+	while (temporal) {
+		cout << temporal->get_dato().get_date() << "->"<<endl;
+		cout << temporal->get_dato().get_weekday() << "->" << endl;
+		cout << temporal->get_dato().get_mounthly_amount() << "->" << endl;
+		temporal = temporal->get_siguiente();
+
+	}
+	cout << "NULL\n";
+}
+template<class T>
+bool List<T>::listaVacia()
 {
 	return (this->primero == NULL);
 }
 template<class T>
-Lista<T>::Lista()
+List<T>::List()
 {
 	this->primero = NULL;
 	this->actual = NULL;
 }
-
 template<class T>
-void Lista<T>::insertar_por_la_cola(T val)
+void List<T>::insertar_por_la_cola(T val)
 {
 	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
 	if (listaVacia()) {
@@ -50,9 +85,24 @@ void Lista<T>::insertar_por_la_cola(T val)
 	}
 	this->actual = nuevo;
 }
-
 template<class T>
-void Lista<T>::insertar_por_la_cabeza(T val)
+void List<T>::set_primero(Nodo<T>* new_primero) {
+	this->primero = new_primero;
+}
+template<class T>
+Nodo<T>* List<T>::get_primero() {
+	return primero;
+}
+template<class T>
+void List<T>::set_actual(Nodo<T>* new_actual) {
+	this->actual = new_actual;
+}
+template<class T>
+Nodo<T>* List<T>::get_actual() {
+	return actual;
+}
+template<class T>
+void List<T>::insertar_por_la_cabeza(T val)
 {
 	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
 
@@ -63,10 +113,9 @@ void Lista<T>::insertar_por_la_cabeza(T val)
 		nuevo->set_siguiente(this->primero);
 	}
 	this->primero = nuevo;
-
 }
 template<class T>
-void Lista<T>::borrar_por_la_cola()
+void List<T>::borrar_por_la_cola()
 {
 	if (!listaVacia()) {
 		Nodo<T>* temp = this->actual;
@@ -80,7 +129,7 @@ void Lista<T>::borrar_por_la_cola()
 	}
 }
 template<class T>
-void Lista<T>::borrar_por_la_cabeza()
+void List<T>::borrar_por_la_cabeza()
 {
 	if (!listaVacia()) {
 		Nodo<T>* temp;
@@ -90,7 +139,7 @@ void Lista<T>::borrar_por_la_cabeza()
 	}
 }
 template<class T>
-void Lista<T>::llenar_aleatorio_lista()
+void List<T>::llenar_aleatorio_lista()
 {
 	Nodo<T>* temp = this->primero;
 	std::srand(std::time(nullptr));
@@ -105,9 +154,8 @@ void Lista<T>::llenar_aleatorio_lista()
 
 
 }
-
 template<class T>
-T Lista<T>::maximo_comun_divisor(T elementos)
+T List<T>::maximo_comun_divisor(T elementos)
 {
 	int mcd = 0;
 	int contador = 0;
@@ -135,10 +183,8 @@ T Lista<T>::maximo_comun_divisor(T elementos)
 
 	return T(mcd);
 }
-
-
 template<class T>
-T Lista<T>::contar_elementos()
+T List<T>::contar_elementos()
 {
 	int elementos = 0;
 	Nodo<T>* temporal = this->primero;
@@ -149,20 +195,5 @@ T Lista<T>::contar_elementos()
 
 	}
 	return T(elementos);
-}
-
-
-
-template<class T>
-void Lista<T>::mostrar()
-{
-	Nodo<T>* temporal = this->primero;
-	//la direccion le apunta a primero
-	while (temporal) {
-		cout << temporal->get_dato() << "->";
-		temporal = temporal->get_siguiente();
-
-	}
-	cout << "NULL\n";
 }
 

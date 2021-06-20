@@ -140,19 +140,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calendar.cpp" />
+    <ClCompile Include="CalendarOperation.cpp" />
     <ClCompile Include="Doubt.cpp" />
     <ClCompile Include="Due.cpp" />
-    <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="Operation .cpp" />
     <ClCompile Include="Operation_person.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Proyect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calendar.h" />
+    <ClInclude Include="CalendarOperation.h" />
     <ClInclude Include="Doubt.h" />
     <ClInclude Include="Due.h" />
-    <ClInclude Include="Lista.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Operation.h" />
     <ClInclude Include="Operation_person.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>

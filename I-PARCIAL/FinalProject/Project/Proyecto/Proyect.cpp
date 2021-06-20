@@ -17,6 +17,7 @@
 #include <iostream>
 #include "Person.h"
 #include "Due.h"
+#include "Doubt.h"
 #include "Operation_person.h"
 
 int main()
@@ -33,6 +34,15 @@ int main()
     cout << due2.to_string1() << endl;
     due2.set_weekday("lunes");
     cout << due2.to_string1() << endl;
+
+    Doubt dou1(12300, "14-06-2021", 12, "FRANCES", 12);
+    dou1.get_dues().mostrar_due();
+    dou1.set_rate_of_interest("ALEMAN");
+    cout << "DEUDA GERMANA" << endl;
+    //dou1.get_dues().mostrar_due();
+    cout << dou1.get_rate_of_interest() << endl;
+    //Doubt::Doubt(double new_initial_amount, string new_initial_date, int new_payment_time, string new_rate_of_interest, double new_interest)
+    //dou = new Doubt();
 }
 
    // Person person = Operation_person::data_entry();  
