@@ -1,5 +1,5 @@
 #include "Due.h"
-#include "Lista.h"
+#include "List.h"
 
 Due::Due(string new_date, string new_weekday, double new_mounthly_amount)
 {

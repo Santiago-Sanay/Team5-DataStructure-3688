@@ -195,7 +195,7 @@ namespace Utils
             catch (...)
             {
                 std::cin.clear(); // Clear error flags
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cin.ignore(9999, '\n');
                 std::cout << "Dato incorrecto intente de nuevo" << std::endl;
                 again = 1;
             }
