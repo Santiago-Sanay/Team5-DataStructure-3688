@@ -18,7 +18,6 @@
 #include <string>
 #include "List.h"
 #include "Nodo.h"
-#include "Utils.h"
 
 #pragma warning(disable:4996)
 #define ARRIBA 72

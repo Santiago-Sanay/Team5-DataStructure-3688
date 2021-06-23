@@ -23,7 +23,9 @@
 
 int main()
 {
-    menu_principal();
+   /* menu_principal();*/
+    Person person = Operation_person::data_entry();
+    cout << person.get_name() << endl;
     //Due due;
     //Due due2;
     //due.set_date("12-12-2021");

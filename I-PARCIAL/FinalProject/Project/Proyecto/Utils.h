@@ -65,7 +65,7 @@ namespace Utils
          * @return true
          * @return false
          */
-        static bool validate_three_digits(int number);
+        static bool validate_three_digits(long number);
 
         /**
          * @brief Valida un numero de cualquier tipo
@@ -76,7 +76,7 @@ namespace Utils
         template <typename T>
         static T validation_numbers(std::string);
 
-
+        static long validateDigits(int digits);
         /**
          * @brief Valida que se ingresen solo numeros decimales por el teclado (con getch())
          *
@@ -135,16 +135,31 @@ namespace Utils
         return false;
     }
 
-    bool Validation::validate_three_digits(int number)
+    bool Validation::validate_three_digits(long number)
     {
         int size = int(std::log10(number) + 1);
-        if (size == 3)
+        if (size == 10)
         {
             return false;
         }
         return true;
     }
-
+    long Validation::validateDigits(int digits)
+    {
+        std::string cad;
+        int i = 0;
+        char c = 0;
+        while (i != digits) {
+            (c = getch());
+            if (c >= '0' && c <= '9') {
+                std::cout << c;
+                cad += c;
+                i++;
+            }
+        }
+        long datos = std::stoll(cad);
+        return datos;
+    }
     inline float Validation::validate_float()
     {
         std::string cad;

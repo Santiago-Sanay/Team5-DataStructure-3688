@@ -14,17 +14,45 @@
 
 #include "Operation_person.h"
 #include <time.h>
-/*bool Operation_person::validate_id(string _id) {
-	int tam = _id.size();
-	for (int i = 0; i < tam; i++)
+#include <vector>
+#include "Utils.h"
+bool Operation_person::validate_id(string _id)
+{
+	vector<int> v1;
+	int _id_num = stoi(_id, nullptr, 10);
+	int temp;
+	int sum_par = 0;
+	int sum_impar = 0;
+	int sum;
+	while (_id_num > 0)
 	{
-		if (_id[i] <= 40 || _id[i] >= 57) {
-			return true;
+		int temp = _id_num % 10;
+		_id_num /= 10;
+		v1.push_back(temp);
+	}
+	for (int i = 1; i < _id.size(); i++)
+	{
+		if (i % 2) {
+			temp = v1.at(i) * 2;
+			if (temp > 9) {
+				temp -= 9;
+			}
+			sum_par += temp;
+		}
+		else {
+			sum_impar += v1.at(i);
 		}
 	}
-	return false;
+	sum = sum_par + sum_impar;
+	if ((10 - (sum % 10)) == v1.front()) {
+		return true;
+	}
+	else {
+		cout << "\nLa cedula ingresada es invalida" << endl;
+		return false;
+	}
 }
-/*string Operation_person::get_actual_date()
+string Operation_person::get_actual_date()
 {
 	time_t now = time(0);
 	struct tm tstruct;
@@ -52,33 +80,33 @@ int Operation_person::calculate_age(string birth_date_) {
 	}
 	age = year_actual - year;
 	return age;
-}*/
-/*Person Operation_person::data_entry() {
+}
+Person Operation_person::data_entry() {
 	string _name;
 	string _last_name;
 	string _birth_date;
 	string _address;
-	string _id1;
+	string _id;
+	long _id1;
 	int _age;
 	cout << "Ingrese sus nombres:";
-	cin >> _name;
-	while(getchar()!='\n');
+	getline(cin, _name);
 	cout << "Ingrese sus apellidos:";
-	cin >> _last_name;
-	while (getchar() != '\n');
+	getline(cin, _last_name);
 	cout << "Ingrese su direccion domiciliaria:";
-	cin >> _address;
-	while (getchar() != '\n');
+	getline(cin, _address);
 	cout << "Ingrese la fecha de nacimiento:";
 	cin >> _birth_date;
 	do {
-		while (getchar() != '\n');
 		cout << "Ingrese su id:";
-		cin >> _id1;
-	} while (Operation_person::validate_id(_id1) || _id1.length()!=10);
+		_id1 = Utils::Validation::validateDigits(10);
+		_id = to_string(_id1);
+
+	} while (!Operation_person::validate_id(_id));
+	
 	_age = Operation_person::calculate_age(_birth_date);
-	Person person(_name, _last_name, _id1,_birth_date, _age, _address, "email");
+	Person person(_name, _last_name, _id,_birth_date, _age, _address, "email");
 	return person;
-}*/
+}
 
 
