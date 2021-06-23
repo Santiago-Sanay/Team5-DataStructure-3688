@@ -1,12 +1,15 @@
 #include "Due.h"
 #include "List.h"
 
-Due::Due(string new_date, string new_weekday, double new_mounthly_amount)
+Due::Due(string new_date, string new_weekday, double new_mounthly_amount, double new_interest, double new_capital)
 {
 
     this->date = new_date;
     this->weekday = new_weekday;
     this->mounthly_amount = new_mounthly_amount;
+    this->interest = new_interest;
+    this->capital = new_capital;
+
 }
 
 string Due::get_date()
@@ -32,6 +35,26 @@ void Due::set_weekday(string new_weekday)
 double Due::get_mounthly_amount()
 {
     return mounthly_amount;
+}
+
+double Due::get_interest()
+{
+    return interest;
+}
+
+double Due::get_capital()
+{
+    return capital;
+}
+
+void Due::set_interest(double new_interest)
+{
+    this->interest = new_interest;
+}
+
+void Due::set_capital(double new_capital)
+{
+    this->capital = new_capital;
 }
 
 void Due::set_mounthly_amount(double new_mounthly_amount)
@@ -96,6 +119,6 @@ Due Due::from_string_to_due(string data)
     cout << date << endl;
     cout << weekday << endl;
     cout << mounthly_amount1 << endl;
-
-    return Due(date, weekday, stod(mounthly_amount1));
+    return Due();
+    //return Due(date,weekday,stod(mounthly_amount1));
 }
