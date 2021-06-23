@@ -28,6 +28,7 @@ private:
 	string email;
 public:
 	Person(string, string, string, string, int, string, string);
+	Person()=default;
 	void set_name(string);
 	string get_name();
 	void set_last_name(string);

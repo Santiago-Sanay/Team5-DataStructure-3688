@@ -100,7 +100,9 @@ Person Operation_person::data_entry() {
 	cout << "Ingrese la fecha de nacimiento:";
 	cin >> _birth_date;
 	List<Person> people;
-	
+	Person perso1;
+	perso1.set_email("aspaguay@espe.edu.ec");
+	people.insertar_por_la_cabeza(perso1);
 	string email;
 	email= create_email(people, _name, _last_name);
 	do {
@@ -112,9 +114,9 @@ Person Operation_person::data_entry() {
 	} while (!Operation_person::validate_id(_id));
 	
 	_age = Operation_person::calculate_age(_birth_date);
-	Person person(_name, _last_name, _id,_birth_date, _age, _address, email);
+	Person person=Person(_name, _last_name, _id,_birth_date, _age, _address, email);
 	//Person perso1("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
-	//people.insertar_por_la_cabeza(person);
+	people.insertar_por_la_cabeza(person);
 	return person;
 
 
