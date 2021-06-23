@@ -17,6 +17,7 @@
 #include<string>
 #include <stdio.h>
 #include "Person.h"
+#include "List.h"
 class Operation_person
 {
 public:
@@ -25,5 +26,8 @@ public:
 	static int calculate_age(string);
 	static void create_email(Person);
 	static bool validate_id(string);*/
+	string create_email(List<Person>, string, string);
+	static string lower_case(string);
+	bool isNumber(const string& str);
 };
 
