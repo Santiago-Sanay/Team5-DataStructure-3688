@@ -24,8 +24,18 @@
 int main()
 {
    /* menu_principal();*/
-    Person person = Operation_person::data_entry();
-    cout << person.get_name() << endl;
+    Operation_person op;
+    Person person = op.data_entry();
+    //cout << person.get_name() << endl;
+    //cout << person.get_email() << endl;
+    //List<Person> people;
+    //Person perso1("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
+    //people.insertar_por_la_cola(perso1);
+    List<int> num;
+    num.insertar_por_la_cabeza(5);
+    num.mostrar();
+    string email;
+    //email = Operation_person::create_email(people, _name, _last_name);
     //Due due;
     //Due due2;
     //due.set_date("12-12-2021");

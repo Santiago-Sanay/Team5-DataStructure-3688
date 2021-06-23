@@ -76,7 +76,8 @@ List<T>::List()
 template<class T>
 void List<T>::insertar_por_la_cola(T val)
 {
-	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
+	Nodo<T>* nuevo = new Nodo<T>(val,NULL);
+	
 	if (listaVacia()) {
 		this->primero = nuevo;
 	}
@@ -104,7 +105,7 @@ Nodo<T>* List<T>::get_actual() {
 template<class T>
 void List<T>::insertar_por_la_cabeza(T val)
 {
-	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
+	Nodo<T>* nuevo = new Nodo<T>(val,NULL);
 
 	if (listaVacia()) {
 		this->actual = nuevo;

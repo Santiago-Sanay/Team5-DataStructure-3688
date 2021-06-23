@@ -9,15 +9,15 @@ private:
 	T dato;
 	Nodo<T>* siguiente;
 public:
-	Nodo<T>(T, Nodo*);
+	Nodo<T>(T, Nodo<T>*);
 
 	T get_dato();
 	void set_dato(T);
 	Nodo<T>* get_siguiente();
 	void set_siguiente(Nodo*);
-
-
-
+	
+	
+	
 };
 template<class T>
 Nodo<T>::Nodo(T val, Nodo* sig)
@@ -49,3 +49,5 @@ void Nodo<T>::set_siguiente(Nodo<T>* nuevo)
 {
 	this->siguiente = nuevo;
 }
+
+//#include "Nodo.cpp"

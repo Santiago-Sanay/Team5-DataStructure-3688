@@ -97,7 +97,12 @@ Person Operation_person::data_entry() {
 	getline(cin, _address);
 	cout << "Ingrese la fecha de nacimiento:";
 	cin >> _birth_date;
+	List<Person> people;
+	
+	string email;
+	email= create_email(people, _name, _last_name);
 	do {
+		
 		cout << "Ingrese su id:";
 		_id1 = Utils::Validation::validateDigits(10);
 		_id = to_string(_id1);
@@ -105,23 +110,24 @@ Person Operation_person::data_entry() {
 	} while (!Operation_person::validate_id(_id));
 	
 	_age = Operation_person::calculate_age(_birth_date);
-	Person person(_name, _last_name, _id,_birth_date, _age, _address, "email");
+	Person person(_name, _last_name, _id,_birth_date, _age, _address, email);
+	//Person perso1("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
+	people.insertar_por_la_cabeza(person);
 	return person;
-<<<<<<< HEAD
-=======
-}*/
+
+}
 string Operation_person::create_email(List<Person> people, string name1, string last)
 {
 	string name, last_name;
 	name = lower_case(name1);
-	cout << name << endl;
+
 	last_name = lower_case(last);
-	cout << last_name << endl;
+
 	string email;
 	email += name.substr(0, 1);
-	cout << email << endl;
+
 	email += name.substr(name.find(" ", 0) + 1, 1);
-	cout << email << endl;
+
 	if (last_name.find(" ", 0) < last_name.length()) {
 		email += last_name.substr(last_name.find(" ", 0), 1);
 	}
@@ -129,7 +135,7 @@ string Operation_person::create_email(List<Person> people, string name1, string 
 		email += last_name;
 	}
 
-	cout << email << endl;
+
 	string domain = "@espe.edu.ec";
 	string email_temp, useremail;
 	Nodo<Person>* person1 = people.get_primero();
@@ -138,16 +144,20 @@ string Operation_person::create_email(List<Person> people, string name1, string 
 	while (person1) {
 		email_temp = person1->get_dato().get_email();
 		positiondomain = email_temp.find("@", 0);
-		useremail = email_temp.substr(positiondomain, positiondomain + 1);
+		useremail = email_temp.substr(0, positiondomain);
+
 		if (useremail.length() == email.length()) {
-			if (useremail.find(email, 0)) {
-				if (isNumber(useremail.substr(useremail.length()))) {
+
+			if (useremail.find(email, 0) == 0) {
+				if (isNumber(useremail.substr(useremail.length() - 1, 1))) {
 					last_digit = stoi(email.substr(email.length() - 1, 1));
 					last_digit = last_digit + 1;
-					email = email.substr(email.length() - 1, 0) + to_string(last_digit);
+					email = email.substr(0, email.length() - 1) + to_string(last_digit);
 				}
 				else {
-					email = email + "1";
+
+					email += "1";
+
 				}
 			}
 		}
@@ -155,7 +165,7 @@ string Operation_person::create_email(List<Person> people, string name1, string 
 	}
 	return email += domain;
 
->>>>>>> f9a5fb61329db66b0a03b646b0e4eeda3f90ac9a
+
 }
 
 string Operation_person::lower_case(string cad)
