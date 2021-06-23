@@ -81,6 +81,7 @@ int Operation_person::calculate_age(string birth_date_) {
 	age = year_actual - year;
 	return age;
 }
+
 Person Operation_person::data_entry() {
 	string _name;
 	string _last_name;
@@ -107,69 +108,53 @@ Person Operation_person::data_entry() {
 	_age = Operation_person::calculate_age(_birth_date);
 	Person person(_name, _last_name, _id,_birth_date, _age, _address, "email");
 	return person;
-<<<<<<< HEAD
-=======
-}*/
 string Operation_person::create_email(List<Person> people, string name1, string last)
 {
 	string name, last_name;
 	name = lower_case(name1);
-	cout << name << endl;
+	
 	last_name = lower_case(last);
-	cout << last_name << endl;
+	
 	string email;
 	email += name.substr(0, 1);
-	cout << email << endl;
-	email += name.substr(name.find(" ", 0) + 1, 1);
-	cout << email << endl;
+	
+	email += name.substr(name.find(" ",0)+1,1);
+	
 	if (last_name.find(" ", 0) < last_name.length()) {
 		email += last_name.substr(last_name.find(" ", 0), 1);
 	}
 	else {
 		email += last_name;
 	}
-
-	cout << email << endl;
-	string domain = "@espe.edu.ec";
-	string email_temp, useremail;
-	Nodo<Person>* person1 = people.get_primero();
-	int positiondomain = 0;
+	
+	
+	string domain="@espe.edu.ec";
+	string email_temp,useremail;
+	Nodo<Person> *person1=people.get_primero();
+	int positiondomain=0;
 	int last_digit = 0;
 	while (person1) {
-		email_temp = person1->get_dato().get_email();
+		email_temp= person1->get_dato().get_email();
 		positiondomain = email_temp.find("@", 0);
-		useremail = email_temp.substr(positiondomain, positiondomain + 1);
+		useremail = email_temp.substr(0, positiondomain);
+		
 		if (useremail.length() == email.length()) {
-			if (useremail.find(email, 0)) {
-				if (isNumber(useremail.substr(useremail.length()))) {
+			
+			if (useremail.find(email, 0)==0) {
+				if (isNumber(useremail.substr(useremail.length() - 1, 1))) {
 					last_digit = stoi(email.substr(email.length() - 1, 1));
 					last_digit = last_digit + 1;
-					email = email.substr(email.length() - 1, 0) + to_string(last_digit);
+					email = email.substr(0,email.length() - 1) + to_string(last_digit);
 				}
 				else {
-					email = email + "1";
+
+					email += "1";
+					
 				}
 			}
 		}
-		person1 = person1->get_siguiente();
+		person1= person1->get_siguiente();
 	}
-	return email += domain;
-
->>>>>>> f9a5fb61329db66b0a03b646b0e4eeda3f90ac9a
-}
-
-string Operation_person::lower_case(string cad)
-{
-
-	for (int i = 0; i < cad.length(); i++) cad[i] = tolower(cad[i]);
-	return cad;
+	return email+=domain;
 
 }
-bool Operation_person::isNumber(const string& str)
-{
-	for (char const& c : str) {
-		if (std::isdigit(c) == 0) return false;
-	}
-	return true;
-}
-
