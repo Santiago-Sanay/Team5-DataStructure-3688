@@ -131,9 +131,10 @@ string Operation_person::create_email(List<Person> people, string name1, string 
 	email += name.substr(0, 1);
 
 	email += name.substr(name.find(" ", 0) + 1, 1);
+	cout<<last_name.find(" ", 0)<<endl;
 
 	if (last_name.find(" ", 0) < last_name.length()) {
-		email += last_name.substr(last_name.find(" ", 0), 1);
+		email += last_name.substr(0,last_name.find(" ", 0));
 	}
 	else {
 		email += last_name;

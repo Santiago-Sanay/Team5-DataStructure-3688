@@ -43,6 +43,8 @@ public:
 	string get_email();
 	void set_age(int);
 	int get_age();
+	string to_string_person();
+	Person deserialization_person(string);
 
 };
 

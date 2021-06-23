@@ -32,6 +32,8 @@ public:
 	void set_id_person(string);
 	string to_string1();
 	Doubt from_string_to_doubt(string);
+	string to_string_doubt();
+	Doubt deserialization_doubt(string);
 
 
 

@@ -27,10 +27,14 @@ int main()
    /* menu_principal();*/
     Operation_person op;
     CalendarOperation op1;
-    Person person = op.data_entry();
+   // Person person = op.data_entry();
     //cout << person.get_name() << endl;
-    cout << person.get_email() << endl;
-    List<Person> people;
+   // cout << person.get_email() << endl;
+    Person person2 = Person("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
+    cout << person2.to_string_person() << endl;
+    Person person3=person2.deserialization_person(person2.to_string_person());
+    cout << person3.get_email() << endl;
+   /* List<Person> people;
     //Person perso1("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
     //people.insertar_por_la_cola(perso1);
     List<int> num;
@@ -68,7 +72,7 @@ int main()
     //dou1.get_dues().mostrar_due();
     //cout << dou1.get_rate_of_interest() << endl;
     //Doubt::Doubt(double new_initial_amount, string new_initial_date, int new_payment_time, string new_rate_of_interest, double new_interest)
-    //dou = new Doubt();
+    //dou = new Doubt();*/
 }
 
    // Person person = Operation_person::data_entry();  
