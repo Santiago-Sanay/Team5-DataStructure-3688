@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\PDF">
+      <UniqueIdentifier>{89bed714-54f3-4a74-8c78-7cc90c6002d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Proyect.cpp">
@@ -47,6 +50,15 @@
     </ClCompile>
     <ClCompile Include="Operation .cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="pdf\converter.cpp">
+      <Filter>Archivos de encabezado\PDF</Filter>
+    </ClCompile>
+    <ClCompile Include="pdf\metrics.cpp">
+      <Filter>Archivos de encabezado\PDF</Filter>
+    </ClCompile>
+    <ClCompile Include="pdf\pdf.cpp">
+      <Filter>Archivos de encabezado\PDF</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="pdf\converter.h">
+      <Filter>Archivos de encabezado\PDF</Filter>
+    </ClInclude>
+    <ClInclude Include="pdf\metrics.h">
+      <Filter>Archivos de encabezado\PDF</Filter>
+    </ClInclude>
+    <ClInclude Include="pdf\pdf.h">
+      <Filter>Archivos de encabezado\PDF</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,19 +21,20 @@
 #include "Operation_person.h"
 #include "CalendarOperation.h"
 #include "Menu.h"
+#include "../Proyecto/pdf/converter.h"
 
 int main()
 {
    /* menu_principal();*/
-    Operation_person op;
-    CalendarOperation op1;
+    //Operation_person op;
+    //CalendarOperation op1;
    // Person person = op.data_entry();
     //cout << person.get_name() << endl;
    // cout << person.get_email() << endl;
-    Person person2 = Person("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
-    cout << person2.to_string_person() << endl;
-    Person person3=person2.deserialization_person(person2.to_string_person());
-    cout << person3.get_email() << endl;
+    //Person person2 = Person("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
+    //cout << person2.to_string_person() << endl;
+    //Person person3=person2.deserialization_person(person2.to_string_person());
+    //cout << person3.get_email() << endl;
    /* List<Person> people;
     //Person perso1("Alex Santiago", "Paguay", "1718605155", "16-05-1991", 30, "Colibri", "aspaguay@espe.edu.ec");
     //people.insertar_por_la_cola(perso1);
