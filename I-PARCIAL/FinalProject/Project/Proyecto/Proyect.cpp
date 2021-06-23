@@ -21,7 +21,7 @@
 #include "Operation_person.h"
 #include "CalendarOperation.h"
 #include "Menu.h"
-#include "../Proyecto/pdf/converter.h"
+#include "../Proyecto/Librerias Externas/converter.h"
 
 int main()
 {
