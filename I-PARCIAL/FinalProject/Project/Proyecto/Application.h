@@ -10,7 +10,8 @@ class Application
 private:
 	static void init();
 	static void create_account();
-	static LinkedList<Person> &container();
+	static LinkedList<Person>& container();
+	static void create_credit();
 public:
 	static int run();
 	

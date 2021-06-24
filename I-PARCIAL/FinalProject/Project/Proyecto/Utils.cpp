@@ -225,7 +225,7 @@ bool Validation::validate_date(std::string input)
     int actual_month = std::stoi(token[1]);
     int actual_year = std::stoi(token[2]);
 
-    if (!(year < actual_year))
+    if (!(year <= actual_year))
     {
         return true;
     }

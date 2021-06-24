@@ -10,7 +10,7 @@ void Application::init()
     std::vector<MenuOption> menu_item
     {
         {1, "CREAR CUENTA", create_account},
-        {2, "CREAR CREDITO", nullptr},
+        {2, "CREAR CREDITO", create_credit},
         {3, "MOSTRAR CREDITO", nullptr},
         {4, "MOSTRAR TABLA DE AMORTIZACION", nullptr},
         {5, "GENERAR PDF", nullptr},
@@ -88,6 +88,67 @@ LinkedList<Person> &Application::container()
 {
     LinkedList<Person> persons = File::read();
     return persons;
+}
+
+void Application::create_credit() {
+    bool validate_id = true;
+    bool search = false;
+    char aswer;
+    std::string id;
+
+    while (validate_id)
+    {
+        std::cout << "Ingrese el numero de cedula: ";
+        id = std::to_string(Utils::Validation::validateDigits(10));
+        search= File::search(id);
+        validate_id = (search || Utils::Validation::validate_id(id));
+        std::cin.clear();
+    }
+    if (search) {
+
+    }
+    else {
+        std::cout << std::endl;
+        std::cout << "Desea crear un credito (S/N):? ";
+        std::cin >> aswer;
+        if (aswer == 'S'|| aswer=='s') {
+            double amount = 0.0;
+            int interest=0, months=0;
+            std::string date;
+            char typeAmt;
+            bool validate = true;
+            while (validate) {
+                std::cout << "Ingrese monto de credito a solicitar : ";
+                std::cin >> amount;
+                validate = Utils::Validation::validate_input_number(amount);
+            } 
+            validate = true;
+            while (validate) {
+                std::cout << "Ingrese numero de meses a pagar ";
+                std::cin >> months;
+                validate = Utils::Validation::validate_input_number(months);
+            } 
+            validate = true;
+            while (validate) {
+                std::cout << "Ingrese la fecha de primer pago segun formato ";
+                std::cin >> date;
+                validate = Utils::Validation::validate_date(date);
+            } 
+            validate = true;
+            while (validate) {
+                std::cout << "Ingrese Tasa de Interes % ";
+                std::cin >> interest;
+                validate = Utils::Validation::validate_input_number(interest);
+            }
+            validate = true;
+            std::cout << "Que tipo de Amortizacion va a utilizar Aleman o Frances (A/F)";
+            std::cin >> typeAmt;
+        }
+        else {
+            exit(0);
+        }
+    }
+
 }
 
 
