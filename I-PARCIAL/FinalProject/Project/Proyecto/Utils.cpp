@@ -5,7 +5,7 @@ using namespace Utils;
 bool Validation::validate_id(std::string& _id)
 {
     LinkedList<int> v1;
-    if (is_digit(_id))
+    if (!is_digit(_id))
     {
         return false;
     }

@@ -23,19 +23,19 @@ void Application::init()
 
 void Application::create_account()
 {
-   bool validate_id = true;
+    bool validate_id = true;
+    std::string id;
+
     while (validate_id)
     {
         std::cout << "Ingrese el numero de cedula: ";
-        std::string id;
-        std::cin >> id;
+        id = std::to_string(Utils::Validation::validateDigits(10));
         validate_id = !Utils::Validation::validate_id(id);
+        std::cin.clear(); // Clear error flags
+        std::cin.ignore(9999, '\n');
     }
-    validate_id = true;
-
-    std::cin.clear();
-    std::cin.ignore(INT_MAX, '\n');
-
+    
+    std::cout << std::endl;
     bool validate = true;
     std::string name;
     while (validate)
@@ -65,13 +65,9 @@ void Application::create_account()
     validate = true;
 
     std::string phone;
-    while (validate)
-    {
-        std::cout << "Ingrese un numero telefonico: ";
-        std::getline(std::cin, phone);
-        validate = Utils::Validation::is_digit(phone);
-    }
-    validate = true;
+    std::cout << "Ingrese un numero telefonico: ";
+    phone = std::to_string(Utils::Validation::validateDigits(10));
+    std::cout << std::endl;
 
     std::string addres;
     while (validate)
