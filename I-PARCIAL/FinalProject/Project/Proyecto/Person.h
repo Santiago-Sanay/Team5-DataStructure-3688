@@ -15,36 +15,37 @@
 #pragma once
 #include <iostream> 
 
-using namespace std;
 class Person
 {
-private:
-	string name;
-	string last_name;
-	string id;
-	string birth_date;
-	int age;
-	string address;
-	string email;
-public:
-	Person(string, string, string, string, int, string, string);
-	Person()=default;
-	void set_name(string);
-	string get_name();
-	void set_last_name(string);
-	string get_last_name();
-	void set_id(string);
-	string get_id();
-	void set_birth_date(string);
-	string get_birth_date();
-	void set_address(string);
-	string get_address();
-	void set_email(string);
-	string get_email();
-	void set_age(int);
-	int get_age();
-	string to_string_person();
-	Person deserialization_person(string);
 
+public:
+    Person() = default;
+    Person(std::string, std::string, std::string, std::string, std::string, std::string);
+    void set_name(std::string);
+    void set_last_name(std::string);
+    void set_addres(std::string);
+    void set_number(std::string);
+    void set_email(std::string);
+    void set_id(std::string);
+    void set_age(int);
+    void set_date_of_birth(std::string);
+    std::string get_name();
+    std::string get_last_name();
+    std::string get_addres();
+    std::string get_number();
+    std::string get_email();
+    std::string get_id();
+    std::string get_date_of_birth();
+    int get_age();
+
+private:
+    std::string id_;
+    std::string name_;
+    std::string last_name_;
+    std::string date_of_birth_;
+    std::string email_;
+    std::string addres_;
+    std::string number_phone_;
+    int age_ = 0;
 };
 

@@ -275,7 +275,8 @@ List<T> Operation<T>::llenar_lista(Matrix vector, int filas)
     List<T> lista;
     for (int i = 0; i < filas; i++) {
         if (*(*(vector.get_matrix() + filas) + 1) > 1) {
-            lista.insertar_por_la_cola(*(*(vector.get_matrix() + filas) + 0));
+            lista.
+            (*(*(vector.get_matrix() + filas) + 0));
 
         }
     }

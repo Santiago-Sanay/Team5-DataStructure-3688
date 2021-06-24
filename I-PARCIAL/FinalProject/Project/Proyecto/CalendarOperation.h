@@ -14,7 +14,6 @@
 #pragma once
 #include "Calendar.h"
 #include <iostream>
-#include "Matrix.h"
 #include "Due.h"
 #include "List.h"
 using namespace std;
@@ -43,7 +42,6 @@ public:
 	void german_amortization(string date, double initial_amount, int payment_time, double interest, List<Due>& dues, double &final_amount);
 	void payment_table(string,double,int,string,double, List<Due>);
 	double final_amount_payment(List<Due>);
-		
-	
+
 };
 

@@ -14,11 +14,7 @@
 */
 #include "CalendarOperation.h"
 #include <string>
-#include <conio.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "Matrix.h"
+#include <cmath>
 #include "Operation.h"
 using namespace std;
 string* CalendarOperation::segment(int dim)
@@ -387,7 +383,7 @@ void CalendarOperation::french_amortization(string date, double initial_amount, 
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
 		
-		dues.insertar_por_la_cola(due);
+		dues.push_back(due);
 
 	}
 	final_amount = payment_time * mounthly_amount;
@@ -423,7 +419,7 @@ void CalendarOperation::german_amortization(string date, double initial_amount, 
 		due.set_date(date1);
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
-		dues.insertar_por_la_cola(due);
+		dues.push_back(due);
 		sum = sum + mounthly_amount;
 	}
 	cout << sum << endl;
@@ -457,7 +453,7 @@ void CalendarOperation::payment_table(string date, double initial_amount, int pa
 		due.set_date(date1);
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
-		dues.insertar_por_la_cola(due);
+		dues.push_back(due);
 		
 	}
 

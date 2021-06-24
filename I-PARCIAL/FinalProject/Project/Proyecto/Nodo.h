@@ -49,5 +49,3 @@ void Nodo<T>::set_siguiente(Nodo<T>* nuevo)
 {
 	this->siguiente = nuevo;
 }
-
-//#include "Nodo.cpp"

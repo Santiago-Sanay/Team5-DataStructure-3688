@@ -17,7 +17,6 @@ using namespace std;
 class Calendar
 {
 private:
-
 	string* date;
 public:
 	Calendar(string*);

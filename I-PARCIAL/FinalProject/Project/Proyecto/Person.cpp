@@ -13,136 +13,90 @@
 */
 
 #include "Person.h"
-#include <cstring>
-#include <string>
-Person::Person(string _name, string _last_name, string _id, string _birth_date, int _age, string _address, string _email) {
-	this->name = _name;
-	this->last_name = _last_name;
-	this->id = _id;
-	this->birth_date = _birth_date;
-	this->age = _age;
-	this->address = _address;
-	this->email = _email;
+
+Person::Person(std::string id, std::string name,
+	std::string last_name, std::string date_of_birth, std::string addres, std::string number)
+	: id_(id), name_(name), last_name_(last_name), addres_(addres), number_phone_(number), date_of_birth_(date_of_birth)
+{
 
 }
 
-void Person::set_name(string _name)
+void Person::set_name(std::string name)
 {
-	this->name = _name;
+	this->name_ = name;
 }
 
-string Person::get_name()
+void Person::set_last_name(std::string last_name)
 {
-	return name;
+	this->last_name_ = last_name;
 }
 
-void Person::set_last_name(string _last_name)
+void Person::set_addres(std::string adress)
 {
-	this->last_name = _last_name;
+	this->addres_ = adress;
 }
 
-string Person::get_last_name()
+void Person::set_number(std::string date_of_birth)
 {
-	return last_name;
+	this->date_of_birth_ = date_of_birth;
 }
 
-void Person::set_id(string _id)
+void Person::set_email(std::string email)
 {
-	this->id = _id;
+	this->email_ = email;
 }
 
-string Person::get_id()
+void Person::set_id(std::string id)
 {
-	return id;
+	this->id_ = id;
 }
 
-
-void Person::set_birth_date(string _birth_date)
+void Person::set_age(int age)
 {
-	this->birth_date = _birth_date;
+	this->age_ = age;
 }
 
-string Person::get_birth_date()
+void Person::set_date_of_birth(std::string date_of_birth)
 {
-	return birth_date;
+	this->date_of_birth_ = date_of_birth;
 }
 
-void Person::set_address(string _address)
+std::string Person::get_name()
 {
-	this->address = _address;
+	return name_;
 }
 
-string Person::get_address()
+std::string Person::get_last_name()
 {
-	return address;
+	return last_name_;
 }
 
-void Person::set_email(string _email)
+std::string Person::get_addres()
 {
-	this->email = _email;
+	return addres_;
 }
 
-string Person::get_email()
+std::string Person::get_number()
 {
-	return email;
+	return number_phone_;
 }
 
-void Person::set_age(int _age)
+std::string Person::get_email()
 {
-	this->age = _age;
+	return email_;
+}
+
+std::string Person::get_id()
+{
+	return id_;
+}
+
+std::string Person::get_date_of_birth()
+{
+	return date_of_birth_;
 }
 
 int Person::get_age()
 {
-	return age;
-}
-
-string Person::to_string_person()
-{
-	string data;
-	string age1 = to_string(this->age);
-	data= name+","+last_name+","+id + ","+birth_date + ","+age1+"," +address + ","+email;
-	
-	return data;
-}
-
-Person Person::deserialization_person(string data)
-{
-	string name1;
-	string last_name1;
-	string id1;
-	string birth_date1;
-	int age1;
-	string address1;
-	string email1;
-	int pos1,pos2,pos3,pos4,pos5,pos6,pos7;
-	pos1 = data.find(",", 0);
-	name1 = data.substr(0, pos1);
-	cout << name1<<endl;
-	pos2= data.find(",", pos1+1);
-
-	last_name1= data.substr(pos1+1, pos2-pos1-1);
-	cout << last_name1<<endl;
-	pos3 = data.find(",", pos2 + 1);
-
-	id1 = data.substr(pos2 + 1, pos3 - pos2 - 1);
-	cout << id1 << endl;
-	pos4 = data.find(",", pos3 + 1);
-
-	birth_date1 = data.substr(pos3 + 1, pos4 - pos3 - 1);
-	cout << birth_date1 << endl;
-	pos5 = data.find(",", pos4 + 1);
-
-	age1 = stoi(data.substr(pos4 + 1, pos5 - pos4 - 1));
-	cout << age1 << endl;
-	pos6 = data.find(",", pos5 + 1);
-
-	address1 = data.substr(pos5 + 1, pos6 - pos5 - 1);
-	cout << address1 << endl;
-	pos7 = data.find(",", pos6 + 1);
-
-	email1 = data.substr(pos6 + 1, pos7 - pos6 - 1);
-	cout << email1 << endl;
-	return Person(name1, last_name1, id1, birth_date1, age1, address1, email1);
-	
+	return age_;
 }

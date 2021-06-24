@@ -5,6 +5,7 @@
 #include <random>
 #include <functional>
 #include <iostream>
+
 using namespace std;
 template <class T>
 class List
@@ -14,8 +15,8 @@ private:
 	Nodo<T>* actual;
 public:
 	bool listaVacia();
-	List<T>() ;
-	void insertar_por_la_cola(T);
+	List<T>();
+	void push_back(T);
 	void set_primero(Nodo<T>*);
 	Nodo<T>* get_primero();
 	void set_actual(Nodo<T>*);
@@ -74,10 +75,9 @@ List<T>::List()
 	this->actual = NULL;
 }
 template<class T>
-void List<T>::insertar_por_la_cola(T val)
+void List<T>::push_back(T val)
 {
-	Nodo<T>* nuevo = new Nodo<T>(val,NULL);
-	
+	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
 	if (listaVacia()) {
 		this->primero = nuevo;
 	}
@@ -105,7 +105,7 @@ Nodo<T>* List<T>::get_actual() {
 template<class T>
 void List<T>::insertar_por_la_cabeza(T val)
 {
-	Nodo<T>* nuevo = new Nodo<T>(val,NULL);
+	Nodo<T>* nuevo = new Nodo<T>(val, NULL);
 
 	if (listaVacia()) {
 		this->actual = nuevo;
@@ -148,7 +148,7 @@ void List<T>::llenar_aleatorio_lista()
 	while (aleatorio != 5) {
 		aleatorio = 1 + rand() % (6);
 		if (aleatorio == 2 || aleatorio == 4) {
-			insertar_por_la_cola(aleatorio);
+			push_back(aleatorio);
 		}
 	}
 
