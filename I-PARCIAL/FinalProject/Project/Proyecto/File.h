@@ -15,7 +15,7 @@ public:
 	static void delete_account();
 	static void add(LinkedList<Person>&);
 	static void update();
-	static bool search(Person&);
+	static bool search(std::string &);
 	static LinkedList<Person>read();
 	static void to_json_objet(json& j,  Person value);
 	static void to_object_json(json& j, Person& value, std::string);

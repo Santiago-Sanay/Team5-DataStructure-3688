@@ -10,6 +10,7 @@ class Application
 private:
 	static void init();
 	static void create_account();
+	static LinkedList<Person> &container();
 public:
 	static int run();
 	

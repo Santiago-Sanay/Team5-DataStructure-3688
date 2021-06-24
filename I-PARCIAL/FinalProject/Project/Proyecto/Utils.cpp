@@ -5,16 +5,12 @@ using namespace Utils;
 bool Validation::validate_id(std::string& _id)
 {
     LinkedList<int> v1;
-    if (!is_digit(_id))
-    {
-        return false;
-    }
 
     int _id_num = std::stoi(_id);
 
     if (int(std::log10(_id_num) + 1) != 10)
     {
-        return false;
+        return true;
     }
     int temp;
     int sum_par = 0;
@@ -41,11 +37,11 @@ bool Validation::validate_id(std::string& _id)
     }
     sum = sum_par + sum_impar;
     if ((10 - (sum % 10)) == v1.at(0)->get_data()) {
-        return true;
+        return false;
     }
     else {
         std::cout << "\nLa cedula ingresada es invalida" << std::endl;
-        return false;
+        return true;
     }
 }
 
@@ -187,8 +183,6 @@ T Validation::validation_numbers(std::string str)
         }
         catch (...)
         {
-            std::cin.clear(); // Clear error flags
-            std::cin.ignore(9999, '\n');
             std::cout << "Dato incorrecto intente de nuevo" << std::endl;
             again = 1;
         }

@@ -15,8 +15,8 @@
 #include "Person.h"
 
 Person::Person(std::string id, std::string name,
-	std::string last_name, std::string date_of_birth, std::string addres, std::string number)
-	: id_(id), name_(name), last_name_(last_name), addres_(addres), number_phone_(number), date_of_birth_(date_of_birth)
+	std::string last_name, std::string date_of_birth, std::string number, std::string addres)
+	: id_(id), name_(name), last_name_(last_name), date_of_birth_(date_of_birth), number_phone_(number),addres_(addres)
 {
 
 }
@@ -36,9 +36,9 @@ void Person::set_addres(std::string adress)
 	this->addres_ = adress;
 }
 
-void Person::set_number(std::string date_of_birth)
+void Person::set_number(std::string phone)
 {
-	this->date_of_birth_ = date_of_birth;
+	this->number_phone_= phone;
 }
 
 void Person::set_email(std::string email)
