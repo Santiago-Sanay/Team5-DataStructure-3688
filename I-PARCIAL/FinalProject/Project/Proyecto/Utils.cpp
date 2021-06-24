@@ -51,9 +51,9 @@ bool Validation::validate_id(std::string& _id)
 
 bool Utils::Validation::is_digit(const std::string& str)
 {
-       for(auto &c : str)
+       for(const char &c : str)
        {
-           if (!isdigit(c))
+           if (std::isdigit(c))
            {
                return true;
            }
@@ -283,10 +283,7 @@ int Generator::calculate_age(std::string birth_date_)
 
 std::string Generator::create_email(LinkedList<Person> people, std::string name1, std::string last)
 {
-    if (people.is_empty())
-    {
-        return "\0";
-    }
+    
     std::string name, last_name;
     name = lower_case(name1);
 
@@ -298,7 +295,7 @@ std::string Generator::create_email(LinkedList<Person> people, std::string name1
     email += name.substr(name.find(" ", 0) + 1, 1);
 
     if (last_name.find(" ", 0) < last_name.length()) {
-        email += last_name.substr(last_name.find(" ", 0), 1);
+        email += last_name.substr(0, last_name.find(" ", 0));
     }
     else {
         email += last_name;
@@ -317,6 +314,7 @@ std::string Generator::create_email(LinkedList<Person> people, std::string name1
         if (useremail.length() == email.length()) {
 
             if (useremail.find(email, 0) == 0) {
+                std::string digit = useremail.substr(useremail.length() - 1, 1);
                 if (Validation::is_digit(useremail.substr(useremail.length() - 1, 1))) {
                     last_digit = std::stoi(email.substr(email.length() - 1, 1));
                     last_digit = last_digit + 1;

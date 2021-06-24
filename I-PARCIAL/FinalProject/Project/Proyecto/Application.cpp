@@ -23,7 +23,7 @@ void Application::init()
 
 void Application::create_account()
 {
-    bool validate_id = true;
+   bool validate_id = true;
     while (validate_id)
     {
         std::cout << "Ingrese el numero de cedula: ";
@@ -81,26 +81,29 @@ void Application::create_account()
         validate = Utils::Validation::validate_string(addres);
     }
     validate = true;
-
-
     int age = Utils::Generator::calculate_age(date_of_birth);
-    //std::cout << age << std::endl;
-    Person person("1726137597", "Junior Stalin", "Jurado", "22/07/1999", "0965412895", "Guamani");
+    std::cout << age << std::endl;
+    Person person ("1726137597", "Junior Stalin", "Jurado", "22/07/1999", "0965412895", "Guamani");
     Person person1("1718605155", "Alex Santiago", "Paguay", "16/05/10991", "0965412895", "Sangolqui");
+    person.set_email("jsjurado@espe.fin.ec");
     LinkedList<Person> persons;
     persons.add(person);
     persons.add(person1);
 
-    File::add(persons);
+    std::string date = Utils::Generator::create_email(persons, "Junior Stalin", "Jurado Pena");
 
-    LinkedList<Person> persons_test;
-    persons_test = File::read();
-    Node<Person>*node = persons_test.at(0);
-    Node<Person>*node1 = persons_test.at(1);
+    std::cout << date << std::endl;
+    
+   //File::add(persons);
 
-    std::cout << persons_test.get_size() << std::endl;
-    std::cout << node->get_data().get_name() << ", "<< persons.get_size() << std::endl;
-    std::cout << node1->get_data().get_name() << ", " << persons.get_size() << std::endl;
+    //<Person> persons_test;
+    //persons_test = File::read();
+    //Node<Person>*node = persons_test.at(0);
+    //Node<Person>*node1 = persons_test.at(1);
+
+   // std::cout << persons_test.get_size() << std::endl;
+   // std::cout << node->get_data().get_name() << ", "<< persons.get_size() << std::endl;
+  //  std::cout << node1->get_data().get_name() << ", " << persons.get_size() << std::endl;
     //std::string email = Utils::Generator::create_email(persons, "Junior Stalin", "Jurado");
     //std::cout << email << std::endl;
 }
