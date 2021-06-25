@@ -1,4 +1,5 @@
 #include "Application.h"
+
 int Application::run()
 {
     init();
@@ -11,10 +12,9 @@ void Application::init()
     {
         {1, "CREAR CUENTA", create_account},
         {2, "CREAR CREDITO", create_credit},
-        {3, "MOSTRAR CREDITO", nullptr},
-        {4, "MOSTRAR TABLA DE AMORTIZACION", nullptr},
-        {5, "GENERAR PDF", nullptr},
-        {6, "SALIR", nullptr}
+        {3, "MOSTRAR TABLA DE AMORTIZACION", print_amortization_table},
+        {4, "GENERAR PDF", create_pdf},
+        {5, "SALIR", nullptr}
     };
     Menu menu{ menu_item };
     menu.navigation();
@@ -28,9 +28,10 @@ void Application::create_account()
     while (validate_id)
     {
         std::cout << "Ingrese el numero de cedula: ";
-        id = std::to_string(Utils::Validation::validateDigits(10));
+        getline(std::cin, id);
         validate_id =  (File::search(id) || Utils::Validation::validate_id(id));
         std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
     }
     
     std::cout << std::endl;
@@ -82,6 +83,7 @@ void Application::create_account()
     new_person.set_email(email);
     persons.add(new_person); 
     File::add(persons);
+    init();
 }
 
 LinkedList<Person> &Application::container()
@@ -90,50 +92,101 @@ LinkedList<Person> &Application::container()
     return persons;
 }
 
+LinkedList<Doubt>& Application::container_credits()
+{
+    LinkedList<Doubt> credits = File::read("credits.json");
+    return credits;
+}
+
 void Application::create_credit() {
     bool validate_id = true;
     bool search = false;
-    char aswer;
+    bool search_credit = false;
+    bool bandera = false;
+    LinkedList<Person> persons = Application::container();
+    LinkedList<Doubt> credits = Application::container_credits();
+   
     std::string id;
 
     while (validate_id)
     {
         std::cout << "Ingrese el numero de cedula: ";
-        id = std::to_string(Utils::Validation::validateDigits(10));
-        search= File::search(id);
-        validate_id = (search || Utils::Validation::validate_id(id));
-        std::cin.clear();
-    }
-    if (search) {
+        getline(std::cin, id);
+        validate_id =  !Utils::Validation::validate_id(id);
+        
 
+
+        if (validate_id)
+        {
+            search = File::search(id);
+            if (search)
+            {
+                search_credit = File::search_credits(id);
+                if (search_credit)
+                {
+                    bandera = false;
+                }
+                else
+                {
+                    bandera = true;
+                    validate_id = false;
+                }
+            }
+            else
+            {
+                std::cout << "El usuario no esta registrado" << std::endl;
+                system("pause");
+                init();
+            }
+        }
+        else
+        {
+            validate_id = true;
+        }
+        
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
+        
     }
-    else {
+
+    if (!bandera)
+    {
+        Application::print_exists(id);
+    }
+    else
+    {
+        char answer;
         std::cout << std::endl;
-        std::cout << "Desea crear un credito (S/N):? ";
-        std::cin >> aswer;
-        if (aswer == 'S'|| aswer=='s') {
-            double amount = 0.0;
-            int interest=0, months=0;
+        std::cout << "Desea crear un credito (S/N): ";
+        std::cin >> answer;
+
+        if (answer == 'S' || answer == 's') {
+
+            double amount = { 0.0 };
+            int interest = { 0 };
+            int months{ 0 };
+
             std::string date;
             char typeAmt;
+
             bool validate = true;
             while (validate) {
-                std::cout << "Ingrese monto de credito a solicitar : ";
+                std::cout << "Ingrese monto de credito a solicitar: ";
                 std::cin >> amount;
                 validate = Utils::Validation::validate_input_number(amount);
-            } 
+            }
             validate = true;
             while (validate) {
-                std::cout << "Ingrese numero de meses a pagar ";
+                std::cout << "Ingrese numero de meses a pagar: ";
                 std::cin >> months;
                 validate = Utils::Validation::validate_input_number(months);
-            } 
+            }
             validate = true;
             while (validate) {
-                std::cout << "Ingrese la fecha de primer pago segun formato ";
+                std::cout << "Ingrese la fecha de primer en formato(dd-mm-AAAA): ";
                 std::cin >> date;
                 validate = Utils::Validation::validate_date(date);
-            } 
+            }
             validate = true;
             while (validate) {
                 std::cout << "Ingrese Tasa de Interes % ";
@@ -141,14 +194,170 @@ void Application::create_credit() {
                 validate = Utils::Validation::validate_input_number(interest);
             }
             validate = true;
-            std::cout << "Que tipo de Amortizacion va a utilizar Aleman o Frances (A/F)";
+            std::cout << "Ingrese el tipo de Amortizacion Aleman o Frances (A/F): ";
             std::cin >> typeAmt;
+
+            Doubt loan;
+            if (typeAmt == 'A' || typeAmt == 'a')
+            {
+                loan = Doubt(id, amount, date, months, "ALEMAN", interest);
+            }
+            else
+            {
+                loan = Doubt(id, amount, date, months, "FRANCES", interest);
+            }
+            LinkedList<Doubt> doubts;
+            doubts.add(loan);
+            File::add(doubts);
+            std::cout << "SE HA AGREGADO EL CREDITO CON EXITO" << std::endl;
+            system("pause");
+            init();
         }
-        else {
-            exit(0);
+        else 
+        {
+            init();
         }
     }
 
 }
 
+void Application::create_pdf()
+{   
+}
 
+void Application::print_exists(std::string id)
+{
+    TextTable table_text('-', '|', '+');
+    Doubt doubt = File::at(id);
+    Person person = File::at_person(id);
+
+    table_text.add("CEDULA");
+    table_text.add("APELLIDOS");
+    table_text.add("NOMBRES");
+    table_text.add("EDAD");
+    table_text.add("EMAIL");
+    table_text.add("PHONE");
+    table_text.add("DIRECCION");
+    table_text.add("CREDITO");
+    table_text.add("PLAZO MESES");
+    table_text.add("TOTAL");
+    table_text.add("TIPO DE AMORTIZACION");
+    table_text.endOfRow();
+
+    table_text.add(person.get_id());
+    table_text.add(person.get_last_name());
+    table_text.add(person.get_name());
+    table_text.add(std::to_string(person.get_age()));
+    table_text.add(person.get_email());
+    table_text.add(person.get_number());
+    table_text.add(person.get_addres());
+    table_text.add(Utils::Generator::to_string(doubt.get_initial_amount()));
+    table_text.add(std::to_string(doubt.get_payment_time()));
+    table_text.add(Utils::Generator::to_string(doubt.get_final_amount()));
+    table_text.add(doubt.get_rate_of_interest());
+    table_text.endOfRow();
+    table_text.setAlignment(2, TextTable::Alignment::RIGHT);
+    std::cout << table_text;
+
+}
+
+void Application::print_amortization_table()
+{
+    bool validate_id = true;
+    bool search = false;
+    bool search_credit = false;
+    bool bandera = false;
+    std::string id;
+    while (validate_id)
+    {
+        std::cout << "Ingrese el numero de cedula: ";
+        getline(std::cin, id);
+        validate_id = !Utils::Validation::validate_id(id);
+
+        if (validate_id)
+        {
+            search = File::search(id);
+            if (search)
+            {
+                search_credit = File::search_credits(id);
+                if (!search_credit)
+                {
+                    bandera = false;
+                }
+                else
+                {
+                    bandera = true;
+                    validate_id = false;
+                }
+            }
+            else
+            {
+                std::cout << "El usuario no esta registrado" << std::endl;
+                system("pause");
+                init();
+            }
+        }
+        else
+        {
+            validate_id = true;
+        }
+
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
+    }
+
+    if (search_credit)
+    {
+        TextTable table_text('-', '|', '+');
+        LinkedList<Due>  due = Application::amortization(id);
+        Person person = File::at_person(id);
+
+        table_text.add("NO");
+        table_text.add("FECHAS DE PAGO");
+        table_text.add("DIA");
+        table_text.add("CAPITAL");
+        table_text.add("INTERES");
+        table_text.add("TOTAL");
+        table_text.endOfRow();
+        Node<Due>* node = due.get_front();
+        int i = 1;
+        while (node)
+        {
+            table_text.add(std::to_string(i++));
+            table_text.add(node->get_data().get_date());
+            table_text.add(node->get_data().get_weekday());
+            table_text.add(Utils::Generator::to_string(node->get_data().get_capital()));
+            table_text.add(Utils::Generator::to_string(node->get_data().get_interest()));
+            table_text.add(Utils::Generator::to_string(node->get_data().get_mounthly_amount()));
+            table_text.endOfRow();
+            node = node->get_next();
+        }
+        table_text.endOfRow();
+        table_text.setAlignment(2, TextTable::Alignment::RIGHT);
+        std::cout << table_text << std::endl;
+
+        system("pause");
+        init();
+    }
+    else
+    {
+        std::cout << "USUARIO NO ENCONTRADO" << std::endl;
+        system("pause");
+        init();
+    }
+}
+
+LinkedList<Due> Application::amortization(std::string &id)
+{
+    Doubt loan = File::at(id);
+    LinkedList<Due> dues;
+    CalendarOperation op;
+    double final_ammount = loan.get_final_amount();
+    if (loan.get_rate_of_interest().compare("ALEMAN") == 0) {
+        op.german_amortization(loan.get_initial_date(), loan.get_initial_amount(), loan.get_payment_time(), loan.get_interest(), dues, final_ammount);
+    }
+    else {
+        op.french_amortization(loan.get_initial_date(), loan.get_initial_amount(), loan.get_payment_time(), loan.get_interest(), dues, final_ammount);
+    }
+    return dues;
+}

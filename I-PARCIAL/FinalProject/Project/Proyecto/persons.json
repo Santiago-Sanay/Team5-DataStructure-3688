@@ -1,22 +1,12 @@
 {
-    "1724701402": {
-        "addres": "5 esquinas",
-        "age": 19,
-        "date_of_birth": "14/04/2002",
-        "email": "iyroman@espe.fin.ec",
-        "id": "1724701402",
-        "last_name": "Roman Verdezoto",
-        "name": "Ivette Yulliana",
-        "phone": "958881920"
-    },
     "1726137597": {
         "addres": "",
         "age": 21,
-        "date_of_birth": "22/07/1999",
+        "date_of_birth": "22-07-1999",
         "email": "jsjurado@espe.fin.ec",
         "id": "1726137597",
         "last_name": "Jurado Pena",
         "name": "Junior Stalin",
-        "phone": "969062649"
+        "phone": "0969062649"
     }
 }

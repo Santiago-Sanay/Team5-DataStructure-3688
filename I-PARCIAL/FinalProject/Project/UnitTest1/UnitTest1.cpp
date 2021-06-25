@@ -1,12 +1,11 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "..\Proyecto\LinkedList.h"
-#include "..\Proyecto\Node.h"
-#include "..\Proyecto\Person.h"
-#include "..\Proyecto\Person.cpp"
-#pragma warning(disable : 4996);
-#include "..\Proyecto\Utils.h"
-#include "..\Proyecto\Utils.cpp"
+#include "../Proyecto/LinkedList.h"
+#include "../Proyecto/Node.h"
+#include "../Proyecto/Person.h"
+#include "../Proyecto/Person.cpp"
+#include "../Proyecto/Utils.h"
+#include "../Proyecto/Utils.cpp"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest1

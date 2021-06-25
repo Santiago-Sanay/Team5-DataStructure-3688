@@ -1,6 +1,4 @@
 #include "Due.h"
-#include "List.h"
-
 Due::Due(string new_date, string new_weekday, double new_mounthly_amount, double new_interest, double new_capital)
 {
 
@@ -93,12 +91,11 @@ string Due::to_string1()
 
 Due Due::from_string_to_due(string data)
 {
-
     string a, b, c;
     string date, weekday, mounthly_amount1;
-    int pos1 = 0;
-    int pos2 = 0;
-    int pos3 = 0;
+    size_t pos1 = 0;
+    size_t pos2 = 0;
+    size_t pos3 = 0;
     pos1 = data.find(",", 0);
     pos2 = data.find(",", pos1 + 1);
     pos3 = data.find("}", pos2 + 1);
@@ -115,10 +112,5 @@ Due Due::from_string_to_due(string data)
     weekday = weekday.replace(weekday.find("\"", 0), 1, "");
     pos3 = c.find(":", 0);
     mounthly_amount1 = c.substr(pos3 + 1, c.length() - pos3 - 1);
-
-    cout << date << endl;
-    cout << weekday << endl;
-    cout << mounthly_amount1 << endl;
     return Due();
-    //return Due(date,weekday,stod(mounthly_amount1));
 }

@@ -6,9 +6,9 @@ class Due
 private:
 	string date;
 	string weekday;
-	double mounthly_amount;
-	double interest;
-	double capital;
+	double mounthly_amount{0.0};
+	double interest{0.0};
+	double capital{0.0};
 public:
 	Due(string, string, double, double, double);
 	Due() = default;

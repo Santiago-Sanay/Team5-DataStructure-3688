@@ -28,7 +28,6 @@
 #include <stdio.h>
 #include "Person.h"
 #include "LinkedList.h"
-#include "List.h"
 namespace Utils
 {
     class Validation
@@ -94,7 +93,7 @@ namespace Utils
 
         static bool validate_id(std::string&);
         static bool is_digit(const std::string &);
-        static bool validate_date(std::string input);
+        static bool validate_date(std::string );
     };
    
     class Generator
@@ -102,9 +101,10 @@ namespace Utils
     public:
         static int random_int(const int, const int);
         static std::string return_current_time_and_date();
-        static int calculate_age(std::string bir);
+        static int calculate_age(std::string );
         static std::string create_email(LinkedList<Person>, std::string, std::string);
         static std::string lower_case(std::string);
+        static std::string to_string(double);
     };
 
   

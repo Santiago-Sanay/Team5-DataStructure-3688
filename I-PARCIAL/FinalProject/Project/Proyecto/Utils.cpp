@@ -1,42 +1,50 @@
 #include "Utils.h"
-#pragma warning(disable : 4996);
+#pragma warning(disable : 4996) ;
 using namespace Utils;
 
 bool Validation::validate_id(std::string& _id)
 {
-    LinkedList<int> v1;
-
-    int _id_num = std::stoi(_id);
-
-    if (int(std::log10(_id_num) + 1) != 10)
+  
+    if (_id.length() != 10)
     {
         return true;
     }
+    
     int temp;
     int sum_par = 0;
     int sum_impar = 0;
     int sum;
-    while (_id_num > 0)
+    
+    int i = 1;
+    std::string digits = _id.substr(0, _id.size() - 1);
+    for (char & c : digits)
     {
-        int temp = _id_num % 10;
-        _id_num /= 10;
-        v1.add(temp);
-    }
-    for (int i = 1; i < _id.size(); i++)
-    {
-        if (i % 2) {
-            temp = v1.at(i)->get_data() * 2;
-            if (temp > 9) {
-                temp -= 9;
-            }
-            sum_par += temp;
+        int digit = c - '0';
+        if (i % 2 == 0) {
+            sum_par += digit;
         }
         else {
-            sum_impar += v1.at(i)->get_data();
+            if ((digit * 2) > 9)
+            {
+                sum_impar += (digit * 2) - 9;
+            }
+            else
+            {
+                sum_impar += (digit * 2);
+            }
         }
+        i++;
     }
+
     sum = sum_par + sum_impar;
-    if ((10 - (sum % 10)) == v1.at(0)->get_data()) {
+    int verifier = _id.at(_id.size() -1) - '0';
+    int higher = (10 - (sum % 10)) + sum;
+
+    if (sum % 10 == 0)
+    {
+        return verifier != 0;
+    }
+    if ((higher -sum) == verifier) {
         return false;
     }
     else {
@@ -209,7 +217,7 @@ bool Validation::validate_date(std::string input)
     std::string date = sm[0].str().c_str();
     std::string actual_date = Generator::return_current_time_and_date();
 
-    std::regex regex{ R"([\/]+)" };
+    std::regex regex{ "[\\/|.-]" };
     std::sregex_token_iterator it{ date.begin(), date.end(), regex, -1 };
     std::vector<std::string> parts{ it, {} };
 
@@ -328,4 +336,12 @@ std::string Generator::lower_case(std::string cad)
 {
     for (int i = 0; i < cad.length(); i++) cad[i] = tolower(cad[i]);
     return cad;
+}
+
+std::string Generator::to_string(double number)
+{
+    std::stringstream stream;
+    stream << std::fixed << std::setprecision(3) << number;
+    std::string s = stream.str();
+    return s;
 }

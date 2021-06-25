@@ -17,23 +17,22 @@
 #include <cmath>
 #include "Operation.h"
 using namespace std;
+
 string* CalendarOperation::segment(int dim)
 {
 	string* p = new string[dim];
 
 	return p;
 }
+
 void CalendarOperation::wax(string* array, int dues)
 {
-
-
 	for (int i = 0; i < dues; i++)
 	{
 		*(array + i) = "0";
-
 	}
-
 }
+
 int CalendarOperation::calculate_day(string date)
 {
 	int day = stoi(date.substr(0, 2));
@@ -89,6 +88,7 @@ int CalendarOperation::calculate_day(string date)
 	int day_week = zeller_sum % 7;
 	return day_week;
 }
+
 void CalendarOperation::date_vector(string date, int dues, Calendar calendar)
 {
 
@@ -127,8 +127,6 @@ void CalendarOperation::date_vector(string date, int dues, Calendar calendar)
 	}
 	set_weekend(dues, calendar.get_date());
 }
-
-
 
 string CalendarOperation::set_valid_date(string date)
 {
@@ -195,8 +193,6 @@ bool CalendarOperation::check_fds(string date)
 	return fds;
 }
 
-
-
 void CalendarOperation::set_weekend(int dues, string* vect)
 {
 	bool state = false;
@@ -204,11 +200,8 @@ void CalendarOperation::set_weekend(int dues, string* vect)
 
 		while (check_fds(vect[i]) || check_holiday(vect[i])) {
 			*(vect + i) = add_day(*(vect + i));
-
 		}
-
 	}
-
 }
 
 bool CalendarOperation::check_holiday(string date)
@@ -252,13 +245,12 @@ bool CalendarOperation::check_holiday(string date)
 	for (int i = 0; i < 20; i++) {
 		if (date_verify == holiday[i]) {
 			state = true;
-
-
 		}
 	}
 
 	return state;
 }
+
 string CalendarOperation::add_day(string date)
 {
 	int day = stoi(date.substr(0, 2));
@@ -360,9 +352,8 @@ double** CalendarOperation::segment2(int rows, int columns)
 	
 }
 
-void CalendarOperation::french_amortization(string date, double initial_amount, int payment_time, double interest, List<Due> &dues, double& final_amount)
+void CalendarOperation::french_amortization(string date, double initial_amount, int payment_time, double interest, LinkedList<Due> &dues, double & final_amount)
 {
-	cout << "si entra jshajksh" << endl;
 	Calendar calendar;
 	string* calendar_vector = new string[payment_time];
 	calendar.set_date(calendar_vector);
@@ -374,25 +365,29 @@ void CalendarOperation::french_amortization(string date, double initial_amount, 
 	mounthly_amount = (initial_amount * (interest / 100) / 12) / (1 - pow(((interest / 100) + 1), -(payment_time)));
 
 	Due due;
+	double capital, mountly_interest;
+	double balance = initial_amount;
 	for (int j = 0; j < payment_time; j++) {
+
 		date1 = *(calendar.get_date() + j);
-		
+		mountly_interest = balance * (interest / 100) / 12;
+		capital = mounthly_amount - mountly_interest;
+		balance = balance - capital;
 		weekday = weekday_name(date1);
-		
 		due.set_date(date1);
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
-		
-		dues.push_back(due);
+		due.set_capital(capital);
+		due.set_interest(mountly_interest);
+		dues.add(due);
 
 	}
 	final_amount = payment_time * mounthly_amount;
 	
 }
 
-void CalendarOperation::german_amortization(string date, double initial_amount, int payment_time, double interest, List<Due>& dues, double& final_amount)
+void CalendarOperation::german_amortization(string date, double initial_amount, int payment_time, double interest, LinkedList<Due>& dues, double & final_amount)
 {
-	cout << "si entra jshajksh" << endl;
 	Calendar calendar;
 	string* calendar_vector = new string[payment_time];
 	calendar.set_date(calendar_vector);
@@ -413,21 +408,20 @@ void CalendarOperation::german_amortization(string date, double initial_amount, 
 		mountly_interest = balance * interest / 100;
 		mounthly_amount = capital+ mountly_interest;
 		balance = balance - capital;
-		//asign to list of dues
 		date1 = *(calendar.get_date() + j);
 		weekday = weekday_name(date1);
 		due.set_date(date1);
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
-		dues.push_back(due);
+		due.set_capital(capital);
+		due.set_interest(mountly_interest);
+		dues.add(due);
 		sum = sum + mounthly_amount;
 	}
-	cout << sum << endl;
-	final_amount = sum;
-		
+	final_amount = sum;	
 }
 
-void CalendarOperation::payment_table(string date, double initial_amount, int payment_time, string rate_of_interest, double interest, List<Due> dues)
+void CalendarOperation::payment_table(string date, double initial_amount, int payment_time, string rate_of_interest, double interest, LinkedList<Due> dues)
 {
 	Calendar calendar;
 	string* calendar_vector = new string[payment_time];
@@ -436,12 +430,7 @@ void CalendarOperation::payment_table(string date, double initial_amount, int pa
 	Matrix<double> matrix;
 	Operation<double> op;
 	matrix.set_matrix(op.segmentar2(payment_time, 2));
-	if (rate_of_interest.compare("ALEMAN") == 0) {
-		//german_amortization(matrix, payment_time, interest, initial_amount);
-	}
-	else {
-		//french_amortization(matrix, payment_time, interest, initial_amount);
-	}
+
 	string date1;
 	string weekday;
 	double mounthly_amount;
@@ -453,21 +442,19 @@ void CalendarOperation::payment_table(string date, double initial_amount, int pa
 		due.set_date(date1);
 		due.set_weekday(weekday);
 		due.set_mounthly_amount(mounthly_amount);
-		dues.push_back(due);
+		dues.add(due);
 		
 	}
 
 }
 
-double CalendarOperation::final_amount_payment(List<Due> dues)
+double CalendarOperation::final_amount_payment(LinkedList<Due> dues)
 {
-	Nodo<Due>* temp = dues.get_primero();
+	Node<Due>* temp = dues.get_front();
 	
 	double final_amount=0;
 	while (temp) {
-		//final_amount = final_amount + double(temp->get_dato());
-		temp = temp->get_siguiente();
-
+		temp = temp->get_next();
 	}
 	return final_amount;
 }

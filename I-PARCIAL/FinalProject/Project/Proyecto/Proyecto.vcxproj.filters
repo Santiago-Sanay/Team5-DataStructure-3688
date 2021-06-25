@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado\Librrerias Externas">
-      <UniqueIdentifier>{1576b08e-47d9-4fd3-a80c-936cb5fe8a33}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Person.cpp">
@@ -25,12 +22,6 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Due.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Nodo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="List.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Matrix.cpp">
@@ -48,9 +39,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Credit.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="File.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -66,15 +54,6 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Librerias Externas\converter.cpp">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClCompile>
-    <ClCompile Include="Librerias Externas\metrics.cpp">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClCompile>
-    <ClCompile Include="Librerias Externas\pdf.cpp">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -84,12 +63,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Due.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Nodo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
@@ -113,9 +86,6 @@
     <ClInclude Include="Application.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Credit.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="File.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -131,17 +101,8 @@
     <ClInclude Include="Node.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Librerias Externas\converter.h">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClInclude>
-    <ClInclude Include="Librerias Externas\metrics.h">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClInclude>
-    <ClInclude Include="Librerias Externas\pdf.h">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
-    </ClInclude>
-    <ClInclude Include="Librerias Externas\tabulate.hpp">
-      <Filter>Archivos de encabezado\Librrerias Externas</Filter>
+    <ClInclude Include="TextTable.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

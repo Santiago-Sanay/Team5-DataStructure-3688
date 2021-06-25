@@ -18,7 +18,7 @@ public:
     Menu() = default;
     Menu(std::vector<MenuOption>);
     void navigation();
-    void display(int);
+    void display(size_t);
 
 private:
     std::vector<MenuOption> menu_option_;

@@ -9,7 +9,7 @@ void Menu::navigation()
     if (menu_option_.empty()) {
         return;
     }
-    int i{ 1 };
+    size_t i{ 1 };
     display(1);
     while (1)
     {
@@ -55,22 +55,25 @@ void Menu::navigation()
     }
 }
 
-void Menu::display(int option)
+void Menu::display(size_t option)
 {
     system("cls");
     unsigned int i = 0;
-
+    SetConsoleCursorPosition(console_, { 35,8 });
+    std::cout << "SISTEMA GENERADOR DE TABLAS DE AMORTIZACION ESPE" << std::endl;
     while (i < menu_option_.size())
     {
 
         if (option == i + 1)
         {
+            SetConsoleCursorPosition(console_, { 50,short(i + 10) });
             SetConsoleTextAttribute(console_, BACKGROUND_GREEN);
             std::cout << "[" << menu_option_[i].get_number_option_() << "] " << menu_option_[i].get_title_() << std::endl;
-            SetConsoleTextAttribute(console_, COLOR_BACKGROUND);
+            SetConsoleTextAttribute(console_, 15);
         }
         else
         {
+            SetConsoleCursorPosition(console_, { 50,short(i + 10) });
             std::cout << "[" << menu_option_[i].get_number_option_() << "] " << menu_option_[i].get_title_() << std::endl;
         }
         i++;

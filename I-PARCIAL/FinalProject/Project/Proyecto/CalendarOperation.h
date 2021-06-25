@@ -15,7 +15,7 @@
 #include "Calendar.h"
 #include <iostream>
 #include "Due.h"
-#include "List.h"
+#include "LinkedList.h"
 using namespace std;
 class CalendarOperation
 {
@@ -38,10 +38,10 @@ public:
 	string add_day(string);
 	string weekday_name(string);
 	double** segment2(int, int);
-	void french_amortization(string date, double initial_amount, int payment_time, double interest, List<Due> &dues, double &final_amount);
-	void german_amortization(string date, double initial_amount, int payment_time, double interest, List<Due>& dues, double &final_amount);
-	void payment_table(string,double,int,string,double, List<Due>);
-	double final_amount_payment(List<Due>);
+	void french_amortization(string date, double initial_amount, int payment_time, double interest, LinkedList<Due> &dues, double &final_amount);
+	void german_amortization(string date, double initial_amount, int payment_time, double interest, LinkedList<Due>& dues, double &final_amount);
+	void payment_table(string,double,int,string,double, LinkedList<Due>);
+	double final_amount_payment(LinkedList<Due>);
 
 };
 
