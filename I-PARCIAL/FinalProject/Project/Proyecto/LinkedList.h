@@ -73,14 +73,11 @@ public:
      * @return int 
      */
     int find(const int found);
-<<<<<<< HEAD
-=======
 
     /**
      * @brief limpiar lista
      * 
      */
->>>>>>> 545583ca033eee5e3d83689466243bb80432fd24
     void clear();
     
     /**

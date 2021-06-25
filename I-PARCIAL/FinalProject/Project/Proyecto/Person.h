@@ -42,7 +42,7 @@ public:
      * @brief Set the last name object
      * 
      */
-    void set_last_name(std::string);
+    void set_last_name(std::string); 
     
     /**
      * @brief Set the addres object
