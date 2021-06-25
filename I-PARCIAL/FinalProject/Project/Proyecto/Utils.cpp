@@ -253,6 +253,54 @@ bool Validation::validate_date(std::string input)
     return false;
 }
 
+bool Validation::validate_date_of_birth(std::string input)
+{
+    std::regex pattern("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$");
+
+    input.erase(std::remove_if(
+        input.begin(),
+        input.end(),
+        ::isspace
+    ), input.end());
+
+    std::smatch sm;
+
+    if (!std::regex_match(input, sm, pattern)) {
+        std::cout << "Formato incorrecto!" << std::endl;
+        return true;
+    }
+    std::string date = sm[0].str().c_str();
+    std::string actual_date = Generator::return_current_time_and_date();
+
+    std::regex regex{ "[\\/|.-]" };
+    std::sregex_token_iterator it{ date.begin(), date.end(), regex, -1 };
+    std::vector<std::string> parts{ it, {} };
+
+    int day = std::stoi(parts[0]);
+    int month = std::stoi(parts[1]);
+    int year = std::stoi(parts[2]);
+
+
+    std::sregex_token_iterator it_actual{ actual_date.begin(), actual_date.end(), regex, -1 };
+    std::vector<std::string> token{ it_actual, {} };
+
+    int actual_day = std::stoi(token[0]);
+    int actual_month = std::stoi(token[1]);
+    int actual_year = std::stoi(token[2]);
+
+    if ((year <= actual_year))
+    {
+        if (month <= actual_month)
+        {
+            if (day <= actual_day)
+            {
+                return false;
+            }
+      }
+        
+    }
+    return true;
+}
 
 int Generator::random_int(const int min, const int max)
 {

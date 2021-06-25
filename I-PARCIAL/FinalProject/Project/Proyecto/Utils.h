@@ -116,6 +116,14 @@ namespace Utils
          * @return false 
          */
         static bool validate_date(std::string );
+
+        /**
+        * @brief valida fecha de nacimiento
+        *
+        * @return true
+        * @return false
+        */
+        static bool validate_date_of_birth(std::string input);
     };
    
     class Generator

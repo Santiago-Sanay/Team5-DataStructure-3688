@@ -59,7 +59,7 @@ void Application::create_account()
     {
         std::cout << "Ingrese la fecha de nacimiento: ";
         std::getline(std::cin, date_of_birth);
-        validate = Utils::Validation::validate_date(date_of_birth);
+        validate = Utils::Validation::validate_date_of_birth(date_of_birth);
     }
     validate = true;
 
@@ -452,19 +452,18 @@ void Application::print_amortization_table()
         table_text.add("INTERES");
         table_text.add("TOTAL");
         table_text.endOfRow();
-        Node<Due>* node = due.get_front();
+
         int i = 1;
-        while (node)
-        {
+        due.for_each([&](Due node) {
             table_text.add(std::to_string(i++));
-            table_text.add(node->get_data().get_date());
-            table_text.add(node->get_data().get_weekday());
-            table_text.add(Utils::Generator::to_string(node->get_data().get_capital()));
-            table_text.add(Utils::Generator::to_string(node->get_data().get_interest()));
-            table_text.add(Utils::Generator::to_string(node->get_data().get_mounthly_amount()));
+            table_text.add(node.get_date());
+            table_text.add(node.get_weekday());
+            table_text.add(Utils::Generator::to_string(node.get_capital()));
+            table_text.add(Utils::Generator::to_string(node.get_interest()));
+            table_text.add(Utils::Generator::to_string(node.get_mounthly_amount()));
             table_text.endOfRow();
-            node = node->get_next();
-        }
+
+    });
         table_text.endOfRow();
         table_text.setAlignment(2, TextTable::Alignment::RIGHT);
         std::cout << table_text << std::endl;
