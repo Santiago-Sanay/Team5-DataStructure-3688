@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tabla de Amortizacion: Fichero Fuente Project/Proyecto/File.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tabla de Amortizacion
+   </div>
+   <div id="projectbrief">Permite calcular la tabla de amortizacion tanto en Aleman o Frances</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_32a6d8febfa63a19e8ecd71a75109b60.html">Proyecto</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">File.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_file_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_node_8h.html">Node.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_person_8h.html">Person.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_linked_list_8h.html">LinkedList.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="json_8hpp.html">json.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_doubt_8h.html">Doubt.h</a>&quot;</span> </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_file_8h.html#ab701e3ac61a85b337ec5c1abaad6742d">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classnlohmann_1_1basic__json.html">json</a> = <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">nlohmann::json</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_file.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_file.html">File</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#ad6a968c3d50d1190cb84800b23545e4d">delete_account</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#a17c804d7301e047b32f21b02ba204ffd">add</a>(<a class="code" href="class_linked_list.html">LinkedList&lt;Person&gt;</a>&amp;);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#a17c804d7301e047b32f21b02ba204ffd">add</a>(<a class="code" href="class_linked_list.html">LinkedList&lt;Doubt&gt;</a>&amp;);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#a8f6a2ccec2d48112847c89541d13bc10">update</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_file.html#aabe95bf669381365942abe44ea0c6492">search</a>(std::string &amp;);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_file.html#a853d66900c365450419c8e00a3714e3d">search_credits</a>(std::string &amp;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_linked_list.html">LinkedList&lt;Person&gt;</a><a class="code" href="class_file.html#a95ca843253d30a194640f0f0662e8d6a">read</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_linked_list.html">LinkedList&lt;Doubt&gt;</a><a class="code" href="class_file.html#a95ca843253d30a194640f0f0662e8d6a">read</a>(std::string);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_doubt.html">Doubt</a> <a class="code" href="class_file.html#a1ba8d1ec1cafa3edf4b74de30c27f177">at</a>(std::string);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_person.html">Person</a> <a class="code" href="class_file.html#afaaccd5241506116ef1db5d428478f79">at_person</a>(std::string);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#abd3a3afcb6d8e1b73535663be7b04ad2">to_json_objet</a>(<a class="code" href="classnlohmann_1_1basic__json.html">json</a>&amp;,  <a class="code" href="class_person.html">Person</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#abd3a3afcb6d8e1b73535663be7b04ad2">to_json_objet</a>(<a class="code" href="classnlohmann_1_1basic__json.html">json</a>&amp;, <a class="code" href="class_doubt.html">Doubt</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#a030ce80b07499d71e3c9b3ca7c3de87e">to_object_json</a>(<a class="code" href="classnlohmann_1_1basic__json.html">json</a>&amp;, <a class="code" href="class_person.html">Person</a>&amp;, std::string);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_file.html#a030ce80b07499d71e3c9b3ca7c3de87e">to_object_json</a>(<a class="code" href="classnlohmann_1_1basic__json.html">json</a>&amp;, <a class="code" href="class_doubt.html">Doubt</a>&amp;, std::string );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="ttc" id="a_doubt_8h_html"><div class="ttname"><a href="_doubt_8h.html">Doubt.h</a></div></div>
+<div class="ttc" id="a_linked_list_8h_html"><div class="ttname"><a href="_linked_list_8h.html">LinkedList.h</a></div></div>
+<div class="ttc" id="a_node_8h_html"><div class="ttname"><a href="_node_8h.html">Node.h</a></div></div>
+<div class="ttc" id="a_person_8h_html"><div class="ttname"><a href="_person_8h.html">Person.h</a></div></div>
+<div class="ttc" id="aclass_doubt_html"><div class="ttname"><a href="class_doubt.html">Doubt</a></div><div class="ttdef"><b>Definition:</b> Doubt.h:7</div></div>
+<div class="ttc" id="aclass_file_html"><div class="ttname"><a href="class_file.html">File</a></div><div class="ttdef"><b>Definition:</b> File.h:14</div></div>
+<div class="ttc" id="aclass_file_html_a030ce80b07499d71e3c9b3ca7c3de87e"><div class="ttname"><a href="class_file.html#a030ce80b07499d71e3c9b3ca7c3de87e">File::to_object_json</a></div><div class="ttdeci">static void to_object_json(json &amp;, Person &amp;, std::string)</div><div class="ttdoc">objeto a json</div><div class="ttdef"><b>Definition:</b> File.cpp:228</div></div>
+<div class="ttc" id="aclass_file_html_a17c804d7301e047b32f21b02ba204ffd"><div class="ttname"><a href="class_file.html#a17c804d7301e047b32f21b02ba204ffd">File::add</a></div><div class="ttdeci">static void add(LinkedList&lt; Person &gt; &amp;)</div><div class="ttdoc">agregar persona</div><div class="ttdef"><b>Definition:</b> File.cpp:8</div></div>
+<div class="ttc" id="aclass_file_html_a1ba8d1ec1cafa3edf4b74de30c27f177"><div class="ttname"><a href="class_file.html#a1ba8d1ec1cafa3edf4b74de30c27f177">File::at</a></div><div class="ttdeci">static Doubt at(std::string)</div><div class="ttdoc">buscar deuda</div><div class="ttdef"><b>Definition:</b> File.cpp:96</div></div>
+<div class="ttc" id="aclass_file_html_a853d66900c365450419c8e00a3714e3d"><div class="ttname"><a href="class_file.html#a853d66900c365450419c8e00a3714e3d">File::search_credits</a></div><div class="ttdeci">static bool search_credits(std::string &amp;)</div><div class="ttdoc">buscar creditos</div><div class="ttdef"><b>Definition:</b> File.cpp:74</div></div>
+<div class="ttc" id="aclass_file_html_a8f6a2ccec2d48112847c89541d13bc10"><div class="ttname"><a href="class_file.html#a8f6a2ccec2d48112847c89541d13bc10">File::update</a></div><div class="ttdeci">static void update()</div><div class="ttdoc">actualizar lista</div><div class="ttdef"><b>Definition:</b> File.cpp:48</div></div>
+<div class="ttc" id="aclass_file_html_a95ca843253d30a194640f0f0662e8d6a"><div class="ttname"><a href="class_file.html#a95ca843253d30a194640f0f0662e8d6a">File::read</a></div><div class="ttdeci">static LinkedList&lt; Person &gt; read()</div><div class="ttdoc">Construct a new Linked List&lt; Person&gt;read object.</div><div class="ttdef"><b>Definition:</b> File.cpp:122</div></div>
+<div class="ttc" id="aclass_file_html_aabe95bf669381365942abe44ea0c6492"><div class="ttname"><a href="class_file.html#aabe95bf669381365942abe44ea0c6492">File::search</a></div><div class="ttdeci">static bool search(std::string &amp;)</div><div class="ttdoc">buscar en lsita</div><div class="ttdef"><b>Definition:</b> File.cpp:52</div></div>
+<div class="ttc" id="aclass_file_html_abd3a3afcb6d8e1b73535663be7b04ad2"><div class="ttname"><a href="class_file.html#abd3a3afcb6d8e1b73535663be7b04ad2">File::to_json_objet</a></div><div class="ttdeci">static void to_json_objet(json &amp;, Person)</div><div class="ttdoc">convertir a json</div><div class="ttdef"><b>Definition:</b> File.cpp:203</div></div>
+<div class="ttc" id="aclass_file_html_ad6a968c3d50d1190cb84800b23545e4d"><div class="ttname"><a href="class_file.html#ad6a968c3d50d1190cb84800b23545e4d">File::delete_account</a></div><div class="ttdeci">static void delete_account()</div><div class="ttdoc">borrar cuenta</div><div class="ttdef"><b>Definition:</b> File.cpp:4</div></div>
+<div class="ttc" id="aclass_file_html_afaaccd5241506116ef1db5d428478f79"><div class="ttname"><a href="class_file.html#afaaccd5241506116ef1db5d428478f79">File::at_person</a></div><div class="ttdeci">static Person at_person(std::string)</div><div class="ttdoc">buscar deuda por persona</div><div class="ttdef"><b>Definition:</b> File.cpp:109</div></div>
+<div class="ttc" id="aclass_linked_list_html"><div class="ttname"><a href="class_linked_list.html">LinkedList</a></div><div class="ttdef"><b>Definition:</b> LinkedList.h:8</div></div>
+<div class="ttc" id="aclass_person_html"><div class="ttname"><a href="class_person.html">Person</a></div><div class="ttdef"><b>Definition:</b> Person.h:19</div></div>
+<div class="ttc" id="aclassnlohmann_1_1basic__json_html"><div class="ttname"><a href="classnlohmann_1_1basic__json.html">nlohmann::basic_json</a></div><div class="ttdoc">a class to store JSON values</div><div class="ttdef"><b>Definition:</b> json.hpp:16658</div></div>
+<div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div></div>
+<div class="ttc" id="anamespacenlohmann_html_a2bfd99e845a2e5cd90aeaf1b1431f474"><div class="ttname"><a href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">nlohmann::json</a></div><div class="ttdeci">basic_json&lt;&gt; json</div><div class="ttdoc">default JSON class</div><div class="ttdef"><b>Definition:</b> json.hpp:2933</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
