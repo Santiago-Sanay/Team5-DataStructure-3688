@@ -10,7 +10,7 @@
 #include "CalendarOperation.h"
 #include "TextTable.h"
 #include <iomanip>
-
+#include <sstream>
 class Application
 {
 private:

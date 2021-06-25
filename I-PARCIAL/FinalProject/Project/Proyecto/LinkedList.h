@@ -21,7 +21,6 @@ public:
     void for_each(std::function<void(T, int)> );
     void for_each(std::function<void(T)>);
     int find(const int found);
-
     void clear();
     void print();
     Node<T> *at(int index);

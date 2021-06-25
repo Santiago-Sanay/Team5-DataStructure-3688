@@ -223,6 +223,139 @@ void Application::create_credit() {
 
 void Application::create_pdf()
 {   
+    bool validate_id = true;
+    bool search = false;
+    bool search_credit = false;
+    bool bandera = false;
+    std::string id;
+    while (validate_id)
+    {
+        std::cout << "Ingrese el numero de cedula: ";
+        getline(std::cin, id);
+        validate_id = !Utils::Validation::validate_id(id);
+
+        if (validate_id)
+        {
+            search = File::search(id);
+            if (search)
+            {
+                search_credit = File::search_credits(id);
+                if (!search_credit)
+                {
+                    bandera = false;
+                }
+                else
+                {
+                    bandera = true;
+                    validate_id = false;
+                }
+            }
+            else
+            {
+                std::cout << "El usuario no esta registrado" << std::endl;
+                system("pause");
+                init();
+            }
+        }
+        else
+        {
+            validate_id = true;
+        }
+
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
+    }
+    if (search_credit)
+    {
+        TextTable table_text('-', '|', '+');
+        LinkedList<Due>  due = Application::amortization(id);
+        Person person = File::at_person(id);
+        std::ostringstream html;
+
+        html << "<html>"
+            "<head><title>Amortizacion</title></head>"
+            "<body>";
+            html << "<table><thead><tr>"
+            "<th>CEDULA</th>"
+            "<th>NOMBRE</th>"
+            "<th>APELLIDO</th>"
+            "</tr></thead><tbody>";
+            html << "<tr>";
+            html << "<td>" + person.get_id() + "</td>";
+            html << "<td>" + person.get_name() + "</td>";
+            html << "<td>" + person.get_last_name() + "</td>";
+            html << "</tr></tbody></table>";
+            html <<
+            "<table><thead><tr>"
+            "<th>NO</th>"
+            "<th>FECHAS DE PAGO</th>"
+            "<th>DIA</th>"
+            "<th>CAPITAL</th>"
+            "<th>INTERES</th>"
+            "<th>TOTAL</th>"
+            "</tr></thead><tbody>";
+
+        table_text.add("NO");
+        table_text.add("FECHAS DE PAGO");
+        table_text.add("DIA");
+        table_text.add("CAPITAL");
+        table_text.add("INTERES");
+        table_text.add("TOTAL");
+        table_text.endOfRow();
+        Node<Due>* node = due.get_front();
+        int i = 1;
+        while (node)
+        {
+            table_text.add(std::to_string(i++));
+            table_text.add(node->get_data().get_date());
+            table_text.add(node->get_data().get_weekday());
+            table_text.add(Utils::Generator::to_string(node->get_data().get_capital()));
+            table_text.add(Utils::Generator::to_string(node->get_data().get_interest()));
+            table_text.add(Utils::Generator::to_string(node->get_data().get_mounthly_amount()));
+            table_text.endOfRow();
+
+            html << "<tr>"
+                << "<td>" + std::to_string(i-1) + "</td>"
+                << "<td>" + node->get_data().get_date() + "</td>"
+                << "<td>" + node->get_data().get_weekday() + "</td>"
+                << "<td>" + Utils::Generator::to_string(node->get_data().get_capital()) + "</td>"
+                << "<td>" + Utils::Generator::to_string(node->get_data().get_interest()) + "</td>"
+                << "<td>" + Utils::Generator::to_string(node->get_data().get_mounthly_amount()) + "</td>"
+                << "</tr>";
+            node = node->get_next();
+        }
+        table_text.endOfRow();
+        table_text.setAlignment(2, TextTable::Alignment::RIGHT);
+        std::cout << table_text << std::endl;
+        html << "</tbody></table></body></html>";
+        
+        std::ostringstream plain;
+        std::string html_filename = "data_" + id + ".html";
+        std::string pdf_filename = "data_" + id + ".pdf";
+        std::ofstream out_html(html_filename, std::ios::trunc);
+        std::ofstream out_txt("data_" + id + ".txt", std::ios::trunc);
+
+        out_txt << table_text;
+        out_html << html.str();
+        out_txt.close();
+        out_html.close();
+
+        if (std::ifstream(pdf_filename.c_str()).good()) {
+            std::remove(pdf_filename.c_str());
+        }
+
+        system((std::string("wkhtmltopdf.exe ") + html_filename + " " + pdf_filename).c_str());
+        std::cout << std::endl << "archivo pdf generado!";
+        system("pause");
+        init();
+    }
+    else
+    {
+        std::cout << "USUARIO NO ENCONTRADO" << std::endl;
+        system("pause");
+        init();
+    }
+
 }
 
 void Application::print_exists(std::string id)
