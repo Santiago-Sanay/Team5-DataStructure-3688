@@ -6,7 +6,7 @@
 *JUNIOR JURADO
 *THEO ROSERO
 *ALEX PAGUAY
-*SANTIAGO SAÑAY
+*SANTIAGO SAï¿½AY
 *TEMA: CREACION DE UN PROGRAMA DE OPERACIONES BASICAS(SUMA, RESTA, MULTIPLICAION, DIVISION) CON TEMPLATES<>
 *FECHA DE CREACION : 19 DE MAYO DEL 2021
 *FECHA DE MODIFICACION: 20 DE MAYO 2021
@@ -91,19 +91,77 @@ namespace Utils
          */
         static float validate_float();
 
+
+
+        /**
+         * @brief valida cedula
+         * 
+         * @return true 
+         * @return false 
+         */
         static bool validate_id(std::string&);
+
+        /**
+         * @brief verifica digito
+         * 
+         * @return true 
+         * @return false 
+         */
         static bool is_digit(const std::string &);
+
+        /**
+         * @brief valida fecha
+         * 
+         * @return true 
+         * @return false 
+         */
         static bool validate_date(std::string );
     };
    
     class Generator
     {
     public:
+
+        /**
+         * @brief generar aleatorio
+         * 
+         * @return int 
+         */
         static int random_int(const int, const int);
+    
+        /**
+         * @brief regresa fecha actual
+         * 
+         * @return std::string 
+         */
         static std::string return_current_time_and_date();
+    
+        /**
+         * @brief calcular edad
+         * 
+         * @return int 
+         */
         static int calculate_age(std::string );
+    
+        /**
+         * @brief Create a email object
+         * 
+         * @return std::string 
+         */
         static std::string create_email(LinkedList<Person>, std::string, std::string);
+    
+        /**
+         * @brief pasa a minusculas
+         * 
+         * @return std::string 
+         */
         static std::string lower_case(std::string);
+    
+        /**
+         * @brief double a string
+         * 
+         * @return std::string 
+         */
         static std::string to_string(double);
     };
 
