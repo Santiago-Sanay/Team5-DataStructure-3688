@@ -185,15 +185,32 @@ void Application::create_credit() {
 
             bool validate = true;
             while (validate) {
+
                 std::cout << "Ingrese monto de credito a solicitar: ";
                 std::cin >> amount;
                 validate = Utils::Validation::validate_input_number(amount);
+                if (amount >= 1000 && amount <= 100000.0)
+                {
+                    validate = false;
+                }
+                else
+                {
+                    validate = true;
+                }
             }
             validate = true;
             while (validate) {
                 std::cout << "Ingrese numero de meses a pagar: ";
                 std::cin >> months;
                 validate = Utils::Validation::validate_input_number(months);
+                if (months >= 3 && months <= 240)
+                {
+                    validate = false;
+                }
+                else
+                {
+                    validate = true;
+                }
             }
             validate = true;
             while (validate) {
@@ -206,6 +223,14 @@ void Application::create_credit() {
                 std::cout << "Ingrese Tasa de Interes % ";
                 std::cin >> interest;
                 validate = Utils::Validation::validate_input_number(interest);
+                if (interest >= 5 && interest <= 30 )
+                {
+                    validate = false;
+                }
+                else
+                {
+                    validate = true;
+                }
             }
             validate = true;
             std::cout << "Ingrese el tipo de Amortizacion Aleman o Frances (A/F): ";
@@ -220,9 +245,10 @@ void Application::create_credit() {
             {
                 loan = Doubt(id, amount, date, months, "FRANCES", interest);
             }
-            LinkedList<Doubt> doubts;
-            doubts.add(loan);
-            File::add(doubts);
+            
+           // LinkedList<Doubt> doubts;
+            credits.add(loan);
+            File::add(credits);
             std::cout << "SE HA AGREGADO EL CREDITO CON EXITO" << std::endl;
             system("pause");
             init();

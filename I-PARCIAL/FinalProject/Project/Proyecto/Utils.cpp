@@ -247,11 +247,57 @@ bool Validation::validate_date(std::string input)
     int actual_month = std::stoi(token[1]);
     int actual_year = std::stoi(token[2]);
 
-    if (!(year <= actual_year))
+    
+    if ((year == actual_year))
     {
-        return true;
+        //std::cout << year << std::endl;
+        //std::cout << actual_year << std::endl;
+        return false;
+        if (month >= actual_month)
+        {
+            if (day >= actual_day)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            return true;
+        }
+
     }
-    return false;
+    else {
+        if (year == actual_year) {
+            if (month >= actual_month)
+            {
+                return false;
+                if (day >= actual_day)
+                {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                if (month == actual_month) {
+                    if (day >= actual_day)
+                    {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+
+                }
+                return true;
+            }
+
+        }
+    }
+    return true;
 }
 
 bool Validation::validate_date_of_birth(std::string input)
@@ -289,16 +335,55 @@ bool Validation::validate_date_of_birth(std::string input)
     int actual_month = std::stoi(token[1]);
     int actual_year = std::stoi(token[2]);
 
-    if ((year <= actual_year))
+  
+    if ((year < actual_year) && (year > 1950))
     {
+        //std::cout << year << std::endl;
+        //std::cout << actual_year << std::endl;
+        return false;
         if (month <= actual_month)
         {
             if (day <= actual_day)
             {
                 return false;
             }
-      }
-        
+            else {
+                return true;
+            }
+        }
+        else {
+            return true;
+        }
+
+    }
+    else {
+        if (year == actual_year) {
+            if (month < actual_month)
+            {
+                return false;
+                if (day <= actual_day)
+                {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                if (month == actual_month) {
+                    if (day <= actual_day)
+                    {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+
+                }
+                return true;
+            }
+
+        }
     }
     return true;
 }
