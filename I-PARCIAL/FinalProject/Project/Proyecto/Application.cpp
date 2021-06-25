@@ -64,7 +64,7 @@ void Application::create_account()
 
     std::string phone;
     std::cout << "Ingrese un numero telefonico: ";
-    phone = std::to_string(Utils::Validation::validateDigits(10));
+    phone = std::to_string(Utils::Validation::validateDigits(10)).insert(0, "0");
     std::cout << std::endl;
 
 
