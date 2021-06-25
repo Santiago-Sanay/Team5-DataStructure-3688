@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tabla de Amortizacion: Fichero Fuente Project/Proyecto/LinkedList.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tabla de Amortizacion
+   </div>
+   <div id="projectbrief">Permite calcular la tabla de amortizacion tanto en Aleman o Frances</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_32a6d8febfa63a19e8ecd71a75109b60.html">Proyecto</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LinkedList.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_linked_list_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_node_8h.html">Node.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_linked_list.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_linked_list.html">LinkedList</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *_head = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *_tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> _lenght = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_linked_list.html#aa3f84b46843ca298dc195a086e2e851f">is_empty</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#ae17c719893c8e81bdd34e316fea9706b">add</a>(<span class="keyword">const</span> T element);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#ac0d33cc1faef4ce51252d6f4547ca0f9">remove</a>(<span class="keyword">const</span> T &amp;value);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a17d7251d51aae97b2febaec77e82d28d">remove_at</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">for_each</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *, <span class="keywordtype">int</span>)&gt; );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">for_each</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *)&gt; );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">for_each</a>(std::function&lt;<span class="keywordtype">void</span>(T, <span class="keywordtype">int</span>)&gt; );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">for_each</a>(std::function&lt;<span class="keywordtype">void</span>(T)&gt;);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_linked_list.html#ab4e4c9b9e167d601e92f5cc228aa8545">find</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> found);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a50c26292740c964ac7bef0e072868be1">clear</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a9675767b81fb9f1d8799444e4ee7f43b">print</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_linked_list.html#a404f26862aa114d1025163429f66fd5a">at</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_linked_list.html#abc3ebb414c876f5ea62a5735e890e6c6">get_size</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a>* <a class="code" href="class_linked_list.html#ad1121ea202dfb1374c8ae5b373878363">get_front</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">  113</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">LinkedList&lt;T&gt;::for_each</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *, <span class="keywordtype">int</span>)&gt; callback)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *current = _head;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">while</span> (current != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        callback(current, index);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        current = current-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        index++;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="class_linked_list.html#a07c8e76f2bba7d5c0f954ba2d343519a">  127</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">LinkedList&lt;T&gt;::for_each</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *)&gt; callback)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    for_each([&amp;](<a class="code" href="class_node.html">Node&lt;T&gt;</a> *node, <span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;             { callback(node-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>()); });</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_linked_list.html#a0da83af74f2860c5f46b27ab7ad55c8f">  134</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">LinkedList&lt;T&gt;::for_each</a>(std::function&lt;<span class="keywordtype">void</span>(T)&gt; callback)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    for_each([&amp;](<a class="code" href="class_node.html">Node&lt;T&gt;</a> *node, <span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;             { callback(node-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>()); });</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_linked_list.html#a0741203ff8f090cd26b0f0c8047b3ab4">  141</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">LinkedList&lt;T&gt;::for_each</a>(std::function&lt;<span class="keywordtype">void</span>(T, <span class="keywordtype">int</span>)&gt; callback)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    for_each([&amp;](<a class="code" href="class_node.html">Node&lt;T&gt;</a> *node, <span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;             { callback(node-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>(), index); });</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_linked_list.html#aa3f84b46843ca298dc195a086e2e851f">  148</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_linked_list.html#aa3f84b46843ca298dc195a086e2e851f">LinkedList&lt;T&gt;::is_empty</a>()</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> (_head == <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_linked_list.html#ae17c719893c8e81bdd34e316fea9706b">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#ae17c719893c8e81bdd34e316fea9706b">LinkedList&lt;T&gt;::add</a>(<span class="keyword">const</span> T element)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *_new_node = <span class="keyword">new</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>(element);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (_head == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        _head = _new_node;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        _tail = _new_node;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        _tail-&gt;<a class="code" href="class_node.html#a951a21381e228e838a26ea5b007bc500">set_next</a>(_new_node);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        _tail = _new_node;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    _lenght++;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="class_linked_list.html#ac0d33cc1faef4ce51252d6f4547ca0f9">  170</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#ac0d33cc1faef4ce51252d6f4547ca0f9">LinkedList&lt;T&gt;::remove</a>(<span class="keyword">const</span> T &amp;value)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">int</span> num_deleted = 0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *curr = this-&gt;_head;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *tmp;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">while</span> (!is_empty() &amp;&amp; curr-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>() == value)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        tmp = curr;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        this-&gt;_head = curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        curr = curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">delete</span> tmp;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        num_deleted++;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">while</span> (!is_empty() &amp;&amp; curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>() != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>()-&gt;get_data() == value)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            tmp = curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            curr-&gt;<a class="code" href="class_node.html#a951a21381e228e838a26ea5b007bc500">set_next</a>(curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>()-&gt;get_next());</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keyword">delete</span> tmp;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">if</span> (curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>() == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            { <span class="comment">// Update tail</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                this-&gt;_tail = curr;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            num_deleted++;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        curr = curr-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (is_empty())</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        this-&gt;_tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (num_deleted)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Se ha eliminado  &quot;</span> &lt;&lt; num_deleted</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; nodo que contenia el valor de &quot;</span> &lt;&lt; value &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">if</span> (!is_empty())</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;El valor &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; no se ha encontrado en la lista&quot;</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                      &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Lista Vaccia.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="class_linked_list.html#a17d7251d51aae97b2febaec77e82d28d">  223</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a17d7251d51aae97b2febaec77e82d28d">LinkedList&lt;T&gt;::remove_at</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> ((index &lt; 0) || (index &gt;= this-&gt;_lenght))</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Index &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot; exccede la longitud de la lista de tamanio&quot;</span> &lt;&lt; this-&gt;_lenght &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> *node = this-&gt;_head;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span> (index == 0)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        { <span class="comment">// Update head</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            this-&gt;_head = node-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keyword">delete</span> node;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">if</span> (is_empty())</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                this-&gt;_tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; index - 1; ++i)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                node = node-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="class_node.html">Node&lt;T&gt;</a> *tmp = node-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            node-&gt;<a class="code" href="class_node.html#a951a21381e228e838a26ea5b007bc500">set_next</a>(node-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>()-&gt;get_next());</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keyword">delete</span> tmp;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span> (index == this-&gt;_lenght - 1)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            { <span class="comment">// Update tail to point to end node</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                this-&gt;_tail = node;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        this-&gt;_lenght--;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="class_linked_list.html#ab4e4c9b9e167d601e92f5cc228aa8545">  260</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_linked_list.html#ab4e4c9b9e167d601e92f5cc228aa8545">LinkedList&lt;T&gt;::find</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> find)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">int</span> found = -1;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">if</span> (is_empty())</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Lista Vacia&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> *node = _head;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">while</span> (node != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (node-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>() == find)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                found = i;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            node = node-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            i++;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">return</span> found;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="class_linked_list.html#a50c26292740c964ac7bef0e072868be1">  285</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a50c26292740c964ac7bef0e072868be1">LinkedList&lt;T&gt;::clear</a>()</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *next = this-&gt;_head;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *curr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">while</span> (next != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        curr = next;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        next = next-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">delete</span> curr;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    next = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    _head = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    _lenght = 0;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Lista Eliminada.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="class_linked_list.html#a9675767b81fb9f1d8799444e4ee7f43b">  302</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_linked_list.html#a9675767b81fb9f1d8799444e4ee7f43b">LinkedList&lt;T&gt;::print</a>()</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (is_empty())</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Lista Vacia&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> *_current = this-&gt;_head;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">while</span> (_current != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            std::cout &lt;&lt; _current-&gt;<a class="code" href="class_node.html#a51ec09af04911942d2e1e827271f535b">get_data</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            _current = _current-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="class_linked_list.html#a404f26862aa114d1025163429f66fd5a">  320</a></span>&#160;<a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_linked_list.html#a404f26862aa114d1025163429f66fd5a">LinkedList&lt;T&gt;::at</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (index &lt; 0 || index &gt;= _lenght)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;index out of bounds&quot;</span>);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (index == 0)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> _head;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">int</span> current_index = 0;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="class_node.html">Node&lt;T&gt;</a> *last = _head;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">while</span> (last-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>() != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (current_index == index)</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        current_index++;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        last = last-&gt;<a class="code" href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">get_next</a>();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> last;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="class_linked_list.html#abc3ebb414c876f5ea62a5735e890e6c6">  350</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_linked_list.html#abc3ebb414c876f5ea62a5735e890e6c6">LinkedList&lt;T&gt;::get_size</a>()</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">return</span> _lenght;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="class_linked_list.html#ad1121ea202dfb1374c8ae5b373878363">  356</a></span>&#160;<a class="code" href="class_node.html">Node&lt;T&gt;</a>* <a class="code" href="class_linked_list.html#ad1121ea202dfb1374c8ae5b373878363">LinkedList&lt;T&gt;::get_front</a>()</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> _head;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="ttc" id="a_node_8h_html"><div class="ttname"><a href="_node_8h.html">Node.h</a></div></div>
+<div class="ttc" id="aclass_linked_list_html"><div class="ttname"><a href="class_linked_list.html">LinkedList</a></div><div class="ttdef"><b>Definition:</b> LinkedList.h:8</div></div>
+<div class="ttc" id="aclass_linked_list_html_a17d7251d51aae97b2febaec77e82d28d"><div class="ttname"><a href="class_linked_list.html#a17d7251d51aae97b2febaec77e82d28d">LinkedList::remove_at</a></div><div class="ttdeci">void remove_at(int index)</div><div class="ttdoc">remover por indice</div><div class="ttdef"><b>Definition:</b> LinkedList.h:223</div></div>
+<div class="ttc" id="aclass_linked_list_html_a404f26862aa114d1025163429f66fd5a"><div class="ttname"><a href="class_linked_list.html#a404f26862aa114d1025163429f66fd5a">LinkedList::at</a></div><div class="ttdeci">Node&lt; T &gt; * at(int index)</div><div class="ttdoc">devuelve por nodo</div><div class="ttdef"><b>Definition:</b> LinkedList.h:320</div></div>
+<div class="ttc" id="aclass_linked_list_html_a50c26292740c964ac7bef0e072868be1"><div class="ttname"><a href="class_linked_list.html#a50c26292740c964ac7bef0e072868be1">LinkedList::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">limpiar lista</div><div class="ttdef"><b>Definition:</b> LinkedList.h:285</div></div>
+<div class="ttc" id="aclass_linked_list_html_a522c8dc8b5eced31c987370f48f90189"><div class="ttname"><a href="class_linked_list.html#a522c8dc8b5eced31c987370f48f90189">LinkedList::for_each</a></div><div class="ttdeci">void for_each(std::function&lt; void(Node&lt; T &gt; *, int)&gt;)</div><div class="ttdoc">recorre elemento</div><div class="ttdef"><b>Definition:</b> LinkedList.h:113</div></div>
+<div class="ttc" id="aclass_linked_list_html_a9675767b81fb9f1d8799444e4ee7f43b"><div class="ttname"><a href="class_linked_list.html#a9675767b81fb9f1d8799444e4ee7f43b">LinkedList::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">imprime lista</div><div class="ttdef"><b>Definition:</b> LinkedList.h:302</div></div>
+<div class="ttc" id="aclass_linked_list_html_aa3f84b46843ca298dc195a086e2e851f"><div class="ttname"><a href="class_linked_list.html#aa3f84b46843ca298dc195a086e2e851f">LinkedList::is_empty</a></div><div class="ttdeci">bool is_empty()</div><div class="ttdoc">chequea si esta vacio</div><div class="ttdef"><b>Definition:</b> LinkedList.h:148</div></div>
+<div class="ttc" id="aclass_linked_list_html_ab4e4c9b9e167d601e92f5cc228aa8545"><div class="ttname"><a href="class_linked_list.html#ab4e4c9b9e167d601e92f5cc228aa8545">LinkedList::find</a></div><div class="ttdeci">int find(const int found)</div><div class="ttdoc">encontrar elemento</div><div class="ttdef"><b>Definition:</b> LinkedList.h:260</div></div>
+<div class="ttc" id="aclass_linked_list_html_abc3ebb414c876f5ea62a5735e890e6c6"><div class="ttname"><a href="class_linked_list.html#abc3ebb414c876f5ea62a5735e890e6c6">LinkedList::get_size</a></div><div class="ttdeci">int get_size()</div><div class="ttdoc">Get the size object.</div><div class="ttdef"><b>Definition:</b> LinkedList.h:350</div></div>
+<div class="ttc" id="aclass_linked_list_html_ac0d33cc1faef4ce51252d6f4547ca0f9"><div class="ttname"><a href="class_linked_list.html#ac0d33cc1faef4ce51252d6f4547ca0f9">LinkedList::remove</a></div><div class="ttdeci">void remove(const T &amp;value)</div><div class="ttdoc">remover de lista</div><div class="ttdef"><b>Definition:</b> LinkedList.h:170</div></div>
+<div class="ttc" id="aclass_linked_list_html_ad1121ea202dfb1374c8ae5b373878363"><div class="ttname"><a href="class_linked_list.html#ad1121ea202dfb1374c8ae5b373878363">LinkedList::get_front</a></div><div class="ttdeci">Node&lt; T &gt; * get_front()</div><div class="ttdoc">Get the front object.</div><div class="ttdef"><b>Definition:</b> LinkedList.h:356</div></div>
+<div class="ttc" id="aclass_linked_list_html_ae17c719893c8e81bdd34e316fea9706b"><div class="ttname"><a href="class_linked_list.html#ae17c719893c8e81bdd34e316fea9706b">LinkedList::add</a></div><div class="ttdeci">void add(const T element)</div><div class="ttdoc">agregar a la lista</div><div class="ttdef"><b>Definition:</b> LinkedList.h:153</div></div>
+<div class="ttc" id="aclass_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:5</div></div>
+<div class="ttc" id="aclass_node_html_a51ec09af04911942d2e1e827271f535b"><div class="ttname"><a href="class_node.html#a51ec09af04911942d2e1e827271f535b">Node::get_data</a></div><div class="ttdeci">T get_data() const</div><div class="ttdoc">Get the data object.</div><div class="ttdef"><b>Definition:</b> Node.h:69</div></div>
+<div class="ttc" id="aclass_node_html_a5d8c5acfdb427dbf1da6d927fe0c141d"><div class="ttname"><a href="class_node.html#a5d8c5acfdb427dbf1da6d927fe0c141d">Node::get_next</a></div><div class="ttdeci">Node&lt; T &gt; * get_next() const noexcept</div><div class="ttdoc">Get the next object.</div><div class="ttdef"><b>Definition:</b> Node.h:75</div></div>
+<div class="ttc" id="aclass_node_html_a951a21381e228e838a26ea5b007bc500"><div class="ttname"><a href="class_node.html#a951a21381e228e838a26ea5b007bc500">Node::set_next</a></div><div class="ttdeci">void set_next(Node&lt; T &gt; *)</div><div class="ttdoc">Set the next object.</div><div class="ttdef"><b>Definition:</b> Node.h:63</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

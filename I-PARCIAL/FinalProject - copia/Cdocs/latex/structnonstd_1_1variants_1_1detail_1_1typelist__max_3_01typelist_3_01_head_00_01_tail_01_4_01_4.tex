@@ -1,0 +1,45 @@
+\hypertarget{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4}{}\doxysection{Referencia de la plantilla de la Estructura nonstd\+::variants\+::detail\+::typelist\+\_\+max$<$ typelist$<$ Head, Tail $>$ $>$}
+\label{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4}\index{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}}
+
+
+{\ttfamily \#include $<$tabulate.\+hpp$>$}
+
+\doxysubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7}{V}} \{ \mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7ad1e77fcb90c293aa55af224017139818}{value}} = (sizeof(Head) $>$ tail\+\_\+value) ? sizeof(Head) \+: std\+::size\+\_\+t(tail\+\_\+value)
+ \}
+\item 
+typedef \mbox{\hyperlink{namespacenonstd_1_1variants_1_1std11_structnonstd_1_1variants_1_1std11_1_1conditional}{std11\+::conditional}}$<$(sizeof(Head) $>$ tail\+\_\+value), Head, tail\+\_\+type $>$\+::\mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}{type}} \mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\mbox{\Hypertarget{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}\label{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}} 
+\index{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}!type@{type}}
+\index{type@{type}!nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$class Head , class Tail $>$ \\
+typedef \mbox{\hyperlink{namespacenonstd_1_1variants_1_1std11_structnonstd_1_1variants_1_1std11_1_1conditional}{std11\+::conditional}}$<$(sizeof(Head) $>$ tail\+\_\+value), Head, tail\+\_\+type$>$\+::\mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}{type}} \mbox{\hyperlink{namespacenonstd_1_1variants_1_1detail_structnonstd_1_1variants_1_1detail_1_1typelist__max}{nonstd\+::variants\+::detail\+::typelist\+\_\+max}}$<$ \mbox{\hyperlink{namespacenonstd_1_1variants_1_1detail_structnonstd_1_1variants_1_1detail_1_1typelist}{typelist}}$<$ Head, Tail $>$ $>$\+::\mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a8b0e6fd0428dc5d9323ef216a0dedf90}{type}}}
+
+
+
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\mbox{\Hypertarget{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7}\label{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7}} 
+\index{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}!V@{V}}
+\index{V@{V}!nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily template$<$class Head , class Tail $>$ \\
+enum \mbox{\hyperlink{namespacenonstd_1_1variants_1_1detail_structnonstd_1_1variants_1_1detail_1_1typelist__max}{nonstd\+::variants\+::detail\+::typelist\+\_\+max}}$<$ \mbox{\hyperlink{namespacenonstd_1_1variants_1_1detail_structnonstd_1_1variants_1_1detail_1_1typelist}{typelist}}$<$ Head, Tail $>$ $>$\+::\mbox{\hyperlink{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7}{V}}}
+
+\begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value@{value}!nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}}\index{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$@{nonstd::variants::detail::typelist\_max$<$ typelist$<$ Head, Tail $>$ $>$}!value@{value}}}\mbox{\Hypertarget{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7ad1e77fcb90c293aa55af224017139818}\label{structnonstd_1_1variants_1_1detail_1_1typelist__max_3_01typelist_3_01_head_00_01_tail_01_4_01_4_a388e38e1f1aaba7d162c2b5f2a6c1aa7ad1e77fcb90c293aa55af224017139818}} 
+value&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Librerias Externas/\mbox{\hyperlink{tabulate_8hpp}{tabulate.\+hpp}}\end{DoxyCompactItemize}
