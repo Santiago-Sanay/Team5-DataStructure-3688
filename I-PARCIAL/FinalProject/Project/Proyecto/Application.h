@@ -84,6 +84,7 @@ private:
 	 * 
 	 */
 	static LinkedList<Due>amortization(std::string &);
+	static void exit_program();
 public:
 
 	/**

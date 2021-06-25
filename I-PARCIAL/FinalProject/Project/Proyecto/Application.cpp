@@ -28,7 +28,7 @@ void Application::init()
         {2, "CREAR CREDITO", create_credit},
         {3, "MOSTRAR TABLA DE AMORTIZACION", print_amortization_table},
         {4, "GENERAR PDF", create_pdf},
-        {5, "SALIR", nullptr}
+        {5, "SALIR", exit_program}
     };
     Menu menu{ menu_item };
     menu.navigation();
@@ -506,4 +506,9 @@ LinkedList<Due> Application::amortization(std::string &id)
         op.french_amortization(loan.get_initial_date(), loan.get_initial_amount(), loan.get_payment_time(), loan.get_interest(), dues, final_ammount);
     }
     return dues;
+}
+
+void Application::exit_program()
+{
+    exit(0);
 }
