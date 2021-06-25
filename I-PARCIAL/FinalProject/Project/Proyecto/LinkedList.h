@@ -12,20 +12,100 @@ private:
     int _lenght = 0;
 
 public:
+    
+    /**
+     * @brief chequea si esta vacio
+     * 
+     * @return true 
+     * @return false 
+     */
     bool is_empty();
+    
+    /**
+     * @brief agregar a la lista
+     * 
+     * @param element 
+     */
     void add(const T element);
+    
+    /**
+     * @brief remover de lista
+     * 
+     * @param value 
+     */
     void remove(const T &value);
+    
+    /**
+     * @brief remover por indice
+     * 
+     * @param index 
+     */
     void remove_at(int index);
+    
+    /**
+     * @brief recorre elemento
+     * 
+     */
     void for_each(std::function<void(Node<T> *, int)> );
+    
+        /**
+     * @brief recorre elemento nodo puntero
+     * 
+     */
     void for_each(std::function<void(Node<T> *)> );
+    
+    /**
+     * @brief recorre elemento template int
+     * 
+     */
     void for_each(std::function<void(T, int)> );
+    
+    /**
+     * @brief recorre elemento template
+     * 
+     */
     void for_each(std::function<void(T)>);
+    
+    /**
+     * @brief encontrar elemento
+     * 
+     * @param found 
+     * @return int 
+     */
     int find(const int found);
 
+    /**
+     * @brief limpiar lista
+     * 
+     */
     void clear();
+    
+    /**
+     * @brief imprime lista
+     * 
+     */
     void print();
+    
+    /**
+     * @brief devuelve por nodo
+     * 
+     * @param index 
+     * @return Node<T>* 
+     */
     Node<T> *at(int index);
+    
+    /**
+     * @brief Get the size object
+     * 
+     * @return int 
+     */
     int get_size();
+    
+    /**
+     * @brief Get the front object
+     * 
+     * @return Node<T>* 
+     */
     Node<T>* get_front();
 };
 
