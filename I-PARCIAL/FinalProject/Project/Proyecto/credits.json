@@ -16,5 +16,14 @@
         "interest": 5.0,
         "payment_time": 12,
         "rate_of_interest": "ALEMAN"
+    },
+    "1803005071": {
+        "final_amount": 3384.7623006244603,
+        "id": "1803005071",
+        "initial_amount": 30000.0,
+        "initial_date": "19-07-2021",
+        "interest": 5.0,
+        "payment_time": 12,
+        "rate_of_interest": "FRANCES"
     }
 }
