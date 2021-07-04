@@ -348,8 +348,44 @@ string Operation::postfix_to_infix(string)
     return string();
 }
 
-string Operation::postfix_to_prefix(string)
+string Operation::postfix_to_prefix(string postfix)
 {
+    mystring str;
+    string cad = postfix;
+    string aux, aux2;
+    string charac = "";
+    char anterior = '.';
+    Stack<string> stack;
+
+    for (char& character : cad) {
+        //stack.mostrar();
+        //cout << endl;
+        if (is_operand(character)) {
+
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza(charac);
+            charac = "";
+        }
+        else if (is_operator(character)) {
+            //cout << character << endl;
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza( aux2 + aux+charac);
+            charac = "";
+        }
+        else if (is_trig_fun(character)) {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza(aux+charac);
+            charac = "";
+        }
+
+    }
+    return stack.get_primero()->get_dato();
     return string();
 }
 
