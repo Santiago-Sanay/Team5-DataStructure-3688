@@ -78,6 +78,74 @@ infix=cad;
     reverse(prefix.begin(), prefix.end());
     return prefix;
 }
+
+string Operation::infix_to_postfix(string infix)
+{
+    Stack<char> stack;
+    mystring str;
+    string cad = infix;
+    string result, postfix;
+    string aux;
+    char anterior = '.';
+    for (char& character : infix) {
+        if ((character >= 'a' && character <= 'z' || character >= '0' && character <= '9')) {
+            postfix += character;
+        }
+        else if (character == '(') {
+            stack.insertar_por_la_cabeza(character);
+        }
+        else if (character == ')') {
+            while ((stack.get_primero()->get_dato() != '(') && (!stack.empty_stack())) {
+                postfix += stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+            }
+            if (stack.get_primero()->get_dato() == '(') {
+                stack.borrar_por_la_cabeza();
+            }
+        }
+        else if (is_operator(character)) {
+            if (stack.empty_stack()) {
+                stack.insertar_por_la_cabeza(character);
+            }
+            else {
+                if (precedence(character) > precedence(stack.get_primero()->get_dato())) {
+                    stack.insertar_por_la_cabeza(character);
+                }
+                else if ((precedence(character) == precedence(stack.get_primero()->get_dato()))
+                    ) {
+                    while ((precedence(character) == precedence(stack.get_primero()->get_dato()))
+                        ) {
+                        postfix += stack.get_primero()->get_dato();
+                        stack.borrar_por_la_cabeza();
+                    }
+                    stack.insertar_por_la_cabeza(character);
+                }
+                else if (precedence(character) == precedence(stack.get_primero()->get_dato())) {
+                    stack.insertar_por_la_cabeza(character);
+                }
+                else {
+                    while ((!stack.empty_stack()) && (precedence(character) < precedence(stack.get_primero()->get_dato()))) {
+                        postfix += stack.get_primero()->get_dato();
+                        stack.borrar_por_la_cabeza();
+                    }
+                    stack.insertar_por_la_cabeza(character);
+                }
+            }
+        }
+        if (is_trig_fun(anterior) && character == '(') {
+            stack.insertar_por_la_cabeza(anterior);
+        }
+        anterior = character;
+
+    }
+
+    while (!stack.empty_stack()) {
+        postfix += stack.get_primero()->get_dato();
+        stack.borrar_por_la_cabeza();
+    }
+    return postfix;
+}
+
 int Operation::precedence(char c)
 {
     if (c == '^')
@@ -88,11 +156,6 @@ int Operation::precedence(char c)
         return 1;
     else
         return -1;
-}
-
-string Operation::infix_to_postfix(string)
-{
-    return string();
 }
 
 string Operation::infix_to_funtional(string)

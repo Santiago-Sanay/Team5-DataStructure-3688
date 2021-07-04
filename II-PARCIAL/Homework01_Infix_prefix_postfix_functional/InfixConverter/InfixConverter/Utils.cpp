@@ -13,7 +13,7 @@
 */
 
 #include "Utils.h"
-#pragma warning(disable : 4996) ;
+#pragma warning(disable : 4996);
 using namespace Utils;
 
 bool Validation::validate_id(std::string& _id)
