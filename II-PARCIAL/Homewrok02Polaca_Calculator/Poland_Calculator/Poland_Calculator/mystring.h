@@ -16,7 +16,9 @@ public:
 	int atoi(char);
 	int stoi(string);
 	long stol(string);
+	double stod(string);
 	string reverse(string);
 	bool is_number(string);
+	double potencia(double num, double pot);
 };
 

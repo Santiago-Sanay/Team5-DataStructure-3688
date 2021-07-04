@@ -12,7 +12,8 @@ int main()
     Operation op;
    
     mystring str;
-    
+    string num = "12.36";
+    cout << str.stod(num) << endl;
     Stack<string> datos;
     datos = op.ingresar_datos();
     datos.mostrar_expresion();
@@ -21,7 +22,7 @@ int main()
    
     prefija = op.infix_to_prefix1(datos);
     prefija.mostrar_expresion();
-    //datos.mostrar_expresion();
+    
     postfija = op.infix_to_postfix1(datos);
     postfija.mostrar_expresion();
     cout << op.calculate(prefija) << endl;

@@ -173,6 +173,35 @@ long mystring::stol(string cad)
     return r;
 }
 
+double mystring::stod(string cad)
+{
+    
+    if (is_number(cad)) {
+        if (find_character(cad, '.', 0) == -1) {
+            long num = 0;
+            num = stol(cad);
+            double num1 = double(num);
+            return num1;
+        }
+        else if (find_character(cad, '.', 0) == 0) {
+            string cad1 = substract(cad, 1, length(cad) - 1);
+            long num = 0;
+            num = stol(cad1);
+            double num1 = double(num)/potencia(10,double(length(cad1)));
+            return num1;
+        }
+        else {
+            int pos = find_character(cad, '.', 0);
+            string cad1 = substract(cad, 0, pos)+ substract(cad, pos+1,length(cad)-pos+1);
+            long num = 0;
+            num = stol(cad1);
+            double num1 = double(num) / potencia(10,double(length(cad1)-pos));
+            return num1;
+        }
+    }
+    return 0.0;
+}
+
 string mystring::reverse(string cad)
 {
     string cad_inverse;
@@ -220,4 +249,28 @@ bool mystring::is_number(string cad)
         return false;
     }
     return true;
+}
+
+
+double mystring::potencia(double num, double pot)
+{
+    double result = 1;
+    if (pot == 0) {
+        return 1;
+    }
+    if (pot == 1) {
+        return num;
+    }
+    if (pot == 0.5) {
+        double raiz = 0;
+        while ((num - raiz * raiz) > 0.00001) {
+            raiz = raiz + 0.00001;
+        }
+
+        return raiz;
+    }
+    for (int i = 0; i < pot; i++) {
+        result = result * num;
+    }
+    return result;
 }

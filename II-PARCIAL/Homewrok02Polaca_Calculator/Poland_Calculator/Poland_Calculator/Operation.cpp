@@ -223,7 +223,7 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(stod(aux) +stod( aux2)));
+            stack.insertar_por_la_cabeza(to_string(str.stod(aux) +str.stod( aux2)));
 
         }
         else if (character1 == "-") {
@@ -231,7 +231,7 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(stod(aux) - stod(aux2)));
+            stack.insertar_por_la_cabeza(to_string(str.stod(aux) - str.stod(aux2)));
 
         }
         else if (character1 == "*") {
@@ -239,7 +239,7 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(stod(aux) * stod(aux2)));
+            stack.insertar_por_la_cabeza(to_string(str.stod(aux) * str.stod(aux2)));
 
         }
         else if (character1 == "/") {
@@ -247,7 +247,7 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(stod(aux) / stod(aux2)));
+            stack.insertar_por_la_cabeza(to_string(str.stod(aux) / str.stod(aux2)));
 
         }
         else if (character1 == "%") {
@@ -255,7 +255,7 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(stoi(aux) % stoi(aux2)));
+            stack.insertar_por_la_cabeza(to_string(int(str.stod(aux)) % int(str.stod(aux2))));
 
         }
         else if (character1 == "^") {
@@ -263,28 +263,28 @@ double Operation::calculate(Stack<string> prefix)
             stack.borrar_por_la_cabeza();
             aux2 = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(trig.potencia(stod(aux), stod(aux2))));
+            stack.insertar_por_la_cabeza(to_string(trig.potencia(str.stod(aux), str.stod(aux2))));
 
         }
         else if (character1 == "sen") {
             aux = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
            
-            stack.insertar_por_la_cabeza(to_string(trig.sin(stod(aux))));
+            stack.insertar_por_la_cabeza(to_string(trig.sin(str.stod(aux))));
 
         }
         else if (character1 == "cos") {
             aux = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
 
-            stack.insertar_por_la_cabeza(to_string(trig.cos(stod(aux))));
+            stack.insertar_por_la_cabeza(to_string(trig.cos(str.stod(aux))));
 
         }
         else if (character1 == "tan") {
             aux = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
 
-            stack.insertar_por_la_cabeza(to_string(trig.tan(stod(aux))));
+            stack.insertar_por_la_cabeza(to_string(trig.tan(str.stod(aux))));
 
         }
         
