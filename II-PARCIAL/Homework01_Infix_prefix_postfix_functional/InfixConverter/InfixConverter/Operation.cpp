@@ -343,9 +343,62 @@ string Operation::prefix_to_funtional(string prefix)
     return string();
 }
 
-string Operation::postfix_to_infix(string)
+string Operation::postfix_to_infix(string expression)
 {
-    return string();
+    mystring str;
+    string aux, aux2;
+    string charac = "";
+    Stack<string> stack;
+    for (char& character : expression) {
+        if (is_operand(character)) {
+
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza(charac);
+            charac = "";
+        }
+        else if (character == '+' || character == '-') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux2 + character + aux);
+
+        }
+        else if (character == '*' || character == '/' || character == '%') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            if (str.length(aux) > 1) {
+                aux = "(" + aux + ")";
+            }
+            if (str.length(aux2) > 1) {
+                aux2 = "(" + aux2 + ")";
+            }
+            stack.insertar_por_la_cabeza("(" + aux2 + character + aux + ")");
+        }
+        else if (character == '^') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            if (str.length(aux) > 1) {
+                aux = "(" + aux + ")";
+            }
+            if (str.length(aux2) > 1) {
+                aux2 = "(" + aux2 + ")";
+            }
+            stack.insertar_por_la_cabeza("(" + aux2 + character + aux + ")");
+        }
+        else if (is_trig_fun(character)) {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza(charac + "(" + aux + ")");
+            charac = "";
+        }
+    }
+    return stack.get_primero()->get_dato();
 }
 
 string Operation::postfix_to_prefix(string postfix)
@@ -416,4 +469,51 @@ bool Operation::is_operand(char c)
         return true;
     }
     return false;
+}
+
+bool Operation::is_postfix(string expression)
+{
+    mystring str;
+    int lenth = str.length(expression);
+    char c = str.at(1, expression);
+    char c2 = str.at(lenth, expression);
+    if (!has_parenthesis(expression) && is_operand(c) && (is_operator(c2) || is_trig_fun(c2)))
+        return true;
+    else
+        return false;
+}
+
+bool Operation::is_infix(string expression)
+{
+    mystring str;
+    int lenth = str.length(expression);
+    char c = str.at(1, expression);
+    char c2 = str.at(lenth, expression);
+    if (is_operator(c2) || is_trig_fun(c2))
+        return false;
+    else
+        return true;
+}
+
+bool Operation::is_prefix(string expression)
+{
+    mystring str;
+    int lenth = str.length(expression);
+    char c = str.at(1, expression);
+    char c2 = str.at(lenth, expression);
+    if (!has_parenthesis(expression) && is_operand(c2) && (is_operator(c) || is_trig_fun(c)))
+        return true;
+    else
+        return false;
+}
+
+bool Operation::has_parenthesis(string expression)
+{
+    for (char& cad : expression)
+    {
+        if (cad == '(' || cad == ')')
+            return true;
+        else
+            return false;
+    }
 }

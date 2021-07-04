@@ -4,21 +4,23 @@
 #include <iostream>
 #include "Stack.h"
 #include "Operation.h"
+#include "Menu.h"
 using namespace std;
 int main()
 {
-   string str, prefix;
-   Operation calculator;
-   //string a = "++-abc/dT%c+ef";
-   string a = "a+b*T(c*(a+x)-a)";
-   cout << a << endl;
-   //cout << calculator.prefix_to_infix(a) << endl;
-   cout << calculator.infix_to_postfix(a) << endl;
-   cout << calculator.infix_to_prefix(a)<< endl;
-   string post = calculator.infix_to_postfix(a);
-   cout << post << endl;
-   string pre = calculator.postfix_to_prefix(post);
-   cout << pre << endl;
+    menu_principal();
+   //string str, prefix;
+   //Operation calculator;
+   ////string a = "++-abc/dT%c+ef";
+   //string a = "a+b*T(c*(a+x)-a)";
+   //cout << a << endl;
+   ////cout << calculator.prefix_to_infix(a) << endl;
+   //cout << calculator.infix_to_postfix(a) << endl;
+   //cout << calculator.infix_to_prefix(a)<< endl;
+   //string post = calculator.infix_to_postfix(a);
+   //cout << post << endl;
+   //string pre = calculator.postfix_to_prefix(post);
+   //cout << pre << endl;
    //cout << calculator.prefix_to_funtional(a) << endl;
     /*cout << "Ingresa la notacion normal >>> (a+b)*c : ";
     cin >> str;

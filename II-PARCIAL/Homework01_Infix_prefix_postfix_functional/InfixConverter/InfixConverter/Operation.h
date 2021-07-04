@@ -23,5 +23,9 @@ public:
 	bool is_trig_fun(char);
 	bool is_operand(char);
 	int precedence(char);
+	bool is_postfix(string);
+	bool is_prefix(string);
+	bool is_infix(string);
+	bool has_parenthesis(string);
 };
 

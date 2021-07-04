@@ -17,5 +17,6 @@ public:
 	int stoi(string);
 	long stol(string);
 	string reverse(string);
+	char at(int,string);
 };
 

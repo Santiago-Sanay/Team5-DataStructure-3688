@@ -185,3 +185,20 @@ string mystring::reverse(string cad)
     }
     return cad_inverse;
 }
+
+char mystring::at(int position, string cad)
+{
+    const char* p = cad.c_str();
+    char c = ' ';
+    if (position <= length(cad)) {
+        for (int i = 0; i < position; i++)
+        {
+            c = *p;
+            p++;
+        }
+    }
+    else {
+        cout << "La posicion ingresada excede el tamaño de la cadena." << endl;
+    }
+    return c;
+}
