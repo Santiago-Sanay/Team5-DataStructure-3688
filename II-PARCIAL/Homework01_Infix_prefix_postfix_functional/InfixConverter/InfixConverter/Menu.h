@@ -45,6 +45,7 @@ void menu_principal()
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Notacion infija", "Notacion prefija","Notacion sufija", "Salir" };
     Operation op;
+    string infix = "";
     int n = 4;  // Numero de opciones
     do {
         opcion = menu(titulo, opciones, n);
@@ -57,7 +58,9 @@ void menu_principal()
                 cin >> expression;
             } while (!op.is_infix(expression));
             cout << "Notacion prefija:" << op.infix_to_prefix(expression)<<endl;
-            cout << "Notacion sufija:" << op.infix_to_postfix(expression) << endl;
+             infix = op.infix_to_prefix(expression);
+            cout << "Notacion sufija:" << op.prefix_to_postfix(infix) << endl;
+            //cout << "Notacion sufija:" << op.infix_to_postfix(expression) << endl;
             cout << "Notacion funcional:" << op.infix_to_funtional(expression) << endl;
             system("pause");
             break;
