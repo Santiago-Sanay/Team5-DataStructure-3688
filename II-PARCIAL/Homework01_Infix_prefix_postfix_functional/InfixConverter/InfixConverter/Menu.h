@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*ENUNCIADO: CREACION DE UN PROGRAMA QUE SIMULE UNA CALCULADORA POLACA INVERSA
+*FECHA DE CREACION : 03 DE JULIO DE 2021
+*FECHA DE MODIFICACION:  04 DE JULIO DE 2021
+*/
+
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -10,9 +23,6 @@
 using namespace std;
 
 void menu_principal();
-void menu_prefix();
-void menu_infix();
-void menu_postfix();
 void Color(int Background, int Text);
 void gotoxy(USHORT x, USHORT y) {
     COORD cp = { x,y };
@@ -34,21 +44,43 @@ void menu_principal()
     // Titulo del menú y nombres de las opciones
     const char* titulo = "MENU DE OPCIONES";
     const char* opciones[] = { "Notacion infija", "Notacion prefija","Notacion sufija", "Salir" };
+    Operation op;
     int n = 4;  // Numero de opciones
     do {
         opcion = menu(titulo, opciones, n);
 
         switch (opcion) {
         case 1:
-            menu_infix();
+            system("cls");
+            do {
+                cout << "Ingrese la expresion infija:";
+                cin >> expression;
+            } while (!op.is_infix(expression));
+            cout << "Notacion prefija:" << op.infix_to_prefix(expression)<<endl;
+            cout << "Notacion sufija:" << op.infix_to_postfix(expression) << endl;
+            cout << "Notacion funcional:" << op.infix_to_funtional(expression) << endl;
+            system("pause");
             break;
         case 2:
-            menu_prefix();
+            system("cls");
+            do {
+                cout << "Ingrese la expresion prefija:";
+                cin >> expression;
+            } while (!op.is_prefix(expression));
+            cout << "Notacion infija:" << op.prefix_to_infix(expression) << endl;
+            cout << "Notacion postfija:" << op.prefix_to_postfix(expression) << endl;
+            cout << "Notacion funcional:" << op.prefix_to_funtional(expression) << endl;
+            system("pause");
             break;
         case 3:
-
             system("cls");
-            menu_postfix();
+            do {
+                cout << "Ingrese la expresion sufija:";
+                cin >> expression;
+            } while (!op.is_postfix(expression));
+            cout << "Notacion prefija:" << op.postfix_to_prefix(expression) << endl;
+            cout << "Notacion infija:" << op.postfix_to_infix(expression) << endl;
+            cout << "Notacion funcional:" << op.postfix_to_funtional(expression) << endl;
             system("pause>nul");
             break;
         case 4:
@@ -56,146 +88,6 @@ void menu_principal()
             cout << "\nGracias por utilizar nuestro programa" << endl;
             repite = false;
             system("pause>nul");
-            break;
-        }
-
-    } while (repite);
-}
-
-void menu_prefix()
-{
-    Operation op;
-    string expression;
-    bool repite = true;
-    int opcion;
-    const char* titulo = "MENU PARA TRANSFORMAR DE NOTACION PREFIJA A";
-    const char* opciones[] = { "INFIJA","SUFIJA","FUNCIONAL","ATRAS" };
-    int n = 4;
-    int num;
-    do {
-        opcion = menu(titulo, opciones, n);
-        system("cls");
-        switch (opcion) {
-        case 1:
-            do {
-                cout << "Ingrese la expresion prefija:";
-                cin >> expression;
-            } while (!op.is_prefix(expression));
-            cout << "Notacion infija:" << op.prefix_to_infix(expression) << endl;
-            system("pause");
-            break;
-        case 2:
-            do {
-                cout << "Ingrese la expresion prefija:";
-                cin >> expression;
-            } while (!op.is_prefix(expression));
-            cout << "Notacion postfija:" << op.prefix_to_postfix(expression) << endl;
-            system("pause");
-            break;
-        case 3:
-            do {
-                cout << "Ingrese la expresion prefija:";
-                cin >> expression;
-            } while (!op.is_prefix(expression)); 
-            cout << "Notacion funcional:" << op.postfix_to_funtional(expression) << endl;
-            system("pause");
-            break;
-        case 4:
-            repite = false;
-            break;
-        }
-
-    } while (repite);
-}
-
-void menu_infix()
-{
-    bool repite = true;
-    int opcion;
-
-    // Titulo del menú y nombres de las opciones
-    const char* titulo = "MENU PARA TRANSFORMAR NOTACION INFIJA A ";
-    const char* opciones[] = { "PREFIJA", "SUFIJA", "FUNCIONAL", "ATRAS" };
-    int n = 4;  // Numero de opciones
-    string expression;
-    Operation op;
-    do {
-        opcion = menu(titulo, opciones, n);
-        system("cls");
-        switch (opcion) {
-        case 1:
-            do {
-                cout << "Ingrese la expresion infija:";
-                cin >> expression;
-            } while (!op.is_infix(expression));
-            cout << "Notacion prefija:" << op.infix_to_prefix(expression);
-            system("pause");
-            break;
-        case 2:
-            do {
-                cout << "Ingrese la expresion infija:";
-                cin >> expression;
-            } while (!op.is_infix(expression));
-            cout << "Notacion sufija:" << op.infix_to_postfix(expression);
-            system("pause");
-            break;
-        case 3:
-            do {
-                cout << "Ingrese la expresion infija:";
-                cin >> expression;
-            } while (!op.is_infix(expression));
-            cout << "Notacion funcional:" << op.infix_to_funtional(expression);
-            system("pause");
-            break;
-        case 4:
-            repite = false;
-            break;
-        }
-
-    } while (repite);
-}
-
-void menu_postfix()
-{
-    bool repite = true;
-    int opcion;
-
-    // Titulo del menú y nombres de las opciones
-    const char* titulo = "MENU PARA TRANSFORMAR NOTACION SUFIJA A ";
-    const char* opciones[] = { "PREFIJA", "INFIJA", "FUNCIONAL", "ATRAS" };
-    int n = 4;  // Numero de opciones
-    string expression;
-    Operation op;
-    do {
-        opcion = menu(titulo, opciones, n);
-        system("cls");
-        switch (opcion) {
-        case 1:
-            do {
-                cout << "Ingrese la expresion sufija:";
-                cin >> expression;
-            } while (!op.is_postfix(expression));
-            cout << "Notacion prefija:" << op.postfix_to_prefix(expression);
-            system("pause");
-            break;
-        case 2:
-            do {
-                cout << "Ingrese la expresion sufija:";
-                cin >> expression;
-            } while (!op.is_postfix(expression));
-            cout << "Notacion infija:" << op.postfix_to_infix(expression);
-            system("pause");
-            break;
-        case 3:
-            do {
-                cout << "Ingrese la expresion sufija:";
-                cin >> expression;
-            } while (!op.is_postfix(expression));
-            cout << "Notacion funcional:" << op.postfix_to_funtional(expression);
-            system("pause");
-            break;
-        case 4:
-            repite = false;
             break;
         }
 

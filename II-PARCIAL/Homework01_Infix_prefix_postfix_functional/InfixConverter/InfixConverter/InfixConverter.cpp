@@ -1,6 +1,17 @@
 // InfixConverter.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*ENUNCIADO: CREACION DE UN PROGRAMA QUE SIMULE UNA CALCULADORA POLACA INVERSA
+*FECHA DE CREACION : 03 DE JULIO DE 2021
+*FECHA DE MODIFICACION:  04 DE JULIO DE 2021
+*/
 #include <iostream>
 #include "Stack.h"
 #include "Operation.h"
@@ -8,30 +19,7 @@
 using namespace std;
 int main()
 {
-    menu_principal();
-   //string str, prefix;
-   //Operation calculator;
-   ////string a = "++-abc/dT%c+ef";
-   //string a = "a+b*T(c*(a+x)-a)";
-   //cout << a << endl;
-   ////cout << calculator.prefix_to_infix(a) << endl;
-   //cout << calculator.infix_to_postfix(a) << endl;
-   //cout << calculator.infix_to_prefix(a)<< endl;
-   //string post = calculator.infix_to_postfix(a);
-   //cout << post << endl;
-   //string pre = calculator.postfix_to_prefix(post);
-   //cout << pre << endl;
-   //cout << calculator.prefix_to_funtional(a) << endl;
-    /*cout << "Ingresa la notacion normal >>> (a+b)*c : ";
-    cin >> str;
-    
-    cout << "EXPRESSION: " << str << endl;
-    prefix = calculator.infix_to_prefix(str);
-   cout << endl
-        << "PREFIX EXPRESSION: " << prefix;
-
-    return 0;
-    cout << "Hello World!\n";*/
+    menu_principal();   
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
