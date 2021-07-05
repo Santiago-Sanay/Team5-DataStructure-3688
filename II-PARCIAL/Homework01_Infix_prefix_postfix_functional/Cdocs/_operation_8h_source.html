@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Infijo_Prefijp_Functional: Fichero Fuente InfixConverter/InfixConverter/Operation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Infijo_Prefijp_Functional
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7791adff190741c47b92bb99d3dbb5aa.html">InfixConverter</a></li><li class="navelem"><a class="el" href="dir_bd89b3e04ae0ba518a63f0fa9b7068ec.html">InfixConverter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Operation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_operation_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mystring_8h.html">mystring.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_stack_8h.html">Stack.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_operation.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_operation.html">Operation</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a2086821225ce4a419ffc01560bae47bd">infix_to_prefix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a331c32fc018aa9cb81e93a6caeb26186">infix_to_postfix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">//theo</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a5c804af96f3be1bad07f59f06b18382f">infix_to_funtional</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//alex</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a95e0f84590c4ad3159b9113095e32b51">prefix_to_infix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//alex</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a8f09c28e6b233b55f0c0d6bcd50f2dea">prefix_to_postfix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a2a1eaf717e9caa05a35d74d984de8145">prefix_to_funtional</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//alex</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#aaf62b08f84c686c569aa9cd883332a74">postfix_to_infix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//yulliana</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a6f5bd7940f4267fb444da3b2dde202bd">postfix_to_prefix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_operation.html#a967ffc389dabec68ed1f6e58462042c7">postfix_to_funtional</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#a2cc174295816609d827df11ac0d6f659">is_operator</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#adad92bd11894f90770bdc568d4f08f66">is_trig_fun</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#ac124d31bc6780429f81c10bcebdfe621">is_operand</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_operation.html#a07062e6f0c40067b0c6c4c25d77a6dd1">precedence</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#acd47a291acbae76f441debe5cf2c4905">is_postfix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#aa434df5c9ae4111f881b03a1ec5e4faa">is_prefix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#a84c907451dd950353a8007860019677c">is_infix</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_operation.html#a7ab066ed67a9a568e748cfb352465519">has_parenthesis</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="ttc" id="a_stack_8h_html"><div class="ttname"><a href="_stack_8h.html">Stack.h</a></div></div>
+<div class="ttc" id="aclass_operation_html"><div class="ttname"><a href="class_operation.html">Operation</a></div><div class="ttdef"><b>Definition:</b> Operation.h:5</div></div>
+<div class="ttc" id="aclass_operation_html_a07062e6f0c40067b0c6c4c25d77a6dd1"><div class="ttname"><a href="class_operation.html#a07062e6f0c40067b0c6c4c25d77a6dd1">Operation::precedence</a></div><div class="ttdeci">int precedence(char)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:149</div></div>
+<div class="ttc" id="aclass_operation_html_a2086821225ce4a419ffc01560bae47bd"><div class="ttname"><a href="class_operation.html#a2086821225ce4a419ffc01560bae47bd">Operation::infix_to_prefix</a></div><div class="ttdeci">string infix_to_prefix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:3</div></div>
+<div class="ttc" id="aclass_operation_html_a2a1eaf717e9caa05a35d74d984de8145"><div class="ttname"><a href="class_operation.html#a2a1eaf717e9caa05a35d74d984de8145">Operation::prefix_to_funtional</a></div><div class="ttdeci">string prefix_to_funtional(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:260</div></div>
+<div class="ttc" id="aclass_operation_html_a2cc174295816609d827df11ac0d6f659"><div class="ttname"><a href="class_operation.html#a2cc174295816609d827df11ac0d6f659">Operation::is_operator</a></div><div class="ttdeci">bool is_operator(char)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:450</div></div>
+<div class="ttc" id="aclass_operation_html_a331c32fc018aa9cb81e93a6caeb26186"><div class="ttname"><a href="class_operation.html#a331c32fc018aa9cb81e93a6caeb26186">Operation::infix_to_postfix</a></div><div class="ttdeci">string infix_to_postfix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:82</div></div>
+<div class="ttc" id="aclass_operation_html_a5c804af96f3be1bad07f59f06b18382f"><div class="ttname"><a href="class_operation.html#a5c804af96f3be1bad07f59f06b18382f">Operation::infix_to_funtional</a></div><div class="ttdeci">string infix_to_funtional(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:161</div></div>
+<div class="ttc" id="aclass_operation_html_a6f5bd7940f4267fb444da3b2dde202bd"><div class="ttname"><a href="class_operation.html#a6f5bd7940f4267fb444da3b2dde202bd">Operation::postfix_to_prefix</a></div><div class="ttdeci">string postfix_to_prefix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:404</div></div>
+<div class="ttc" id="aclass_operation_html_a7ab066ed67a9a568e748cfb352465519"><div class="ttname"><a href="class_operation.html#a7ab066ed67a9a568e748cfb352465519">Operation::has_parenthesis</a></div><div class="ttdeci">bool has_parenthesis(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:510</div></div>
+<div class="ttc" id="aclass_operation_html_a84c907451dd950353a8007860019677c"><div class="ttname"><a href="class_operation.html#a84c907451dd950353a8007860019677c">Operation::is_infix</a></div><div class="ttdeci">bool is_infix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:486</div></div>
+<div class="ttc" id="aclass_operation_html_a8f09c28e6b233b55f0c0d6bcd50f2dea"><div class="ttname"><a href="class_operation.html#a8f09c28e6b233b55f0c0d6bcd50f2dea">Operation::prefix_to_postfix</a></div><div class="ttdeci">string prefix_to_postfix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:255</div></div>
+<div class="ttc" id="aclass_operation_html_a95e0f84590c4ad3159b9113095e32b51"><div class="ttname"><a href="class_operation.html#a95e0f84590c4ad3159b9113095e32b51">Operation::prefix_to_infix</a></div><div class="ttdeci">string prefix_to_infix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:166</div></div>
+<div class="ttc" id="aclass_operation_html_a967ffc389dabec68ed1f6e58462042c7"><div class="ttname"><a href="class_operation.html#a967ffc389dabec68ed1f6e58462042c7">Operation::postfix_to_funtional</a></div><div class="ttdeci">string postfix_to_funtional(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:445</div></div>
+<div class="ttc" id="aclass_operation_html_aa434df5c9ae4111f881b03a1ec5e4faa"><div class="ttname"><a href="class_operation.html#aa434df5c9ae4111f881b03a1ec5e4faa">Operation::is_prefix</a></div><div class="ttdeci">bool is_prefix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:498</div></div>
+<div class="ttc" id="aclass_operation_html_aaf62b08f84c686c569aa9cd883332a74"><div class="ttname"><a href="class_operation.html#aaf62b08f84c686c569aa9cd883332a74">Operation::postfix_to_infix</a></div><div class="ttdeci">string postfix_to_infix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:346</div></div>
+<div class="ttc" id="aclass_operation_html_ac124d31bc6780429f81c10bcebdfe621"><div class="ttname"><a href="class_operation.html#ac124d31bc6780429f81c10bcebdfe621">Operation::is_operand</a></div><div class="ttdeci">bool is_operand(char)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:466</div></div>
+<div class="ttc" id="aclass_operation_html_acd47a291acbae76f441debe5cf2c4905"><div class="ttname"><a href="class_operation.html#acd47a291acbae76f441debe5cf2c4905">Operation::is_postfix</a></div><div class="ttdeci">bool is_postfix(string)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:474</div></div>
+<div class="ttc" id="aclass_operation_html_adad92bd11894f90770bdc568d4f08f66"><div class="ttname"><a href="class_operation.html#adad92bd11894f90770bdc568d4f08f66">Operation::is_trig_fun</a></div><div class="ttdeci">bool is_trig_fun(char)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:458</div></div>
+<div class="ttc" id="amystring_8h_html"><div class="ttname"><a href="mystring_8h.html">mystring.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
