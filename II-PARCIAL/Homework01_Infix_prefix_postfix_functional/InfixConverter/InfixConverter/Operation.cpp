@@ -78,12 +78,18 @@ infix=cad;
     reverse(prefix.begin(), prefix.end());
     return prefix;
 }
-
 string Operation::infix_to_postfix(string infix)
+{
+    string prefix = infix_to_prefix(infix);
+    string postfix = prefix_to_postfix(prefix);
+    return postfix;
+
+}
+/*string Operation::infix_to_postfix(string infix)
 {
     Stack<char> stack;
     mystring str;
-    string cad = infix;
+    string cad =")"+ infix+"(";
     string result, postfix;
     string aux;
     char anterior = '.';
@@ -144,7 +150,7 @@ string Operation::infix_to_postfix(string infix)
         stack.borrar_por_la_cabeza();
     }
     return postfix;
-}
+}*/
 
 int Operation::precedence(char c)
 {
@@ -252,9 +258,93 @@ string Operation::prefix_to_infix(string prefix)
     return stack.get_primero()->get_dato();
 }
 
-string Operation::prefix_to_postfix(string)
+string Operation::prefix_to_postfix(string prefix)
 {
-    return string();
+    mystring str;
+    string cad = str.reverse(prefix);
+    //string result, prefix;
+    string aux, aux2;
+    string charac = "";
+    char anterior = '.';
+    Stack<string> stack;
+
+    for (char& character : cad) {
+        if (is_operand(character)) {
+
+            charac.push_back(character);
+            stack.insertar_por_la_cabeza(charac);
+            charac = "";
+        }
+        else if (character == '+') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza( aux  + aux2 + "+");
+
+        }
+        else if (character == '-') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + aux2 + "-");
+
+        }
+        else if (character == '*') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + aux2 + "*");
+
+        }
+        else if (character == '/') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + aux2 + "/");
+
+        }
+        else if (character == '%') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + aux2 + "%");
+
+        }
+        else if (character == '^') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            aux2 = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + aux2 + "^");
+
+        }
+        else if (character == 'T') {
+            charac.push_back(character);
+                    
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza( aux + "T");
+            charac = "";
+        }
+        else if (character == 'S') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + "S");
+        }
+        else if (character == 'C') {
+            aux = stack.get_primero()->get_dato();
+            stack.borrar_por_la_cabeza();
+            stack.insertar_por_la_cabeza(aux + "C");
+        }
+
+    }
+    return stack.get_primero()->get_dato();
+   
 }
 
 string Operation::prefix_to_funtional(string prefix)
