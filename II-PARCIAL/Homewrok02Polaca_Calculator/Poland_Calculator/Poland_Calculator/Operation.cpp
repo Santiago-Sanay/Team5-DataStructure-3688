@@ -300,6 +300,9 @@ Stack<string> Operation::ingresar_datos()
     Stack<string> datos;
     string dato="";
     while (dato != "=") {
+        system("cls");
+        
+        datos.mostrar_expresion_invertida();
         cout << "ingrese un numero u operador : " ;
         cin >> dato;
         datos.insertar_por_la_cabeza(dato);

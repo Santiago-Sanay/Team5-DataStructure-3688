@@ -25,6 +25,7 @@ public:
 	void borrar_por_la_cabeza();
 	void mostrar();
 	void mostrar_expresion();
+	void mostrar_expresion_invertida();
 	void llenar_aleatorio_lista();
 	void vaciar_lista();
 	T maximo_comun_divisor(T);
@@ -52,6 +53,27 @@ void Stack<T>::mostrar_expresion()
 		temporal = temporal->get_siguiente();
 
 	}
+	cout << endl;
+}
+template<class T>
+void Stack<T>::mostrar_expresion_invertida()
+{
+	Stack<T> copia;
+	Nodo<T>* temporal = this->primero;
+	while (temporal) {
+		//cout << temporal->get_dato() << " ";
+		copia.insertar_por_la_cabeza(temporal->get_dato());
+		temporal = temporal->get_siguiente();
+
+	}
+	temporal = copia.get_primero();
+	while (temporal) {
+		cout << temporal->get_dato() << " ";
+		//copia.insertar_por_la_cabeza(temporal->get_dato());
+		temporal = temporal->get_siguiente();
+
+	}
+	//copia.vaciar_lista();
 	cout << endl;
 }
 template<class T>
