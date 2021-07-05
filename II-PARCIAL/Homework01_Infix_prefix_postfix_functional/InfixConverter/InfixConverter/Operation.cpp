@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*AUTORES : YULLIANA ROMAN
+*JUNIOR JURADO
+*TEHO ROSERO
+*ALEX PAGUAY
+*SANTIAGO SAÑAY
+*ENUNCIADO: CREACION DE UN PROGRAMA QUE SIMULE UNA CALCULADORA POLACA INVERSA
+*FECHA DE CREACION : 03 DE JULIO DE 2021
+*FECHA DE MODIFICACION:  04 DE JULIO DE 2021
+*/
+
 #include "Operation.h"
 
 string Operation::infix_to_prefix(string infix)
@@ -78,18 +91,12 @@ infix=cad;
     reverse(prefix.begin(), prefix.end());
     return prefix;
 }
-string Operation::infix_to_postfix(string infix)
-{
-    string prefix = infix_to_prefix(infix);
-    string postfix = prefix_to_postfix(prefix);
-    return postfix;
 
-}
-/*string Operation::infix_to_postfix(string infix)
+string Operation::infix_to_postfix(string infix)
 {
     Stack<char> stack;
     mystring str;
-    string cad =")"+ infix+"(";
+    string cad = infix;
     string result, postfix;
     string aux;
     char anterior = '.';
@@ -150,7 +157,7 @@ string Operation::infix_to_postfix(string infix)
         stack.borrar_por_la_cabeza();
     }
     return postfix;
-}*/
+}
 
 int Operation::precedence(char c)
 {
@@ -164,9 +171,12 @@ int Operation::precedence(char c)
         return -1;
 }
 
-string Operation::infix_to_funtional(string)
+string Operation::infix_to_funtional(string expression)
 {
-    return string();
+    string expression1 = infix_to_prefix(expression);
+    string expression2 = prefix_to_funtional(expression1);
+
+    return expression2;
 }
 
 string Operation::prefix_to_infix(string prefix)
@@ -238,113 +248,27 @@ string Operation::prefix_to_infix(string prefix)
             stack.borrar_por_la_cabeza();
             
             if (str.length(aux) == 1) {
-                cout << "si entra a trigonometricas 1" << endl;
                 charac.push_back(character);
                 stack.insertar_por_la_cabeza(charac+"(" + aux + ")");
                 charac = "";
-                cout << stack.get_primero()->get_dato() << endl;
             }
             else if (str.substract(aux,0,1)=="(") {
                 stack.insertar_por_la_cabeza(character +  aux );
             }
             else {
                 stack.insertar_por_la_cabeza(character +"("+ aux+ ")");
-            }
-            
-            
+            }                        
         }
        
     }
     return stack.get_primero()->get_dato();
 }
 
-string Operation::prefix_to_postfix(string prefix)
+string Operation::prefix_to_postfix(string expression1)
 {
-    mystring str;
-    string cad = str.reverse(prefix);
-    //string result, prefix;
-    string aux, aux2;
-    string charac = "";
-    char anterior = '.';
-    Stack<string> stack;
-
-    for (char& character : cad) {
-        if (is_operand(character)) {
-
-            charac.push_back(character);
-            stack.insertar_por_la_cabeza(charac);
-            charac = "";
-        }
-        else if (character == '+') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza( aux  + aux2 + "+");
-
-        }
-        else if (character == '-') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + aux2 + "-");
-
-        }
-        else if (character == '*') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + aux2 + "*");
-
-        }
-        else if (character == '/') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + aux2 + "/");
-
-        }
-        else if (character == '%') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + aux2 + "%");
-
-        }
-        else if (character == '^') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + aux2 + "^");
-
-        }
-        else if (character == 'T') {
-            charac.push_back(character);
-                    
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza( aux + "T");
-            charac = "";
-        }
-        else if (character == 'S') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + "S");
-        }
-        else if (character == 'C') {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(aux + "C");
-        }
-
-    }
-    return stack.get_primero()->get_dato();
-   
+    string expression2 = prefix_to_infix(expression1);
+    string expression3 = infix_to_postfix(expression2);
+    return expression3;
 }
 
 string Operation::prefix_to_funtional(string prefix)
@@ -430,7 +354,6 @@ string Operation::prefix_to_funtional(string prefix)
 
     }
     return stack.get_primero()->get_dato();
-    return string();
 }
 
 string Operation::postfix_to_infix(string expression)
@@ -483,9 +406,18 @@ string Operation::postfix_to_infix(string expression)
         else if (is_trig_fun(character)) {
             aux = stack.get_primero()->get_dato();
             stack.borrar_por_la_cabeza();
-            charac.push_back(character);
-            stack.insertar_por_la_cabeza(charac + "(" + aux + ")");
-            charac = "";
+
+            if (str.length(aux) == 1) {
+                charac.push_back(character);
+                stack.insertar_por_la_cabeza(charac + "(" + aux + ")");
+                charac = "";
+            }
+            else if (str.substract(aux, 0, 1) == "(") {
+                stack.insertar_por_la_cabeza(character + aux);
+            }
+            else {
+                stack.insertar_por_la_cabeza(character + "(" + aux + ")");
+            }
         }
     }
     return stack.get_primero()->get_dato();
@@ -493,48 +425,53 @@ string Operation::postfix_to_infix(string expression)
 
 string Operation::postfix_to_prefix(string postfix)
 {
-    mystring str;
-    string cad = postfix;
-    string aux, aux2;
-    string charac = "";
-    char anterior = '.';
-    Stack<string> stack;
+    string expression = postfix_to_infix(postfix);
+    string expression1 = infix_to_prefix(expression);
+    //mystring str;
+    //string cad = postfix;
+    //string aux, aux2;
+    //string charac = "";
+    //char anterior = '.';
+    //Stack<string> stack;
 
-    for (char& character : cad) {
-        //stack.mostrar();
-        //cout << endl;
-        if (is_operand(character)) {
+    //for (char& character : cad) {
+    //    //stack.mostrar();
+    //    //cout << endl;
+    //    if (is_operand(character)) {
 
-            charac.push_back(character);
-            stack.insertar_por_la_cabeza(charac);
-            charac = "";
-        }
-        else if (is_operator(character)) {
-            //cout << character << endl;
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            charac.push_back(character);
-            stack.insertar_por_la_cabeza( aux2 + aux+charac);
-            charac = "";
-        }
-        else if (is_trig_fun(character)) {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            charac.push_back(character);
-            stack.insertar_por_la_cabeza(aux+charac);
-            charac = "";
-        }
+    //        charac.push_back(character);
+    //        stack.insertar_por_la_cabeza(charac);
+    //        charac = "";
+    //    }
+    //    else if (is_operator(character)) {
+    //        //cout << character << endl;
+    //        aux = stack.get_primero()->get_dato();
+    //        stack.borrar_por_la_cabeza();
+    //        aux2 = stack.get_primero()->get_dato();
+    //        stack.borrar_por_la_cabeza();
+    //        charac.push_back(character);
+    //        stack.insertar_por_la_cabeza( aux2 + aux+charac);
+    //        charac = "";
+    //    }
+    //    else if (is_trig_fun(character)) {
+    //        aux = stack.get_primero()->get_dato();
+    //        stack.borrar_por_la_cabeza();
+    //        charac.push_back(character);
+    //        stack.insertar_por_la_cabeza(aux+charac);
+    //        charac = "";
+    //    }
 
-    }
-    return stack.get_primero()->get_dato();
-    return string();
+    //}
+    //return stack.get_primero()->get_dato();
+    return expression1;
 }
 
-string Operation::postfix_to_funtional(string)
+string Operation::postfix_to_funtional(string expression)
 {
-    return string();
+    string expression1=postfix_to_prefix(expression);
+    cout << expression1 << endl;
+    string expression2 = prefix_to_funtional(expression1);
+    return expression2;
 }
 
 bool Operation::is_operator(char c)
@@ -579,7 +516,7 @@ bool Operation::is_infix(string expression)
     int lenth = str.length(expression);
     char c = str.at(1, expression);
     char c2 = str.at(lenth, expression);
-    if (is_operator(c2) || is_trig_fun(c2))
+    if (is_operator(c) || is_operator(c2) || is_trig_fun(c2))
         return false;
     else
         return true;
