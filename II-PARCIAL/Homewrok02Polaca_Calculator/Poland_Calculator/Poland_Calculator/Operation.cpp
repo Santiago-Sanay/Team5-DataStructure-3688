@@ -298,15 +298,31 @@ double Operation::calculate(Stack<string> prefix)
 Stack<string> Operation::ingresar_datos()
 {
     Stack<string> datos;
+    Stack<string> datos1;
+    Stack<string> datos2;
     string dato="";
     while (dato != "=") {
         system("cls");
-        
+        cout << "       CALCULADORA POLACA "<< endl;
+        cout << "_______________________________________" << endl;
         datos.mostrar_expresion_invertida();
-        cout << "ingrese un numero u operador : " ;
+        cout << "_______________________________________" << endl;
+        cout << "|   +   -   *   /   %   sen cos tan (   )  |" << endl;
+        cout << "|   1          2           3               |" << endl;
+        cout << "|   4          5           6               |" << endl;
+        cout << "|   7          8           9               |" << endl;
+        cout << "|   0          .                           |" << endl;
+        cout << "--------------------------------------------" << endl;
+        cout << "   ingrese un numero u operador : " ;
         cin >> dato;
+       
+       
+       
         datos.insertar_por_la_cabeza(dato);
+        
+        
     }
+    cout << "_______________________________________" << endl;
     datos.borrar_por_la_cabeza();
     return invertir_pila(datos);
 }
@@ -447,7 +463,7 @@ Stack<string> Operation::infix_to_postfix1(Stack<string> infix)
             
             if (stack.empty_stack()) {
                 stack.insertar_por_la_cabeza(character1);
-                stack.mostrar_expresion();
+                //stack.mostrar_expresion();
             }
             else {
                 if (precedence1(character1) > precedence1(stack.get_primero()->get_dato())) {
@@ -461,7 +477,7 @@ Stack<string> Operation::infix_to_postfix1(Stack<string> infix)
                     while ((precedence1(character1) == precedence1(stack.get_primero()->get_dato()))
                         ) {
                        
-                        stack.mostrar_expresion();
+                        //stack.mostrar_expresion();
                         postfix.insertar_por_la_cabeza(stack.get_primero()->get_dato());
                         stack.borrar_por_la_cabeza();
                     }
