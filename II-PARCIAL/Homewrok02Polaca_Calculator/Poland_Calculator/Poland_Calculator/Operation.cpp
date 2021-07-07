@@ -1,3 +1,17 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAÑAY
+*TEMA: Calculadora Polaca inversa
+*FECHA DE CREACION : 3 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
+
 #include "Operation.h"
 #include "Trig_Operation.h"
 #include <Math.h>
@@ -199,99 +213,110 @@ int Operation::precedence1(string c)
 
 double Operation::calculate(Stack<string> prefix)
 {
-    Trig_Operation trig;
-    mystring str;
-    Stack<string> cad = invertir_pila(prefix);
-    //string result, prefix;
-    string aux, aux2;
-    string charac = "";
-    char anterior = '.';
-    Stack<string> stack;
-    Nodo<string>* character = cad.get_primero();
-    string character1 = "";
-    while (character) {
-        character1 = character->get_dato();
-        if (str.is_number(character1)) {
+    if (prefix.empty_stack()) {
+        return 0;
+    }
+    try
+    {
+        Trig_Operation trig;
+        mystring str;
+        Stack<string> cad = invertir_pila(prefix);
+        //string result, prefix;
+        string aux, aux2;
+        string charac = "";
+        char anterior = '.';
+        Stack<string> stack;
+        Nodo<string>* character = cad.get_primero();
+        string character1 = "";
+        while (character) {
+            character1 = character->get_dato();
+            if (str.is_number(character1)) {
 
-           
-            stack.insertar_por_la_cabeza(character1);
-           
-           
+
+                stack.insertar_por_la_cabeza(character1);
+
+
+            }
+            else if (character1 == "+") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(str.stod(aux) + str.stod(aux2)));
+
+            }
+            else if (character1 == "-") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(str.stod(aux) - str.stod(aux2)));
+
+            }
+            else if (character1 == "*") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(str.stod(aux) * str.stod(aux2)));
+
+            }
+            else if (character1 == "/") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(str.stod(aux) / str.stod(aux2)));
+
+            }
+            else if (character1 == "%") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(int(str.stod(aux)) % int(str.stod(aux2))));
+
+            }
+            else if (character1 == "^") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                aux2 = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+                stack.insertar_por_la_cabeza(to_string(trig.potencia(str.stod(aux), str.stod(aux2))));
+
+            }
+            else if (character1 == "sen") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+
+                stack.insertar_por_la_cabeza(to_string(trig.sin(str.stod(aux))));
+
+            }
+            else if (character1 == "cos") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+
+                stack.insertar_por_la_cabeza(to_string(trig.cos(str.stod(aux))));
+
+            }
+            else if (character1 == "tan") {
+                aux = stack.get_primero()->get_dato();
+                stack.borrar_por_la_cabeza();
+
+                stack.insertar_por_la_cabeza(to_string(trig.tan(str.stod(aux))));
+
+            }
+
+            character = character->get_siguiente();
+
         }
-        else if (character1 == "+" ) {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(str.stod(aux) +str.stod( aux2)));
-
-        }
-        else if (character1 == "-") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(str.stod(aux) - str.stod(aux2)));
-
-        }
-        else if (character1 == "*") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(str.stod(aux) * str.stod(aux2)));
-
-        }
-        else if (character1 == "/") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(str.stod(aux) / str.stod(aux2)));
-
-        }
-        else if (character1 == "%") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(int(str.stod(aux)) % int(str.stod(aux2))));
-
-        }
-        else if (character1 == "^") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            aux2 = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-            stack.insertar_por_la_cabeza(to_string(trig.potencia(str.stod(aux), str.stod(aux2))));
-
-        }
-        else if (character1 == "sen") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-           
-            stack.insertar_por_la_cabeza(to_string(trig.sin(str.stod(aux))));
-
-        }
-        else if (character1 == "cos") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-
-            stack.insertar_por_la_cabeza(to_string(trig.cos(str.stod(aux))));
-
-        }
-        else if (character1 == "tan") {
-            aux = stack.get_primero()->get_dato();
-            stack.borrar_por_la_cabeza();
-
-            stack.insertar_por_la_cabeza(to_string(trig.tan(str.stod(aux))));
-
-        }
-        
-        character = character->get_siguiente();
+        return stod(stack.get_primero()->get_dato());
+    }
+    catch (...)
+    {
+        cout << "excepcion" << endl;
 
     }
-    return stod(stack.get_primero()->get_dato());
     
 }
 
@@ -315,15 +340,18 @@ Stack<string> Operation::ingresar_datos()
         cout << "--------------------------------------------" << endl;
         cout << "   ingrese un numero u operador : " ;
         cin >> dato;
-       
-       
-       
+
         datos.insertar_por_la_cabeza(dato);
         
         
     }
     cout << "_______________________________________" << endl;
+
+
     datos.borrar_por_la_cabeza();
+    if (datos.empty_stack()) {
+        return datos;
+    }
     return invertir_pila(datos);
 }
 

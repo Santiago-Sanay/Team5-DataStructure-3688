@@ -1,3 +1,17 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAÑAY
+*TEMA: Calculadora Polaca inversa
+*FECHA DE CREACION : 3 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
+
 #pragma once
 #include "Nodo.h"
 #include <ctime>
@@ -12,21 +26,105 @@ private:
 	Nodo<T>* primero;
 	Nodo<T>* actual;
 public:
+	/**
+	 * @brief comprobar lista vacia
+	 * 
+	 * @return true 
+	 * @return false 
+	 */
 	bool listaVacia();
+
+	/**
+	 * @brief Construct a new List< T> object
+	 * 
+	 */
 	List<T>() ;
+	/**
+	 * @brief insertar por cola
+	 * 
+	 */
 	void insertar_por_la_cola(T);
+
+	/**
+	 * @brief Set the primero object
+	 * 
+	 */
 	void set_primero(Nodo<T>*);
+
+	/**
+	 * @brief Get the primero object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_primero();
+	
+	/**
+	 * @brief Set the actual object
+	 * 
+	 */
 	void set_actual(Nodo<T>*);
+	
+	/**
+	 * @brief Get the actual object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_actual();
+	
+	/**
+	 * @brief devuelve nodo actual
+	 * 
+	 */
 	void insertar_por_la_cabeza(T);
+	
+	/**
+	 * @brief insertar por cabeza
+	 * 
+	 */
 	void borrar_por_la_cola();
+	
+	/**
+	 * @brief borra por cabeza
+	 * 
+	 */
 	void borrar_por_la_cabeza();
+	
+	/**
+	 * @brief imprime
+	 * 
+	 */
 	void mostrar();
+	
+	/**
+	 * @brief expresion por consola
+	 * 
+	 */
 	void mostrar_expresion();
+	
+	/**
+	 * @brief llenar lista de aleatorio
+	 * 
+	 */
 	void llenar_aleatorio_lista();
+	
+	/**
+	 * @brief vaciar lista
+	 * 
+	 */
 	void vaciar_lista();
+	
+	/**
+	 * @brief devuelve mcd
+	 * 
+	 * @return T 
+	 */
 	T maximo_comun_divisor(T);
+	
+	/**
+	 * @brief contar elementos
+	 * 
+	 * @return T 
+	 */
 	T contar_elementos();
 	
 };

@@ -1,3 +1,17 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAÑAY
+*TEMA: Calculadora Polaca inversa
+*FECHA DE CREACION : 3 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
+
 #pragma once
 #include <iostream>
 #include <ctime>
@@ -9,11 +23,37 @@ private:
 	T dato;
 	Nodo<T>* siguiente;
 public:
+
+	/**
+	 * @brief Construct a new Nodo< T> object
+	 * 
+	 */
 	Nodo<T>(T, Nodo*);
 
+	/**
+	 * @brief Get the dato object
+	 * 
+	 * @return T 
+	 */
 	T get_dato();
+
+	/**
+	 * @brief Set the dato object
+	 * 
+	 */
 	void set_dato(T);
+
+	/**
+	 * @brief Get the siguiente object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_siguiente();
+
+	/**
+	 * @brief Set the siguiente object
+	 * 
+	 */
 	void set_siguiente(Nodo*);
 	
 	
@@ -29,7 +69,15 @@ Nodo<T>::Nodo(T val, Nodo* sig)
 template<class T>
 T Nodo<T>::get_dato()
 {
-	return this->dato;
+	try
+	{
+		return this->dato;
+	}
+	catch (...)
+	{
+		std::cout << "Error" << std::endl;
+	}
+	
 }
 
 template<class T>

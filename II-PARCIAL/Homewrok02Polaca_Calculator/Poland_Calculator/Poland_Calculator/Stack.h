@@ -1,3 +1,17 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAÑAY
+*TEMA: Calculadora Polaca inversa
+*FECHA DE CREACION : 3 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
+
 #pragma once
 #include "Nodo.h"
 #include <ctime>
@@ -12,23 +26,120 @@ private:
 	Nodo<T>* primero;
 	Nodo<T>* actual;
 public:
+	/**
+	 * @brief comprobar pila vacia
+	 * 
+	 * @return true 
+	 * @return false 
+	 */
 	bool StackVacia();
+
+	/**
+	 * @brief Comprobar pila vacia
+	 * 
+	 * @return true 
+	 * @return false 
+	 */
 	bool empty_stack();
+	
+	/**
+	 * @brief Construct a new Stack< T> object
+	 * 
+	 */
 	Stack<T>();
+	
+	/**
+	 * @brief insertar por cola
+	 * 
+	 */
 	void insertar_por_la_cola(T);
+	
+	/**
+	 * @brief Set the primero object
+	 * 
+	 */
 	void set_primero(Nodo<T>*);
+	
+	/**
+	 * @brief Get the primero object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_primero();
+	
+	/**
+	 * @brief Set the actual object
+	 * 
+	 */
 	void set_actual(Nodo<T>*);
+	
+	/**
+	 * @brief Get the actual object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_actual();
+	
+	/**
+	 * @brief Insertar por cabezas
+	 * 
+	 */
 	void insertar_por_la_cabeza(T);
+	
+	/**
+	 * @brief Borrar por cola
+	 * 
+	 */
 	void borrar_por_la_cola();
+	
+	/**
+	 * @brief Borrar por cabeza
+	 * 
+	 */
 	void borrar_por_la_cabeza();
+	
+	/**
+	 * @brief Mostrar
+	 * 
+	 */
 	void mostrar();
+	
+	/**
+	 * @brief Ver Expresion
+	 * 
+	 */
 	void mostrar_expresion();
+	
+	/**
+	 * @brief Mostrar Expresion Invetida
+	 * 
+	 */
 	void mostrar_expresion_invertida();
+	
+	/**
+	 * @brief Llenar lista aleatorio
+	 * 
+	 */
 	void llenar_aleatorio_lista();
+	
+	/**
+	 * @brief Vaciar Lista
+	 * 
+	 */
 	void vaciar_lista();
+	
+	/**
+	 * @brief MCD
+	 * 
+	 * @return T 
+	 */
 	T maximo_comun_divisor(T);
+	
+	/**
+	 * @brief Contar elementos
+	 * 
+	 * @return T 
+	 */
 	T contar_elementos();
 
 };
