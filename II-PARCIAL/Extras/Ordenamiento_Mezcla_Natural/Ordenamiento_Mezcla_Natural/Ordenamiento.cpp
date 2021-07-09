@@ -99,6 +99,96 @@ void Ordenamiento::natural_sort(const string f)
 	//remove("archivo2.txt");*/
 }
 
+void Ordenamiento::natural_sort1(function<bool(ifstream&)>archivo_vacio2,const string f)
+{
+	int lineas = 0;
+	lineas = contar_lineas(f);
+	bool band = false;
+	int archivo_vacio1 = -1;
+	string f1 = "archivo1.txt";
+	string f2 = "archivo2.txt";
+	string f3 = "archivo3.txt";
+	cout << "paso " << 0 << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
+	particion_inicial(f, f2, f3);
+	int cont = 1;
+	cout << "paso " << cont << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
+	band = true;
+	do {
+		if (band) {
+			particionFusion(f2, f3, f, f1);
+			//imprimir("después de partición fusión con band=true");
+			cont++;
+			cout << "paso " << cont << endl;
+			imprimir_archivo(f);
+			imprimir_archivo(f1);
+			imprimir_archivo(f2);
+			imprimir_archivo(f3);
+			cout << endl;
+			band = false;
+		}
+		else {
+			particionFusion(f, f1, f2, f3);
+			cont++;
+			cout << "paso " << cont << endl;
+			imprimir_archivo(f);
+			imprimir_archivo(f1);
+			imprimir_archivo(f2);
+			imprimir_archivo(f3);
+			cout << endl;
+			//imprimir("después de partición fusión con band=false");
+			band = true;
+		}
+		ifstream archivo1(f1.c_str(), ios::in);
+
+		if (archivo_vacio2(archivo1)) {
+			archivo_vacio1 = 1;
+		}
+		archivo1.close();
+
+		if (archivo_vacio1 == -1) {
+			ifstream archivo3(f3.c_str(), ios::in);
+			if (archivo_vacio2(archivo3)) {
+				archivo_vacio1 = 1;
+			}
+			archivo1.close();
+		}
+	} while (archivo_vacio1 == -1);
+	cont++;
+	cout << "paso " << cont << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
+	//particion_inicial(f, f2, f3);
+	//particionFusion(f2, f3, f, f1);
+	//particion_inicial(f, f2, f3);
+	//particionFusion(f2, f3, f, f1);
+	ifstream archivo(f.c_str(), ios::in);
+	archivo.close();
+	if (contar_lineas(f) != lineas) {
+		remove("archivo.txt");
+		rename("archivo2.txt", "archivo.txt");
+		remove("archivo1.txt");
+		remove("archivo3.txt");
+	}
+	else {
+		remove("archivo1.txt");
+		remove("archivo3.txt");
+		remove("archivo2.txt");
+	}
+}
+
 void Ordenamiento::particion_inicial(string f, string f2, string f3)
 {
 	mystring str;

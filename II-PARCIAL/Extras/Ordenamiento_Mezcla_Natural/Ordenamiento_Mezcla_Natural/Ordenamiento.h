@@ -4,14 +4,14 @@
 #include <time.h>
 #include <ctime>
 #include <random>
+#include <functional>
 using namespace std;
 class Ordenamiento
 {
 public:
 	void natural_sort(const string);
+	void natural_sort1(function<bool(ifstream&)>archivo_vacio2,const string);
 	void particion_inicial(const string, const string, const string);
-	void particion_fusion(string, string, string, string);
-	
 	List<int> generar_aleatorio(int);
 
 	void grabar_aleatorio(List<int>, string);
