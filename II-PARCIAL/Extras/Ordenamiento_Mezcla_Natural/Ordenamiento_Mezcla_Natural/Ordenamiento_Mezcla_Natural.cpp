@@ -12,10 +12,10 @@ int main()
    
     ord.crear_archivo_aleatorio(f1,20);
     cout << ord.contar_lineas(f1) << endl;
-    ord.imprimir_archivo(f1);
+   // ord.imprimir_archivo(f1);
     ord.natural_sort(f1);
-    ord.imprimir_archivo(f1);
-    //ord.natural_sort(f1);
+    //ord.imprimir_archivo(f1);
+    ord.natural_sort(f1);
     //ord.imprimir_archivo(f1);
     
     

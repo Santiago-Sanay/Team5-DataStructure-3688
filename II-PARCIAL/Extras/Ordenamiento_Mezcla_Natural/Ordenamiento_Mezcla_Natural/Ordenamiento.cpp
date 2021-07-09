@@ -15,16 +15,43 @@ void Ordenamiento::natural_sort(const string f)
 	string f1 = "archivo1.txt";
 	string f2 = "archivo2.txt";
 	string f3 = "archivo3.txt";
+	cout << "paso " << 0 << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
 	particion_inicial(f,f2,f3);
-	/*band = true;
+	int cont = 1;
+	cout << "paso " << cont  << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
+	band = true;
 	do {
 		if (band) {
 			particionFusion(f2, f3, f, f1);
 			//imprimir("después de partición fusión con band=true");
+			cont++;
+			cout << "paso " << cont << endl;
+			imprimir_archivo(f);
+			imprimir_archivo(f1);
+			imprimir_archivo(f2);
+			imprimir_archivo(f3);
+			cout << endl;
 			band = false;
 		}
 		else {
 			particionFusion(f, f1, f2, f3);
+			cont++;
+			cout << "paso " << cont << endl;
+			imprimir_archivo(f);
+			imprimir_archivo(f1);
+			imprimir_archivo(f2);
+			imprimir_archivo(f3);
+			cout << endl;
 			//imprimir("después de partición fusión con band=false");
 			band = true;
 		}
@@ -43,6 +70,13 @@ void Ordenamiento::natural_sort(const string f)
 			archivo1.close();
 		}
 	} while (archivo_vacio1 == -1);
+	cont++;
+	cout << "paso " << cont << endl;
+	imprimir_archivo(f);
+	imprimir_archivo(f1);
+	imprimir_archivo(f2);
+	imprimir_archivo(f3);
+	cout << endl;
 	//particion_inicial(f, f2, f3);
 	//particionFusion(f2, f3, f, f1);
 	//particion_inicial(f, f2, f3);
@@ -349,12 +383,19 @@ void Ordenamiento::imprimir_archivo(string f)
 {
 	string linea;
 	ifstream archivo(f.c_str(), ios::in);//abrir achivo de lectura f
-	while (!archivo.eof()) {
-		getline(archivo, linea);
-		cout <<"- "<< linea << "-\t";
-		//cout << linea << "\t";
+	if (archivo_vacio(archivo)) {
+		cout <<"vacio"<< endl;
 	}
-	cout << endl;
+	else {
+		while (!archivo.eof()) {
+			getline(archivo, linea);
+			cout << "- " << linea << "-\t";
+			//cout << linea << "\t";
+		}
+		cout << endl;
+
+	}
+	
 	archivo.close();
 }
 
