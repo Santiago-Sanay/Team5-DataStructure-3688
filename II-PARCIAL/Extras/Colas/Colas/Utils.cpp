@@ -5,7 +5,7 @@
 #include "mystring.h"
 #include <conio.h>
 #include <stdio.h>
-#pragma warning(disable : 4996) ;
+#pragma warning(disable : 4996);
 
 int Utils::random_int(const int min, const int max)
 {
@@ -17,7 +17,7 @@ int Utils::random_int(const int min, const int max)
     return dist(random_generator);
 }
 
-int Utils::max(int num1, int num2)
+int Utils::maxx(int num1, int num2)
 {
     if (num1 > num2)
     {
@@ -26,9 +26,11 @@ int Utils::max(int num1, int num2)
     else
         return num2;
 }
+
 int Utils::sum(int num1, int num2) {
     return num1 + num2;
 }
+
 int Utils::validate_number(int digits)
 {
     std::string cad;
