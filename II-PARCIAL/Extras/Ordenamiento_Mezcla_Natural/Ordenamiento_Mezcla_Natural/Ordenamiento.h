@@ -17,11 +17,16 @@ public:
 	void grabar_aleatorio(List<int>, string);
 	void crear_archivo_aleatorio(string, int);
 	bool archivo_vacio(ifstream&);
+	
 
 
 	void particionFusion(string archfa, string archfb, string archfc, string archfd);
-	void ayuda1(int* aux, int r, int fc, int fd, bool band);
+	void ayuda1(int& aux, int r, ofstream& fc, ofstream& fd, bool band, int& contc, int& contd);
+	void ayuda2(int& aux, int r, ofstream& fc, ofstream& fd, bool &band, int& contc, int& contd);
 	void escribir_en_archivo(ofstream&, int&,int );
 	int leer_linea(ifstream&);
+	void ayuda3(int& aux, int r, ifstream& f, ofstream& fc, ofstream& fd, bool &band,int &contC,int &contD);
+	void imprimir_archivo(string f);
+	int contar_lineas(string f);
 };
 
