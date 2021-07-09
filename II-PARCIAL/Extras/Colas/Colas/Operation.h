@@ -1,6 +1,8 @@
 #pragma once
 #include "Queue.h"
 #include "Client.h"
+
+
 class Operation
 {
 public:

@@ -4,6 +4,8 @@
 #include "Utils.h"
 #include "TextTable.h"
 #include <string>
+#include "Marquee1.h"
+
 using namespace std;
 
 Client Operation::first() {
@@ -18,6 +20,7 @@ Client Operation::first() {
     client = Client(arrival_time, waiting_time, service_time, time_off, exit_time, time_between_arrival);        
     return client;
 }
+
 Queue<Client> Operation::generate_table(int index)
 {
     Queue<Client> queue;
@@ -27,6 +30,7 @@ Queue<Client> Operation::generate_table(int index)
     queue = calculate_waiting_time(queue, index);
     return queue;
 }
+
 Queue<Client> Operation::calculate_arrival_time(Queue<Client> &clients,int index)
 {
     int arrival;
@@ -94,7 +98,7 @@ Queue<Client> Operation::calculate_waiting_time(Queue<Client> &clients,int index
         if (c1 != index-1) {
             client = client3;
             client2 = temp2->get_dato();
-            arrival2 = utils.max(client.get_exit_time(), client2.get_arrival_time());
+            arrival2 = utils.maxx(client.get_exit_time(), client2.get_arrival_time());
             time_off = arrival2 - client.get_exit_time();
             arrival =arrival2  - client2.get_arrival_time();
             client2.set_waiting_time(arrival);
@@ -115,14 +119,17 @@ int Operation::calculate_exit_time(Client client)
     int exit = client.get_arrival_time() + client.get_service_time()  + client.get_time_off() + client.get_waiting_time();
     return exit;
 }
+
 void Operation::calculate_summary(Queue<Client>& clients)
 {
+    Marquee mark("Theo Yuli Junior Alex Santiago ");
     float waiting=0;
     float time_off=0;
     float service=0;
     float arrival=0;
     int summary_waiting = 0;
     Node<Client>* temp = clients.get_head();
+    
     while (temp!=nullptr)
     {
         waiting += temp->get_dato().get_waiting_time();
@@ -143,35 +150,43 @@ void Operation::calculate_summary(Queue<Client>& clients)
     cout << "Tiempo promedio de servicio: " << service << endl;
     cout << "Tiempo promedio de entre llegadas: " << arrival << endl;
     cout << "Numero de personas en cola: " << summary_waiting << endl;
+    mark.transicion();
 }
 void Operation::mostrar(Queue<Client> clients)
 {
-    TextTable table_text('-', '|', '+');
-    Node<Client>* temp;
     int cont = 1;
-    table_text.add("NO");
-    table_text.add("TIEMPO LLEGADA");
-    table_text.add("TIEMPO ESPERA");
-    table_text.add("TIEMPO NO TRABAJA");
-    table_text.add("TIEMPO DE SERVICIO");
-    table_text.add("TIEMPO DE SALIDA");
-    table_text.add("TIEMPO ENTRE LLEGADA");
-    table_text.endOfRow();
-    table_text.setAlignment(2, TextTable::Alignment::RIGHT);
-    temp = clients.get_head();
-    while (temp != nullptr)
+    Marquee mark1("THEO YULI JUNIOR ALEX SANTIAGO ");
+    int hoja = (clients.get_size()/10)+1;
+    int conteo = 0;
+    for (size_t i = 0; i < hoja; i++)
     {
-        table_text.add(to_string(cont++));
-        table_text.add(to_string(temp->get_dato().get_arrival_time()));
-        table_text.add(to_string(temp->get_dato().get_waiting_time()));
-        table_text.add(to_string(temp->get_dato().get_time_off()));
-        table_text.add(to_string(temp->get_dato().get_service_time()));
-        table_text.add(to_string(temp->get_dato().get_exit_time()));
-        table_text.add(to_string(temp->get_dato().get_time_between_arrival()));
-        temp = temp->get_siguiente();
-        table_text.endOfRow();
+        TextTable table_text2('-', '|', '+');
+        table_text2.add("NO");
+        table_text2.add("TIEMPO LLEGADA");
+        table_text2.add("TIEMPO ESPERA");
+        table_text2.add("TIEMPO NO TRABAJA");
+        table_text2.add("TIEMPO DE SERVICIO");
+        table_text2.add("TIEMPO DE SALIDA");
+        table_text2.add("TIEMPO ENTRE LLEGADA");
+        table_text2.endOfRow();
+        table_text2.setAlignment(2, TextTable::Alignment::RIGHT);
+        for (size_t j = 0; j < 10 && conteo!=clients.get_size(); j++,conteo++)
+        {
+            table_text2.add(to_string(cont++));
+            table_text2.add(to_string(clients.search(j).get_arrival_time()));
+            table_text2.add(to_string(clients.search(j).get_waiting_time()));
+            table_text2.add(to_string(clients.search(j).get_time_off()));
+            table_text2.add(to_string(clients.search(j).get_service_time()));
+            table_text2.add(to_string(clients.search(j).get_exit_time()));
+            table_text2.add(to_string(clients.search(j).get_time_between_arrival()));
+            table_text2.endOfRow();
+            table_text2.setAlignment(2, TextTable::Alignment::RIGHT);
+        }
+        std::cout << table_text2 << std::endl;
+        mark1.transicion();
+        system("cls");
+        std::cout << endl;
     }
-    table_text.setAlignment(2, TextTable::Alignment::RIGHT);
-    std::cout << table_text << std::endl;
+    
 }
 

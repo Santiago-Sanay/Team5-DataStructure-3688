@@ -1,32 +1,38 @@
-// Colas.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #include <iostream>
 #include "Queue.h"
 #include "Client.h"
 #include "Operation.h"
 #include "Utils.h"
+#include <thread>
+#include <Windows.h>
+
+void marquee_limit(std::string text, size_t limit) {
+    while (true)
+    {
+        std::string temp = text;
+        text.erase(0, 1);
+        text += temp[0];
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        SetConsoleTitleA(text.substr(0, limit).c_str());
+    }
+}
+
 using namespace std;
 int main()
 {    
+    std::string test = "UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE ";
+    std::thread t2(marquee_limit, test, test.size());
     Queue<Client> queue;
     Operation op;
     Utils  utils;
     int num;
+    cout << endl;
     cout << "Ingrese el numero de clientes: ";
     num = utils.validate_number(2);
+    cout << endl;
     cout << "\n";
     queue = op.generate_table(num);
     op.mostrar(queue);    
     op.calculate_summary(queue);
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
