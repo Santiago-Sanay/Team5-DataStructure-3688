@@ -5,7 +5,6 @@
 #include "TextTable.h"
 #include <string>
 #include "Marquee1.h"
-
 using namespace std;
 
 Client Operation::first() {
@@ -152,12 +151,14 @@ void Operation::calculate_summary(Queue<Client>& clients)
     cout << "Numero de personas en cola: " << summary_waiting << endl;
     mark.transicion();
 }
+
 void Operation::mostrar(Queue<Client> clients)
 {
     int cont = 1;
     Marquee mark1("THEO YULI JUNIOR ALEX SANTIAGO ");
     int hoja = (clients.get_size()/10)+1;
     int conteo = 0;
+    int k = 0;
     for (size_t i = 0; i < hoja; i++)
     {
         TextTable table_text2('-', '|', '+');
@@ -173,14 +174,15 @@ void Operation::mostrar(Queue<Client> clients)
         for (size_t j = 0; j < 10 && conteo!=clients.get_size(); j++,conteo++)
         {
             table_text2.add(to_string(cont++));
-            table_text2.add(to_string(clients.search(j).get_arrival_time()));
-            table_text2.add(to_string(clients.search(j).get_waiting_time()));
-            table_text2.add(to_string(clients.search(j).get_time_off()));
-            table_text2.add(to_string(clients.search(j).get_service_time()));
-            table_text2.add(to_string(clients.search(j).get_exit_time()));
-            table_text2.add(to_string(clients.search(j).get_time_between_arrival()));
+            table_text2.add(to_string(clients.search(k).get_arrival_time()));
+            table_text2.add(to_string(clients.search(k).get_waiting_time()));
+            table_text2.add(to_string(clients.search(k).get_time_off()));
+            table_text2.add(to_string(clients.search(k).get_service_time()));
+            table_text2.add(to_string(clients.search(k).get_exit_time()));
+            table_text2.add(to_string(clients.search(k).get_time_between_arrival()));
             table_text2.endOfRow();
             table_text2.setAlignment(2, TextTable::Alignment::RIGHT);
+            k++;
         }
         std::cout << table_text2 << std::endl;
         mark1.transicion();

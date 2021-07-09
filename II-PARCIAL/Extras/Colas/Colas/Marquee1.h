@@ -76,7 +76,7 @@ void Marquee::marquee()
         msg = "\t\t\t\t" + logo.substr(index % stringSize) + logo.substr(0, index % stringSize);
         printToCoordinates(0, 0, msg);
         Sleep(velocidad);
-        if (GetAsyncKeyState(VK_SPACE)) {
+        if (GetAsyncKeyState(VK_RETURN)) {
             ciclo = false;
             break;
         }
