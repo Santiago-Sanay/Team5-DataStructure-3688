@@ -10,13 +10,13 @@ int main()
     Ordenamiento ord;
     const string f1="archivo.txt";
    
-    ord.crear_archivo_aleatorio(f1,20);
+    ord.crear_archivo_aleatorio(f1,10);
     cout << ord.contar_lineas(f1) << endl;
-   // ord.imprimir_archivo(f1);
+   
     ord.natural_sort(f1);
-    //ord.imprimir_archivo(f1);
-    ord.natural_sort(f1);
-    //ord.imprimir_archivo(f1);
+    cout << "ORDENADO" << endl;
+    ord.imprimir_archivo(f1);
+   
     
     
 }

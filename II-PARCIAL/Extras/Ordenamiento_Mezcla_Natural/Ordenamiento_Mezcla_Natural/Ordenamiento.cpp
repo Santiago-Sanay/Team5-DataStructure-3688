@@ -326,13 +326,14 @@ void Ordenamiento::ayuda1(int& aux, int r, ofstream& fc, ofstream& fd, bool band
 
 void Ordenamiento::ayuda2(int& aux, int r, ofstream& fc, ofstream& fd, bool& band, int& contc, int& contd)
 {
+	
 	aux = r;
 	if (band == true) {
-		escribir_en_archivo(fc, contc, r);
+		escribir_en_archivo(fd, contd, r);
 		band = false;
 	}
 	else {
-		escribir_en_archivo(fd, contd, r);
+		escribir_en_archivo(fc, contc, r);
 		band = true;
 	}
 }
