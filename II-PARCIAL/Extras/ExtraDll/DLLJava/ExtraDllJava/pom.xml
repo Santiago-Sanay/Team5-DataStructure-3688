@@ -10,6 +10,7 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
+<!--Importa la libreria desde un repositorio externo en este caso MAVEN-->
     <dependencies>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
@@ -35,6 +36,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
+                            <!--Direcion del main del proyecto a llamar-->
                             <mainClass>ec.edu.espe.Dll.Main</mainClass>
                         </manifest>
                     </archive>

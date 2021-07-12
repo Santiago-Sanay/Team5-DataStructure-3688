@@ -5,10 +5,12 @@
 #endif
 
 /**
- * @brief Permite solo el ingreso de numeros, discriminando letras e inclusive teclas adicionales
+ * @brief  En C ++, cuando se usa con una cadena, externespecifica que las convenciones de enlace de otro 
+ idioma se están usando para los declaradores.
+ Se puede acceder a las funciones y datos de C solo si se declararon previamente que tienen un enlace de C
  * 
  * @param msj 
- * @return int  El numero Ingresado
+ * @return Retorna el numero a guardar
  */
 extern "C" {
 	VALIDACION_API int ingresar(const char* msj);
