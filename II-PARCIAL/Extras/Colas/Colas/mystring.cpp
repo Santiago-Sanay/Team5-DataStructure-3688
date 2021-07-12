@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SAï¿½AY
+*TEMA: PROGRAMA DE COLAS
+*FECHA DE CREACION : 05 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 11 DE JULIO 2021
+*/
 #include "mystring.h"
 #include <iostream>
 using namespace std;
@@ -198,7 +211,7 @@ char mystring::at(int position, string cad)
         }
     }
     else {
-        cout << "La posicion ingresada excede el tamaño de la cadena." << endl;
+        cout << "La posicion ingresada excede el tamaï¿½o de la cadena." << endl;
     }
     return c;
 }
