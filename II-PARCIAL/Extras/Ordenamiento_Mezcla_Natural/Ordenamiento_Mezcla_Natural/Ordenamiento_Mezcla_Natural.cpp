@@ -12,13 +12,14 @@ int main()
    
     ord.crear_archivo_aleatorio(f1,10);
     cout << ord.contar_lineas(f1) << endl;
-   
-    ord.natural_sort(f1);
+    /*ord.natural_sort(f1);*/
+    ord.natural_sort1([](ifstream& file)->bool {
+        bool state = false;
+        state = file.peek() == std::ifstream::traits_type::eof();
+        return state;
+        }, f1);
     cout << "ORDENADO" << endl;
-    ord.imprimir_archivo(f1);
-   
-    
-    
+    ord.imprimir_archivo(f1);  
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar

@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: PROGRAMA DE COLAS
+*FECHA DE CREACION : 05 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 11 DE JULIO 2021
+*/
 #include  <iostream>
 #include <stdlib.h>
 #include "Operation.h"
@@ -23,17 +36,29 @@ Client Operation::first() {
 Queue<Client> Operation::generate_table(int index)
 {
     Queue<Client> queue;
-    queue.encolar(first());
-    queue = calculate_arrival_time(queue, index);
-    queue = calculate_service_time(queue, index);
+    queue.encolar(first()); 
+    queue = calculate_arrival_time(
+        [](int& arrival2, Node<Client>* temp, Client& client, int& arrival) {
+            Utils utils;
+            arrival2 = temp->get_dato().get_arrival_time();
+            client.set_arrival_time(utils.sum(arrival, arrival2));
+            client.set_time_between_arrival(arrival);
+        }, queue, index);
+
+    queue = calculate_service_time([](int& arrival, Queue<Client> clients1, Client& client, Queue<Client>& clients, int& i) {
+        Utils utils;
+        arrival = utils.random_int(1, 16);
+        client = clients1.search(i);
+        client.set_service_time(arrival);
+        clients.modify_for_index(client, i); }, queue, index);
     queue = calculate_waiting_time(queue, index);
     return queue;
 }
 
-Queue<Client> Operation::calculate_arrival_time(Queue<Client> &clients,int index)
+Queue<Client> Operation::calculate_arrival_time(function<void(int& _arrival2, Node<Client>* _temp, Client& _client, int& _arrival)>assign, Queue<Client>& clients, int index)
 {
-    int arrival;
-    int arrival2;
+    int arrival = 0;
+    int arrival2 = 0;
     Utils utils;
     Node<Client>* temp;
     Client client;
@@ -44,9 +69,7 @@ Queue<Client> Operation::calculate_arrival_time(Queue<Client> &clients,int index
         arrival = utils.random_int(1, 25);
         while (temp != nullptr)
         {
-            arrival2 = temp->get_dato().get_arrival_time();
-            client.set_arrival_time(utils.sum(arrival, arrival2));
-            client.set_time_between_arrival(arrival);
+            assign(arrival2, temp, client, arrival);
             temp = temp->get_siguiente();
         }
         clients.encolar(client);
@@ -54,20 +77,14 @@ Queue<Client> Operation::calculate_arrival_time(Queue<Client> &clients,int index
     return clients;
 }
 
-Queue<Client> Operation::calculate_service_time(Queue<Client> &clients,int index)
+Queue<Client> Operation::calculate_service_time(function<void(int& _arrival, Queue<Client> _clients1, Client& _client, Queue<Client>& _clients, int& _i)>assign, Queue<Client>& clients, int index)
 {
     int arrival;
-    int arrival2;
-    int cont = 0;
-    Utils utils;
     Queue<Client>clients1 = clients;
     Client client;
     for (int i = 1; i < clients1.get_size(); i++)
-    {       
-        arrival = utils.random_int(1, 16);
-        client = clients1.search(i);
-        client.set_service_time(arrival);
-        clients.modify_for_index(client, i);
+    {
+        assign(arrival, clients1, client, clients, i);
     }
     return clients;
 }
