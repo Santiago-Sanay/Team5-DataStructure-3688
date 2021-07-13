@@ -22,11 +22,47 @@ using namespace std;
 class Marquee
 {
 public:
+
+    /**
+     * @brief Construct a new Marquee object
+     * 
+     */
 	Marquee(string);
+
+    /**
+     * @brief Ocultar cursor
+     * 
+     */
     void cursorHide();
+
+    /**
+     * @brief Imprime en coordenadas 
+     * 
+     * @param x 
+     * @param y 
+     * @param format 
+     * @param ... 
+     */
     void printToCoordinates(int x, int y, string format, ...);
+
+    /**
+     * @brief Get the Console Cursor Position object
+     * 
+     * @param hConsoleOutput 
+     * @return COORD 
+     */
     COORD GetConsoleCursorPosition(HANDLE hConsoleOutput);
+
+    /**
+     * @brief Impresion de marquesina 
+     * 
+     */
     void marquee();
+
+    /**
+     * @brief ajusta marquesina en consola
+     * 
+     */
     void transicion();
 private:
 	string marquesina;
