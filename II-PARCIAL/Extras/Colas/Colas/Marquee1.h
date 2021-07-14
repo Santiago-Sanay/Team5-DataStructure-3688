@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: PROGRAMA DE COLAS
+*FECHA DE CREACION : 05 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 11 DE JULIO 2021
+*/
 #pragma once
 #include <iostream>
 #include <string.h>
@@ -9,11 +22,47 @@ using namespace std;
 class Marquee
 {
 public:
+
+    /**
+     * @brief Construct a new Marquee object
+     * 
+     */
 	Marquee(string);
+
+    /**
+     * @brief Ocultar cursor
+     * 
+     */
     void cursorHide();
+
+    /**
+     * @brief Imprime en coordenadas 
+     * 
+     * @param x 
+     * @param y 
+     * @param format 
+     * @param ... 
+     */
     void printToCoordinates(int x, int y, string format, ...);
+
+    /**
+     * @brief Get the Console Cursor Position object
+     * 
+     * @param hConsoleOutput 
+     * @return COORD 
+     */
     COORD GetConsoleCursorPosition(HANDLE hConsoleOutput);
+
+    /**
+     * @brief Impresion de marquesina 
+     * 
+     */
     void marquee();
+
+    /**
+     * @brief ajusta marquesina en consola
+     * 
+     */
     void transicion();
 private:
 	string marquesina;

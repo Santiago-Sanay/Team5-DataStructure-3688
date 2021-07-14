@@ -1,3 +1,16 @@
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*TEMA: PROGRAMA DE COLAS
+*FECHA DE CREACION : 05 DE JULIO DE 2021
+*FECHA DE MODIFICACION: 11 DE JULIO 2021
+*/
 #pragma once
 template <typename T>
 class Node {
@@ -5,11 +18,37 @@ private:
 	T data;
 	Node<T>*  next;
 public:
+	/**
+	 * @brief Construct a new Node< T> object
+	 * 
+	 */
 	Node<T>() = default;
+	/**
+	 * @brief Construct a new Node< T> object
+	 * 
+	 */
 	Node<T>(T, Node*);
+	/**
+	 * @brief Get the dato object
+	 * 
+	 * @return T 
+	 */
 	T get_dato();
+	/**
+	 * @brief Set the dato object
+	 * 
+	 */
 	void set_dato(T);
+	/**
+	 * @brief Get the siguiente object
+	 * 
+	 * @return Node<T>* 
+	 */
 	Node<T>* get_siguiente();
+	/**
+	 * @brief Set the siguiente object
+	 * 
+	 */
 	void set_siguiente(Node*);
 };
 
