@@ -20,9 +20,9 @@ public interface DLLLibrary extends Library {
 public static void main(String[] args) {
     Scanner scanner= new Scanner(System.in);
     try {
-        
         char opt=0;
         do{
+            System.out.println("UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE");
             int value = DLLLibrary.INSTANCE.ingresar("Ingrese un numero: ");
             System.out.println("\nValor ingresado: " + value + "\n\n");
             System.out.print("Desea continuar validando S/N ??:");
