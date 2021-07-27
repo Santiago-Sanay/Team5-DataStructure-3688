@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\vscode\C++\CMake\AVL Tree\avl_node.h" />
-    <ClInclude Include="..\..\..\vscode\C++\CMake\AVL Tree\avl_tree.h" />
-    <ClInclude Include="..\..\..\vscode\C++\CMake\AVL Tree\trunk.h" />
-    <ClInclude Include="..\..\..\vscode\C++\CMake\AVL Tree\utils.h" />
+    <ClInclude Include="avl_node.h" />
+    <ClInclude Include="avl_tree.h" />
+    <ClInclude Include="trunk.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\vscode\C++\CMake\AVL Tree\main.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
