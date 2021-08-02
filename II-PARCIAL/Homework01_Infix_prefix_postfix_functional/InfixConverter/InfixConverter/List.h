@@ -24,23 +24,81 @@ private:
 	Nodo<T>* primero;
 	Nodo<T>* actual;
 public:
+	/**
+	 * @brief Lista Vacia
+	 *
+	 * @return Lista
+	 */
 	bool listaVacia();
 	List<T>() ;
+	/**
+	 * @brief Insertar por la cola  de una Lista 
+	 *
+	 * @return Lista T
+	 */
 	void insertar_por_la_cola(T);
+	/**
+	 * @brief setter
+	 *
+	 * @return Lista T
+	 */
 	void set_primero(Nodo<T>*);
+	/**
+	 * @brief getter
+	 *
+	 * @return Lista T
+	 */
 	Nodo<T>* get_primero();
+	/**
+	 * @brief setter
+	 *
+	 * @return Lista T
+	 */
 	void set_actual(Nodo<T>*);
+	/**
+	 * @brief setter
+	 *
+	 * @return Lista T
+	 */
 	Nodo<T>* get_actual();
+	/**
+	 * @brief Insertar por la cabeza  de una Lista
+	 *
+	 * @return Lista T
+	 */
 	void insertar_por_la_cabeza(T);
+	/**
+	 * @brief Borrar por la cola  de una Lista
+	 *
+	 * @return Lista T
+	 */
 	void borrar_por_la_cola();
+	/**
+	 * @brief Borrar por la cabeza  de una Lista
+	 *
+	 * @return Lista T
+	 */
 	void borrar_por_la_cabeza();
+	/**
+	 * @brief Mostar Lista
+	 *
+	 * @return Lista T
+	 */
 	void mostrar();
-	void mostrar_due();
+	/**
+	 * @brief Llena de numeros aleatorios en la lista
+	 *
+	 * @return Lista T
+	 */
 	void llenar_aleatorio_lista();
+	/**
+	 * @brief vacia una en la lista
+	 *
+	 * @return Lista T
+	 */
 	void vaciar_lista();
 	T maximo_comun_divisor(T);
 	T contar_elementos();
-	
 };
 
 template<class T>

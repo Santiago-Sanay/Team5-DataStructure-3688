@@ -21,13 +21,32 @@
 #define ABAJO 80
 #define ENTER 13
 using namespace std;
-
+/**
+ * @brief Menu principal
+ *
+ * @return void
+ */
 void menu_principal();
+/**
+ * @brief Menu Colores
+ *
+ * @return void
+ */
 void Color(int Background, int Text);
+/**
+ * @brief posicion en la pantalla del color
+ *
+ * @return void
+ */
 void gotoxy(USHORT x, USHORT y) {
     COORD cp = { x,y };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cp);
 }
+/**
+ * @brief posicion en la pantalla del color
+ *
+ * @return void
+ */
 void Color(int Background, int Text) { // Función para cambiar el color del fondo y/o pantalla
     HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE); // Tomamos la consola.
     // Para cambiar el color, se utilizan números desde el 0 hasta el 255.

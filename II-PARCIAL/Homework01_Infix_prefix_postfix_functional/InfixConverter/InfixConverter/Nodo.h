@@ -22,13 +22,10 @@ private:
 	Nodo<T>* siguiente;
 public:
 	Nodo<T>(T, Nodo*);
-
 	T get_dato();
 	void set_dato(T);
 	Nodo<T>* get_siguiente();
 	void set_siguiente(Nodo*);
-	
-	
 	
 };
 template<class T>

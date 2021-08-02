@@ -25,18 +25,69 @@ private:
 	Nodo<T>* actual;
 public:
 	bool listaVacia();
+	/**
+	 * @brief Verifica la pila este creada y vacia
+	 *
+	 * @return true
+	 * @return false
+	 */
 	bool empty_stack();
 	Stack<T>();
+	/**
+	 * @brief Inserta por la cola de una pila
+	 *
+	 * @return T
+	 */
 	void insertar_por_la_cola(T);
+	/**
+	 * @brief setter
+	 *
+	 * @return void
+	 */
 	void set_primero(Nodo<T>*);
 	Nodo<T>* get_primero();
+	/**
+	 * @brief setter
+	 *
+	 * @return void
+	 */
 	void set_actual(Nodo<T>*);
 	Nodo<T>* get_actual();
+	/**
+	 * @brief Inserta por la cabeza de la pila
+	 *
+	 * @return void
+	 */
 	void insertar_por_la_cabeza(T);
+	/**
+	 * @brief Borra por la cola de la pila
+	 *
+	 * @return void
+	 */
 	void borrar_por_la_cola();
+	/**
+	 * @brief Borra por la cabeza de la pila
+	 *
+	 * @return void
+	 */
 	void borrar_por_la_cabeza();
+	/**
+	 * @brief Muestra la pila completa
+	 *
+	 * @return void
+	 */
 	void mostrar();
+	/**
+	 * @brief llena la pila, con numeros aleatorios
+	 *
+	 * @return void
+	 */
 	void llenar_aleatorio_lista();
+	/**
+	 * @brief borra los datos de la pila
+	 *
+	 * @return void
+	 */
 	void vaciar_lista();
 	T maximo_comun_divisor(T);
 	T contar_elementos();

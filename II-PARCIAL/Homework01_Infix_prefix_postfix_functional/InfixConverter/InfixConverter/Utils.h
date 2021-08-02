@@ -89,9 +89,6 @@ namespace Utils
          * @return float
          */
         static float validate_float();
-
-
-
         /**
          * @brief valida cedula
          * 
