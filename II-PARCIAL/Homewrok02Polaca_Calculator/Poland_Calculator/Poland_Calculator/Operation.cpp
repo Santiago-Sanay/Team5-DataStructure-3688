@@ -362,8 +362,18 @@ Stack<string> Operation::ingresar_datos()
                 datos.insertar_por_la_cabeza("*");
             }
         }
-        
-        datos.insertar_por_la_cabeza(dato);
+        if (str.is_number(dato)) {
+            datos.insertar_por_la_cabeza(dato);
+        }
+        else {
+            if (dato == "=" || dato == "sen" || dato == "cos" || dato == "tan" || dato == "+" || dato == "-" || dato == "/" || dato == "*" || dato == "(" || dato == ")" || dato == "%" || dato == "^") {
+                datos.insertar_por_la_cabeza(dato);
+            }
+            else {
+                cout << "Ingrese datos validos" << endl;
+            }
+        }
+        //datos.insertar_por_la_cabeza(dato);
         
         
     }
