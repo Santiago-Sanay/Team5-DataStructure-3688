@@ -369,8 +369,9 @@ Stack<string> Operation::ingresar_datos()
             if (dato == "=" || dato == "sen" || dato == "cos" || dato == "tan" || dato == "+" || dato == "-" || dato == "/" || dato == "*" || dato == "(" || dato == ")" || dato == "%" || dato == "^") {
                 datos.insertar_por_la_cabeza(dato);
             }
-            else {
+            else{ 
                 cout << "Ingrese datos validos" << endl;
+                system("pause");
             }
         }
         //datos.insertar_por_la_cabeza(dato);
@@ -538,11 +539,11 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
         aux = datos.get_primero()->get_dato();
         if (aux == "(") {
             if (is_operator1(anterior)) {
-                cout << "aqui 15" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             if (anterior == ")") {
-                cout << "aqui 2" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             cont_paren_abi++;
@@ -560,12 +561,12 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
 
         if (is_operator1(aux)) {
             if (is_operator1(anterior)) {
-                cout << "aqui 4" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             
             if (anterior == ")") {
-                cout << "aqui 2" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             
@@ -574,11 +575,11 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
         }
         if (str.is_number(aux)) {
             if (str.is_number(anterior)) {
-                cout << "aqui 6" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             if (is_trig_fun1(anterior)) {
-                cout << "aqui 16" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
 
@@ -586,11 +587,11 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
         }
         if (is_trig_fun1(aux)) {
             if (str.is_number(anterior)) {
-                cout << "aqui 7" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
             if (is_trig_fun1(anterior)) {
-                cout << "aqui 8" << endl;
+                cout << "Expresion Invalida" << endl;
                 return false;
             }
         }
@@ -599,7 +600,7 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
                 if (!is_operator1(aux)) {
                     if (aux != "(") {
                         if (aux != ")") {
-                            cout << "aqui 9" << endl;
+                            cout << "Expresion Invalida" << endl;
                             return false;
                         }
                     }
@@ -616,15 +617,15 @@ bool Operation::evaluar_expresion(Stack<string> datos1)
     }
     
     if (is_operator1(anterior)) {
-        cout << "aqui 17" << endl;
+        cout << "Expresion Invalida" << endl;
         return false;
     }
     if (is_trig_fun1(anterior)&&cont_data==0) {
-        cout << "aqui 17" << endl;
+        cout << "Expresion Invalida" << endl;
         return false;
     }
     if (anterior == ")") {
-        cout << "aqui 10" << endl;
+        cout << "Expresion Invalida" << endl;
         return false;
     }
     if (cont_paren_abi != cont_paren_cerr) {
