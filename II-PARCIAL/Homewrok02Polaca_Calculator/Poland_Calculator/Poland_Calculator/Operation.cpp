@@ -701,6 +701,70 @@ bool Operation::is_operator(char c)
     return false;
 }
 
+bool Operation::expresionvalida(Stack<string> datos)
+{
+    Nodo<string>* dato = datos.get_primero();
+    mystring str;
+    string aux;
+        int cont_paren_abi = 0, cont_paren_cerr = 0;
+    while (dato) {
+        aux = dato->get_dato();
+        if (aux == "(") {
+            cont_paren_abi++;
+
+            if (dato->get_siguiente() != nullptr) {
+                if (is_operator1(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+                if (dato->get_siguiente()->get_dato() == ")") {
+                    return false;
+                }
+
+            }
+        }
+        if (aux == ")") {
+            cont_paren_cerr++;
+            if (dato->get_siguiente() != nullptr) {
+                if (is_trig_fun1(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+                if (str.is_number(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+            }
+        }
+
+        if (is_operator1(aux)) {
+
+            if (dato->get_siguiente() != nullptr) {
+                if (dato->get_siguiente()->get_dato() == ")") {
+                    return false;
+                }
+                if (is_operator1(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+            }
+        }
+        if (str.is_number(dato->get_dato())) {
+            if (dato->get_siguiente() != nullptr) {
+                if (is_trig_fun1(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+                if (str.is_number(dato->get_siguiente()->get_dato())) {
+                    return false;
+                }
+            }
+
+        }
+        dato = dato->get_siguiente();
+    }
+    if (cont_paren_abi != cont_paren_cerr) {
+        return false;
+    }
+    return true;
+
+}
+
 bool Operation::is_operator1(string c)
 {
     if (c == "+" || c == "-" || c == "*" || c == "/" || c == "%" || c == "^") {

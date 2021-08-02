@@ -21,19 +21,22 @@ int main()
 {
     try
     {
-    Operation op;
-   
-    mystring str;
-    string num = "12.36";
-    //cout << str.stod(num) << endl;
-    Stack<string> datos;
-    datos = op.ingresar_datos();
-
+        Operation op;
+        mystring str;
+        Stack<string> datos;
+        datos = op.ingresar_datos();
+        if (op.expresionvalida(datos)) {
+            cout << "Expresion valida";
+        }
+        else {
+            cout << "Expresion incorrecta";
+        }
+        /**
         cout << "INFIJA         :   ";
         datos.mostrar_expresion();
+        Nodo<string>* dato = datos.get_primero();
         Stack<string> prefija;
         Stack<string> postfija;
-
         prefija = op.infix_to_prefix1(datos);
         cout << "PREFIJA        :   ";
         prefija.mostrar_expresion();
@@ -43,7 +46,9 @@ int main()
         postfija.mostrar_expresion();
         cout << "RESULTADO      :   ";
         cout << op.calculate(prefija) << endl;
+        */
     }
+    
     catch (const std::exception&)
     {
         cout << "Error" << endl;

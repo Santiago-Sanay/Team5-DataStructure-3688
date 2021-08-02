@@ -102,6 +102,8 @@ public:
 	 * @return false 
 	 */
 	bool is_operator(char);
+
+	bool expresionvalida(Stack<string>);
 	
 	/**
 	 * @brief comprobar operador
