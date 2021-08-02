@@ -162,7 +162,7 @@ public:
 	 * @return Stack<string> 
 	 */
 	Stack<string> ingresar_datos();
-	
+	Stack<string> ingresar_datos_enteros();
 	/**
 	 * @brief invertir pila
 	 * 
@@ -176,5 +176,9 @@ public:
 	 * @return Stack<string> 
 	 */
 	Stack<string> copiar_pila(Stack<string>);
+	Stack<string> desencolar_pila_cifrada(Stack<string>,int);
+	string cifrar(string, int);
+	bool evaluar_expresion(Stack<string>);
+	char* ingreso(const char*);
 };
 

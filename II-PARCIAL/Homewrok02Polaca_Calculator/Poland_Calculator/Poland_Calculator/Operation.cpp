@@ -15,7 +15,11 @@
 #include "Operation.h"
 #include "Trig_Operation.h"
 #include <Math.h>
-
+#include <iostream>
+#include <string>
+#include <conio.h>
+#include <cstring>
+#include "Utils.h"
 string Operation::infix_to_prefix(string infix)
 {
     Stack<char> stack;
@@ -325,6 +329,7 @@ Stack<string> Operation::ingresar_datos()
     Stack<string> datos;
     Stack<string> datos1;
     Stack<string> datos2;
+    mystring str;
     string dato="";
     while (dato != "=") {
         system("cls");
@@ -340,7 +345,24 @@ Stack<string> Operation::ingresar_datos()
         cout << "--------------------------------------------" << endl;
         cout << "   ingrese un numero u operador : " ;
         cin >> dato;
-
+        if (!datos.empty_stack()) {
+            if (str.is_number(dato) && datos.get_primero()->get_dato() == ")" ) {
+                datos.insertar_por_la_cabeza("*");
+            }
+            if (is_trig_fun1(dato) && str.is_number(datos.get_primero()->get_dato()) ) {
+                datos.insertar_por_la_cabeza("*");
+            }
+            if (is_trig_fun1(dato) && datos.get_primero()->get_dato() == ")") {
+                datos.insertar_por_la_cabeza("*");
+            }
+            if (dato=="(" && datos.get_primero()->get_dato() == ")") {
+                datos.insertar_por_la_cabeza("*");
+            }
+            if (dato == "(" && str.is_number(datos.get_primero()->get_dato())) {
+                datos.insertar_por_la_cabeza("*");
+            }
+        }
+        
         datos.insertar_por_la_cabeza(dato);
         
         
@@ -353,6 +375,34 @@ Stack<string> Operation::ingresar_datos()
         return datos;
     }
     return invertir_pila(datos);
+}
+
+Stack<string> Operation::ingresar_datos_enteros()
+{
+    string dato="99";
+    Stack<string> datos;
+    mystring str;
+    int num = 0;
+    char datos2[11];
+    while (dato != "999" ) {
+      
+        
+       
+        strcpy_s(datos2, ingreso("ingrese un numero a la pila "));
+        //cout << datos2 << endl;
+        dato=datos2 ;
+        
+        cout << endl;
+        //cin >> dato;
+        if (dato != "999" && str.stoi(dato) > 9) {
+            datos.insertar_por_la_cabeza(dato);
+            
+        }
+        
+       
+    }
+    return datos;
+
 }
 
 Stack<string> Operation::invertir_pila(Stack<string> datos)
@@ -383,6 +433,213 @@ Stack<string> Operation::copiar_pila(Stack<string> datos)
     return datos1;
 }
 
+Stack<string> Operation::desencolar_pila_cifrada(Stack<string> datos, int clave)
+{
+    Nodo<string>* dato = datos.get_primero();
+    Stack<string> datos1;
+    string aux;
+    string aux2;
+    while (dato) {
+        
+        aux = dato->get_dato();
+        aux2 = cifrar(aux, clave);
+        datos1.insertar_por_la_cabeza(aux2);
+        dato = dato->get_siguiente();
+
+    }
+    return datos1;
+}
+
+string Operation::cifrar(string dato, int clave)
+{
+    mystring str;
+    string data;
+    
+   
+    data = to_string(clave);
+    
+    if (str.find(dato, data, 0) == -1) {
+        return dato;
+    }
+    else {
+        int aux = str.stoi(dato);
+       
+        int sum = 0;
+        for (int i = 0; i < str.length(dato); i++) {
+            sum = sum + aux % 10;
+            
+            aux = aux / 10;
+        }
+        
+        dato = to_string(sum);
+        
+        return cifrar(dato, clave);
+
+    }
+    
+}
+
+bool Operation::evaluar_expresion(Stack<string> datos1)
+{
+    
+    Stack<string> datos = copiar_pila(datos1);
+    Nodo<string>* dato = datos.get_primero();
+    if (datos.empty_stack()) {
+        return true;
+    }
+    
+    string aux;
+    string anterior;
+    string cabeza;
+    mystring str;
+    bool result = false;
+    int cont_paren_abi = 0;
+    int cont_paren_cerr= 0;
+   /* while (dato) {
+        aux = dato->get_dato();
+        datos1.insertar_por_la_cabeza(aux);
+        dato = dato->get_siguiente();
+
+    }*/
+    if (dato->get_dato() == "(") {
+        cout << "aqui 13" << endl;
+        return false;
+    }
+    if (dato->get_dato() == ")") {
+        cont_paren_cerr++;
+    }
+    anterior = dato->get_dato();
+    if (!is_trig_fun1(anterior)) {
+        if (!str.is_number(anterior)) {
+            if (!is_operator1(anterior)) {
+                if (anterior != "(") {
+                    if (anterior != ")") {
+                        cout << "termino no valido" << endl;
+                        return false;
+                    }
+                }
+            }
+        }
+
+    }
+    datos.borrar_por_la_cabeza();
+    int cont_data = 0;
+    while (!datos.empty_stack()) {
+        aux = datos.get_primero()->get_dato();
+        if (aux == "(") {
+            if (is_operator1(anterior)) {
+                cout << "aqui 15" << endl;
+                return false;
+            }
+            if (anterior == ")") {
+                cout << "aqui 2" << endl;
+                return false;
+            }
+            cont_paren_abi++;
+
+        }
+        if (aux == ")") {
+            cont_paren_cerr++;
+            
+            /*if (is_operator1(anterior)) {
+                cout << "aqui 3" << endl;
+                return false;
+            }*/
+            
+        }
+
+        if (is_operator1(aux)) {
+            if (is_operator1(anterior)) {
+                cout << "aqui 4" << endl;
+                return false;
+            }
+            
+            if (anterior == ")") {
+                cout << "aqui 2" << endl;
+                return false;
+            }
+            
+            
+
+        }
+        if (str.is_number(aux)) {
+            if (str.is_number(anterior)) {
+                cout << "aqui 6" << endl;
+                return false;
+            }
+            if (is_trig_fun1(anterior)) {
+                cout << "aqui 16" << endl;
+                return false;
+            }
+
+
+        }
+        if (is_trig_fun1(aux)) {
+            if (str.is_number(anterior)) {
+                cout << "aqui 7" << endl;
+                return false;
+            }
+            if (is_trig_fun1(anterior)) {
+                cout << "aqui 8" << endl;
+                return false;
+            }
+        }
+        if (!is_trig_fun1(aux)) {
+            if (!str.is_number(aux)) {
+                if (!is_operator1(aux)) {
+                    if (aux != "(") {
+                        if (aux != ")") {
+                            cout << "aqui 9" << endl;
+                            return false;
+                        }
+                    }
+                }
+           }
+            
+        }
+       
+        anterior = aux;
+        datos.borrar_por_la_cabeza();
+        cont_data++;
+
+        
+    }
+    
+    if (is_operator1(anterior)) {
+        cout << "aqui 17" << endl;
+        return false;
+    }
+    if (is_trig_fun1(anterior)&&cont_data==0) {
+        cout << "aqui 17" << endl;
+        return false;
+    }
+    if (anterior == ")") {
+        cout << "aqui 10" << endl;
+        return false;
+    }
+    if (cont_paren_abi != cont_paren_cerr) {
+        cout << "faltan parentesis" << endl;
+        return false;
+    }
+   
+    return true;
+}
+
+char* Operation::ingreso(const char* msj) {
+    char dato[10];
+    char c;
+    int i = 0;
+    printf("%s", msj);
+    cout << endl;
+    while ((c = _getch()) != 13) {
+        if (c >= '0' && c <= '9') {
+            printf("%c", c);
+            dato[i++] = c;
+        }
+    }
+    dato[i] = '\0';
+    return dato;
+}
 string Operation::infix_to_postfix(string infix)
 {
     Stack<char> stack;
