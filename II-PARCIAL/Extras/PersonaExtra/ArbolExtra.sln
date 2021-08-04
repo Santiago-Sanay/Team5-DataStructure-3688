@@ -5,32 +5,58 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArbolExtra", "ArbolExtra.vcxproj", "{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1", "..\UnitTest1\UnitTest1.vcxproj", "{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UnitTest1", "UnitTest1\", "{AFB68C64-C86D-41B1-9A02-309D92EA08D0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58685"
+		Debug.AspNetCompiler.PhysicalPath = "UnitTest1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58685\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58685"
+		Release.AspNetCompiler.PhysicalPath = "UnitTest1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58685\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58685"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Debug|x64.ActiveCfg = Debug|x64
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Debug|x64.Build.0 = Debug|x64
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Debug|x86.ActiveCfg = Debug|Win32
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Debug|x86.Build.0 = Debug|Win32
+		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Release|Any CPU.ActiveCfg = Release|Win32
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Release|x64.ActiveCfg = Release|x64
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Release|x64.Build.0 = Release|x64
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Release|x86.ActiveCfg = Release|Win32
 		{8AB1F6FF-B98D-4A63-B252-2E2EEA32E1AB}.Release|x86.Build.0 = Release|Win32
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Debug|x64.ActiveCfg = Debug|x64
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Debug|x64.Build.0 = Debug|x64
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Debug|x86.ActiveCfg = Debug|Win32
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Debug|x86.Build.0 = Debug|Win32
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Release|x64.ActiveCfg = Release|x64
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Release|x64.Build.0 = Release|x64
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Release|x86.ActiveCfg = Release|Win32
-		{8F70C431-74EB-4909-BE8B-7DC4BE4612F0}.Release|x86.Build.0 = Release|Win32
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Debug|x86.Build.0 = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|x64.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|x64.Build.0 = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|x86.ActiveCfg = Debug|Any CPU
+		{AFB68C64-C86D-41B1-9A02-309D92EA08D0}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
