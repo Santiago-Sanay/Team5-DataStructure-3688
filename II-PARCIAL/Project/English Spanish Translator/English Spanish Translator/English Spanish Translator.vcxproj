@@ -19,13 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App.h" />
     <ClInclude Include="avl_node.h" />
     <ClInclude Include="avl_tree.h" />
+    <ClInclude Include="Menu1.h" />
+    <ClInclude Include="MenuOption.h" />
     <ClInclude Include="trunk.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu1.cpp" />
+    <ClCompile Include="MenuOption.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

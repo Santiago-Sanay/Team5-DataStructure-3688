@@ -70,10 +70,7 @@ void Lista::borrar_por_la_cabeza()
 		this->primero = this->primero->get_siguiente();
 		free(temp);
 	}
-}
-	
-	
-	
+}		
 
 void Lista::mostrar()
 {
