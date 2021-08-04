@@ -22,14 +22,14 @@ void Application::init()
 void Application::manager_menu() {
     std::vector<MenuOption> menu_item
     {
-        {1,"TRADUCIR",traductor_menu},
-        {2,"MOSTRAR",print_menu},
-        {3,"DESPLEGAR ARBOL",prueba},
-        {4,"AGREGAR PALABRA",prueba},
-        {5,"ELIMINAR PALABRA",prueba},
-        {6,"MODIFICAR PALABRA",prueba},
-        {7,"MODIFICAR CUENTA",menu_of_modify},
-        {8,"REGRESAR",init}
+        {1,"TRADUCIR",traductor_menu()},
+        {2,"MOSTRAR",print_menu()},
+        {3,"DESPLEGAR ARBOL",prueba()},
+        {4,"AGREGAR PALABRA",prueba()},
+        {5,"ELIMINAR PALABRA",prueba()},
+        {6,"MODIFICAR PALABRA",prueba()},
+        {7,"MODIFICAR CUENTA",menu_of_modify()},
+        {8,"REGRESAR",init()}
     };
     Menu menu{ menu_item };
     menu.navigation();

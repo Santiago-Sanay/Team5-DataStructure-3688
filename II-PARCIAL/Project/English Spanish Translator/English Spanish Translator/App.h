@@ -3,6 +3,7 @@
 #include <iostream>
 #include "MenuOption.h"
 #include "Menu1.h"
+#include "avl_tree.h"
 #include <iomanip>
 #include <sstream>
 #include <fstream>
@@ -11,21 +12,22 @@ using namespace std;
 class Application
 {
 private:
-	static void init();
-	static void validate_account();
-	static void manager_menu();
-	static void user_menu();
-	static void write(string);
-	static void modify_password();
-	static void menu_of_modify();
-	static void prueba();
-	static void traductor_menu();
-	static void print_menu();
-	static void modify_user();
-	static string read();
-	static void exit_program();
-	static void add_word();
+	AvlTree tree;
+	 void init();
+	 void validate_account();
+	 void manager_menu();
+	 void user_menu();
+	 void write(string);
+	 void modify_password();
+	 void menu_of_modify();
+	 void prueba();
+	 void traductor_menu();
+	 void print_menu();
+	 void modify_user();
+	 string read();
+	 void exit_program();
+	 void add_word();
 public:
 
-	static int run();
+	 int run();
 };
