@@ -18,26 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="avl_node.h" />
-    <ClInclude Include="avl_tree.h" />
-    <ClInclude Include="Menu1.h" />
-    <ClInclude Include="MenuOption.h" />
-    <ClInclude Include="trunk.h" />
-    <ClInclude Include="utils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu1.cpp" />
-    <ClCompile Include="MenuOption.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6cc2fe41-da6b-4f66-abdd-23c46d13abfd}</ProjectGuid>
-    <RootNamespace>EnglishSpanishTranslator</RootNamespace>
+    <ProjectGuid>{8ab1f6ff-b98d-4a63-b252-2e2eea32e1ab}</ProjectGuid>
+    <RootNamespace>ArbolExtra</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -153,6 +138,23 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Arbol.cpp" />
+    <ClCompile Include="ArbolExtra.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuOption.cpp" />
+    <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Arbol.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuOption.h" />
+    <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -3,7 +3,7 @@
 #include "avl_node.h"
 #include "utils.h"
 #include <iomanip>
-
+#include "App.h"
 int main()
 {
 
@@ -37,6 +37,7 @@ int main()
     std::cout << "Nodo encontrado: " << test_find->spanish_word() << "," << test_find->english_word() << std::endl;
 
     tree.print_tree(tree.get_root(), nullptr, false, 0);
-
+    Application app;
+    app.run();
     return 0;
 }
