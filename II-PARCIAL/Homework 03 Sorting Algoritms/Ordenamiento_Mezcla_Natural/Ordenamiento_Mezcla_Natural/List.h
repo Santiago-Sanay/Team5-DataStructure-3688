@@ -25,18 +25,82 @@ private:
 	Nodo<T>* primero;
 	Nodo<T>* actual;
 public:
+
+	/**
+	 * @brief Devuelve true si esta vacio
+	 * 
+	 * @return true 
+	 * @return false 
+	 *//**
+	 /**
 	bool listaVacia();
+	
+	/**
+	 * @brief Construct a new List< T> object
+	 * 
+	 */
 	List<T>() ;
+	
+	/**
+	 * @brief Insertar por cola
+	 * 
+	 */
 	void insertar_por_la_cola(T);
+	
+	/**
+	 * @brief Set the primero object
+	 * 
+	 */
 	void set_primero(Nodo<T>*);
+	
+	/**
+	 * @brief Get the primero object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_primero();
+	
+	/**
+	 * @brief Set the actual object
+	 * 
+	 */
 	void set_actual(Nodo<T>*);
+	
+	/**
+	 * @brief Get the actual object
+	 * 
+	 * @return Nodo<T>* 
+	 */
 	Nodo<T>* get_actual();
+	
+	/**
+	 * @brief Insertar por cabeza
+	 * 
+	 */
 	void insertar_por_la_cabeza(T);
+	
+	/**
+	 * @brief Borrar cola
+	 * 
+	 */
 	void borrar_por_la_cola();
+	
+	/**
+	 * @brief Borrar cabeza
+	 * 
+	 */
 	void borrar_por_la_cabeza();
+	
+	/**
+	 * @brief Muestra
+	 * 
+	 */
 	void mostrar();
 	
+	/**
+	 * @brief Vacia la lista
+	 * 
+	 */
 	void vaciar_lista();
 	
 	

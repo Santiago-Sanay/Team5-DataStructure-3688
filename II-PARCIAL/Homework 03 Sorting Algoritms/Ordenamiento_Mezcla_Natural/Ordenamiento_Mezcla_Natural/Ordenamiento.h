@@ -29,6 +29,10 @@ public:
 	 * @void
 	 */
 	void natural_sort(const string);
+	/**
+	 * @brief Natural sort
+	 * 
+	 */
 	void natural_sort1(function<bool(ifstream&)>archivo_vacio2, const string);
 	/**
 	 * @brief Particiona el archivo original en archivo2.txt y archivo3.txt

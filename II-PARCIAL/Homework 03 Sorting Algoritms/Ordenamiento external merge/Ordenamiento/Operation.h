@@ -10,10 +10,31 @@ template <typename T>
 class Operation{
 public:
 	T* segment(int);
-	void wax(Vector<T>, int);
-	void add(Vector<T>, int);
-	void print(Vector<T> vector, int size, void(func)(int));
-	Vector<T> selectionSort(Vector<T>, int size);
+	/**
+	 * @brief segmentar
+	 * 
+	 */
+    void wax(Vector<T>, int);
+	/**
+	 * @brief encerar
+	 * 
+	 */
+    void add(Vector<T>, int);
+	/**
+	 * @brief agregar
+	 * 
+	 * @param vector 
+	 * @param size 
+	 * @param func 
+	 */
+    void print(Vector<T> vector, int size, void(func)(int));
+	/**
+	 * @brief Selection sort
+	 * 
+	 * @param size 
+	 * @return Vector<T> 
+	 */
+    Vector<T> externalMerge(Vector<T>, int size);
 };
 
 template<typename T>
@@ -57,7 +78,7 @@ inline void Operation<T>::print(Vector<T> vector, int size, void(func)(int))
 }
 
 template<typename T>
-inline Vector<T> Operation<T>::selectionSort(Vector<T> data, int n)
+inline Vector<T> Operation<T>::externalMerge(Vector<T> data, int n)
 {
     int* a = data.get_vector();
 

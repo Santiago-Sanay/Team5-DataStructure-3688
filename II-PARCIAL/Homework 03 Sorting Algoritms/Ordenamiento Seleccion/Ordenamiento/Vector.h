@@ -6,9 +6,28 @@ class Vector
 private: 
 public:
 	T* data;
+	/**
+	 * @brief Construct a new Vector object
+	 * 
+	 */
 	Vector() = default;
+	/**
+	 * @brief Set the vector object
+	 * 
+	 */
 	void set_vector(T*);
+	/**
+	 * @brief Get the vector object
+	 * 
+	 * @return T* 
+	 */
 	T* get_vector();
+	/**
+	 * @brief segmentar
+	 * 
+	 * @param size 
+	 * @return T* 
+	 */
 	T* segment(int size);
 };
 

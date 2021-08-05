@@ -9,10 +9,36 @@ using namespace std;
 template <typename T>
 class Operation{
 public:
+	/**
+	 * @brief Segmentar
+	 * 
+	 * @return T* 
+	 */
 	T* segment(int);
+	/**
+	 * @brief Encerar
+	 * 
+	 */
 	void wax(Vector<T>, int);
+	/**
+	 * @brief Agregar
+	 * 
+	 */
 	void add(Vector<T>, int);
+	/**
+	 * @brief Imprimir
+	 * 
+	 * @param vector 
+	 * @param size 
+	 * @param func 
+	 */
 	void print(Vector<T> vector, int size, void(func)(int));
+	/**
+	 * @brief Seleccion sort
+	 * 
+	 * @param size 
+	 * @return Vector<T> 
+	 */
 	Vector<T> selectionSort(Vector<T>, int size);
 };
 
