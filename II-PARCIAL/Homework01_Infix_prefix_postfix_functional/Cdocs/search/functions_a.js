@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['nodo_168',['Nodo',['../class_nodo.html#a24a0a39dfbb45cb4321ece5e9888fa3f',1,'Nodo']]]
-];
