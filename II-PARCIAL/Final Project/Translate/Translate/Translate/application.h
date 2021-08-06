@@ -30,7 +30,6 @@ class Application
 {
 public:
     static inline int run(int);
-    static inline void stop();
     static inline void exit();
 
 private:
@@ -451,6 +450,7 @@ inline void Application::print_tree()
     {
         tree.print_tree(tree.get_root(), nullptr, false, SPANISH);
     }
+    system("pause");
 }
 
 inline void Application::new_admin()
