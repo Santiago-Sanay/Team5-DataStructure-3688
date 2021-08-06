@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D9722F03-DB3F-49E9-9E7F-7E2180C05A8B}</ProjectGuid>
+    <ProjectGuid>{777CCDB3-56F5-472A-9AC4-E45880D2F463}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>UnitTest1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -168,8 +168,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Poland_Calculator\Poland_Calculator.vcxproj">
-      <Project>{6b8eaa08-066c-48d9-92fb-54e236d7f136}</Project>
+    <ProjectReference Include="..\Ordenamiento_Mezcla_Natural\Ordenamiento_Mezcla_Natural.vcxproj">
+      <Project>{2c860972-b579-4867-a37f-d4b66c936e5b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

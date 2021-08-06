@@ -24,5 +24,5 @@ int main(void) {
     vector = op.externalMerge(vector, cantidad);
     op.print(vector, cantidad, [](int value) {
         cout << value << endl;
-        });
+        });    
 }

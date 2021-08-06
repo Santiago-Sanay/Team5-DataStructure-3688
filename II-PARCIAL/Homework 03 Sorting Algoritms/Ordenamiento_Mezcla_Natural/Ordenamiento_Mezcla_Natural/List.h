@@ -103,7 +103,7 @@ public:
 	 */
 	void vaciar_lista();
 	
-	
+	bool listaVacia();
 };
 
 template<class T>
