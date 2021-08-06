@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ordenamiento de Datos Radix y ShellSort: Fichero Fuente Ordenamiento_datos/Operaciones.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="metodo-de-ordenamiento-shell.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ordenamiento de Datos Radix y ShellSort
+   &#160;<span id="projectnumber">Grupo_5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4fd2d597b3e8aa30557a75f5423d334e.html">Ordenamiento_datos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Operaciones.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_operaciones_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include&lt;functional&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_operaciones.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_operaciones.html">Operaciones</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> generar_arreglo(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> imprimir_arreglo(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> ordenar_Bubble_sort(<a class="code" href="class_vector.html">Vector</a>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> ordenar_quicksort(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span> izq, <span class="keywordtype">int</span> der);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> ordenar_shellsort(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> ordenar_intercambio(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> ordenar_shellsort1(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>, <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>&amp;, <span class="keywordtype">int</span>&amp;)&gt;intercambio);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> ordenar_shellsort2(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>, <span class="keyword">function</span>&lt;<span class="keywordtype">bool</span>(<span class="keywordtype">int</span>&amp;, <span class="keywordtype">int</span>&amp;)&gt;ordenar);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> ordenar_seleccion(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>,<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> ordenar_seleccion1(<span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>&amp;, <span class="keywordtype">int</span>&amp;)&gt;intercambio,<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>, <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> ascendente(<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> descendente(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> encerar_arreglo(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> maxm(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span> n); </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> countingSort(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> place);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> radixsort(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_operaciones.html#a0f50c3082a5cc97f7d85d9ccec69bbec">  122</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_operaciones.html#a0f50c3082a5cc97f7d85d9ccec69bbec">merge</a>(<a class="code" href="class_vector.html">Vector</a>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_operaciones.html#a0232f533110472db20a6c6e345929371">  128</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_operaciones.html#a0232f533110472db20a6c6e345929371">merge_sort</a>(<span class="keywordtype">int</span> izquierda, <span class="keywordtype">int</span> derecha);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="ttc" id="a_vector_8h_html"><div class="ttname"><a href="_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="aclass_operaciones_html"><div class="ttname"><a href="class_operaciones.html">Operaciones</a></div><div class="ttdef"><b>Definition:</b> Operaciones.h:20</div></div>
+<div class="ttc" id="aclass_operaciones_html_a0232f533110472db20a6c6e345929371"><div class="ttname"><a href="class_operaciones.html#a0232f533110472db20a6c6e345929371">Operaciones::merge_sort</a></div><div class="ttdeci">void merge_sort(int izquierda, int derecha)</div><div class="ttdoc">Get the dato object.</div></div>
+<div class="ttc" id="aclass_operaciones_html_a0f50c3082a5cc97f7d85d9ccec69bbec"><div class="ttname"><a href="class_operaciones.html#a0f50c3082a5cc97f7d85d9ccec69bbec">Operaciones::merge</a></div><div class="ttdeci">void merge(Vector, int, int, int)</div><div class="ttdoc">Get the dato object.</div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> Vector.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
