@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="En el proyecto se utiliza un archivo de cabecera &quot;Menu.h&quot; que usa funciones de ambas clases.">
+    <Position X="3.302" Y="3.865" Height="0.854" Width="1.856" />
+  </Comment>
+  <Class Name="ListaDobleEnlazada">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAgAAAEAIACAIAAgEAAAAgAAAAACAAAAAACAAA=</HashCode>
+      <FileName>ListaDobleEnlazada.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cabeza" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Nodo">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAAAAAAABEAAACAAAEAABgAAAABAAAAAAAA=</HashCode>
+      <FileName>Nodo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

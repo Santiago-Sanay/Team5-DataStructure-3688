@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ordenamieto_Pigeon_Hole: Fichero Fuente Bin_Sort_algoritm/Nodo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="metodo-de-ordenamiento-shell.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ordenamieto_Pigeon_Hole
+   &#160;<span id="projectnumber">Grupo_5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f2280f95ac11d4f46eb4583a9be4f3f8.html">Bin_Sort_algoritm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Nodo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_nodo_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_nodo.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nodo.html">Nodo</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> bin_no;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> data;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_nodo.html">Nodo</a>* next;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nodo.html#acf708af296fd99ba0b327b6c56becc05">   23</a></span>&#160;    <a class="code" href="class_nodo.html#acf708af296fd99ba0b327b6c56becc05">Nodo</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_nodo.html#ab8de758bc95997f4980ac4d27596ff49">get_bin_no</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_nodo.html#ae3ce5ac71da98541e0195f370030756e">get_data</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_nodo.html">Nodo</a>* <a class="code" href="class_nodo.html#ace9c34e6031aea75d001d6e2a594adc6">get_next</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nodo.html#a8fd8c6d8b88092c3ecfa1ecc3f07365f">set_bin_no</a>(<span class="keywordtype">int</span> new_bin_no);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nodo.html#a35e3ad6da4284873f533551f72bf2f58">set_data</a>(<span class="keywordtype">int</span> new_data);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nodo.html#a38fbf6634dcbbb6742f1f60bd077eafa">set_next</a>(<a class="code" href="class_nodo.html">Nodo</a>* new_next);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="ttc" id="aclass_nodo_html"><div class="ttname"><a href="class_nodo.html">Nodo</a></div><div class="ttdef"><b>Definition:</b> Nodo.h:17</div></div>
+<div class="ttc" id="aclass_nodo_html_a35e3ad6da4284873f533551f72bf2f58"><div class="ttname"><a href="class_nodo.html#a35e3ad6da4284873f533551f72bf2f58">Nodo::set_data</a></div><div class="ttdeci">void set_data(int new_data)</div><div class="ttdoc">siguientdato</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:36</div></div>
+<div class="ttc" id="aclass_nodo_html_a38fbf6634dcbbb6742f1f60bd077eafa"><div class="ttname"><a href="class_nodo.html#a38fbf6634dcbbb6742f1f60bd077eafa">Nodo::set_next</a></div><div class="ttdeci">void set_next(Nodo *new_next)</div><div class="ttdoc">setter</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:41</div></div>
+<div class="ttc" id="aclass_nodo_html_a8fd8c6d8b88092c3ecfa1ecc3f07365f"><div class="ttname"><a href="class_nodo.html#a8fd8c6d8b88092c3ecfa1ecc3f07365f">Nodo::set_bin_no</a></div><div class="ttdeci">void set_bin_no(int new_bin_no)</div><div class="ttdoc">genera</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:31</div></div>
+<div class="ttc" id="aclass_nodo_html_ab8de758bc95997f4980ac4d27596ff49"><div class="ttname"><a href="class_nodo.html#ab8de758bc95997f4980ac4d27596ff49">Nodo::get_bin_no</a></div><div class="ttdeci">int get_bin_no()</div><div class="ttdoc">genera un arreglo</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:16</div></div>
+<div class="ttc" id="aclass_nodo_html_ace9c34e6031aea75d001d6e2a594adc6"><div class="ttname"><a href="class_nodo.html#ace9c34e6031aea75d001d6e2a594adc6">Nodo::get_next</a></div><div class="ttdeci">Nodo * get_next()</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:26</div></div>
+<div class="ttc" id="aclass_nodo_html_acf708af296fd99ba0b327b6c56becc05"><div class="ttname"><a href="class_nodo.html#acf708af296fd99ba0b327b6c56becc05">Nodo::Nodo</a></div><div class="ttdeci">Nodo()=default</div></div>
+<div class="ttc" id="aclass_nodo_html_ae3ce5ac71da98541e0195f370030756e"><div class="ttname"><a href="class_nodo.html#ae3ce5ac71da98541e0195f370030756e">Nodo::get_data</a></div><div class="ttdeci">int get_data()</div><div class="ttdoc">genera un arreglo</div><div class="ttdef"><b>Definition:</b> Nodo.cpp:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

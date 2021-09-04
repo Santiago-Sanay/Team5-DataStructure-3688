@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tabla de Amortizacion: Fichero Fuente Project/Proyecto/Matrix.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tabla de Amortizacion
+   </div>
+   <div id="projectbrief">Permite calcular la tabla de amortizacion tanto en Aleman o Frances</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_32a6d8febfa63a19e8ecd71a75109b60.html">Proyecto</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Matrix.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_matrix_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_matrix.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_matrix.html">Matrix</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    T **matrix;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_matrix.html#a8f3dfbe2a101bdc58c768d315dbc1234">   27</a></span>&#160;    <a class="code" href="class_matrix.html#a8f3dfbe2a101bdc58c768d315dbc1234">Matrix</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    T **<a class="code" href="class_matrix.html#a95baa7bc7eac9cc91954af13e82a244d">get_matrix</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a6c4fba27434555823a246e9dee502ab6">set_matrix</a>(T **);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_matrix.html#a95baa7bc7eac9cc91954af13e82a244d">   43</a></span>&#160;T** <a class="code" href="class_matrix.html#a95baa7bc7eac9cc91954af13e82a244d">Matrix&lt;T&gt;::get_matrix</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> matrix;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_matrix.html#a6c4fba27434555823a246e9dee502ab6">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_matrix.html#a6c4fba27434555823a246e9dee502ab6">Matrix&lt;T&gt;::set_matrix</a>(T** matrix_1) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    matrix = matrix_1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:18</div></div>
+<div class="ttc" id="aclass_matrix_html_a6c4fba27434555823a246e9dee502ab6"><div class="ttname"><a href="class_matrix.html#a6c4fba27434555823a246e9dee502ab6">Matrix::set_matrix</a></div><div class="ttdeci">void set_matrix(T **)</div><div class="ttdoc">Set the matrix object.</div><div class="ttdef"><b>Definition:</b> Matrix.h:47</div></div>
+<div class="ttc" id="aclass_matrix_html_a8f3dfbe2a101bdc58c768d315dbc1234"><div class="ttname"><a href="class_matrix.html#a8f3dfbe2a101bdc58c768d315dbc1234">Matrix::Matrix</a></div><div class="ttdeci">Matrix()=default</div><div class="ttdoc">Construct a new Matrix object.</div></div>
+<div class="ttc" id="aclass_matrix_html_a95baa7bc7eac9cc91954af13e82a244d"><div class="ttname"><a href="class_matrix.html#a95baa7bc7eac9cc91954af13e82a244d">Matrix::get_matrix</a></div><div class="ttdeci">T ** get_matrix()</div><div class="ttdoc">Get the matrix object.</div><div class="ttdef"><b>Definition:</b> Matrix.h:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

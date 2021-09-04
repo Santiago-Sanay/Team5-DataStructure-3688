@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ordenamieto_Pigeon_Hole: Fichero Fuente Ordenamiento/Operation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="metodo-de-ordenamiento-shell.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ordenamieto_Pigeon_Hole
+   &#160;<span id="projectnumber">Grupo_5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1db9443d44ae63bfad917f9464b3f464.html">Ordenamiento</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Operation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_operation_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vector_8h.html">Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utils_8h.html">Utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_operation.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_operation.html">Operation</a>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    T* segment(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> wax(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> add(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> print(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a> vector, <span class="keywordtype">int</span> size, <span class="keywordtype">void</span>(func)(<span class="keywordtype">int</span>));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;T&gt;</a> selectionSort(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a>, <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_operation.html#a0aa18b7a780c8e8b36f5e8e2d4abf9d7">   59</a></span>&#160;<span class="keyword">inline</span> T* <a class="code" href="class_operation.html#a0aa18b7a780c8e8b36f5e8e2d4abf9d7">Operation&lt;T&gt;::segment</a>(<span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;T&gt;</a> vector;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    vector.<a class="code" href="class_vector.html#af80c3a0a69d865a9a6b8bb56daf3b85e">set_vector</a>((T*)malloc((size * <span class="keyword">sizeof</span>(T))));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> vector.<a class="code" href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">get_vector</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_operation.html#a90fabc2cb47551b309e676489339a0a4">   67</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_operation.html#a90fabc2cb47551b309e676489339a0a4">Operation&lt;T&gt;::wax</a>(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a> vector, <span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> counter;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        *(vector.<a class="code" href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">get_vector</a>() + i) = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_operation.html#a7c91251142a46b82d98aeddd80ed0663">   78</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_operation.html#a7c91251142a46b82d98aeddd80ed0663">Operation&lt;T&gt;::add</a>(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a> vector, <span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        *(vector.<a class="code" href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">get_vector</a>() + i) = <a class="code" href="class_utils.html#a7cc204cdb56c1a04c715e1a024ac0d4b">Utils::random_int</a>(1, 1000);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_operation.html#a4e04c01a1fac736d70b4d7b60ba6f69a">   88</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_operation.html#a4e04c01a1fac736d70b4d7b60ba6f69a">Operation&lt;T&gt;::print</a>(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a> vector, <span class="keywordtype">int</span> size, <span class="keywordtype">void</span>(func)(<span class="keywordtype">int</span>))</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> val;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        val = *(vector.<a class="code" href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">get_vector</a>() + i);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        func(val);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_operation.html#a3e4aa2d53cef0b5bfa253921511b9359">   99</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="class_vector.html">Vector&lt;T&gt;</a> <a class="code" href="class_operation.html#a3e4aa2d53cef0b5bfa253921511b9359">Operation&lt;T&gt;::selectionSort</a>(<a class="code" href="class_vector.html">Vector&lt;T&gt;</a> data, <span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span>* a = data.<a class="code" href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">get_vector</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">while</span> (i &lt; size - 1) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> piv = i;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; size; j++) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> ((*(a + j)) &lt; (*(a + piv))) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                piv = j;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">int</span> aux = *(a + piv);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        *(a + piv) = *(a + i);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        *(a + i) = aux;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        i++;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> data;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="ttc" id="a_utils_8h_html"><div class="ttname"><a href="_utils_8h.html">Utils.h</a></div></div>
+<div class="ttc" id="a_vector_8h_html"><div class="ttname"><a href="_vector_8h.html">Vector.h</a></div></div>
+<div class="ttc" id="aclass_operation_html"><div class="ttname"><a href="class_operation.html">Operation</a></div><div class="ttdef"><b>Definition:</b> Operation.h:23</div></div>
+<div class="ttc" id="aclass_operation_html_a0aa18b7a780c8e8b36f5e8e2d4abf9d7"><div class="ttname"><a href="class_operation.html#a0aa18b7a780c8e8b36f5e8e2d4abf9d7">Operation::segment</a></div><div class="ttdeci">T * segment(int)</div><div class="ttdoc">Segmentar.</div><div class="ttdef"><b>Definition:</b> Operation.h:59</div></div>
+<div class="ttc" id="aclass_operation_html_a3e4aa2d53cef0b5bfa253921511b9359"><div class="ttname"><a href="class_operation.html#a3e4aa2d53cef0b5bfa253921511b9359">Operation::selectionSort</a></div><div class="ttdeci">Vector&lt; T &gt; selectionSort(Vector&lt; T &gt;, int size)</div><div class="ttdoc">Seleccion sort.</div><div class="ttdef"><b>Definition:</b> Operation.h:99</div></div>
+<div class="ttc" id="aclass_operation_html_a4e04c01a1fac736d70b4d7b60ba6f69a"><div class="ttname"><a href="class_operation.html#a4e04c01a1fac736d70b4d7b60ba6f69a">Operation::print</a></div><div class="ttdeci">void print(Vector&lt; T &gt; vector, int size, void(func)(int))</div><div class="ttdoc">Imprimir.</div><div class="ttdef"><b>Definition:</b> Operation.h:88</div></div>
+<div class="ttc" id="aclass_operation_html_a7c91251142a46b82d98aeddd80ed0663"><div class="ttname"><a href="class_operation.html#a7c91251142a46b82d98aeddd80ed0663">Operation::add</a></div><div class="ttdeci">void add(Vector&lt; T &gt;, int)</div><div class="ttdoc">Agregar.</div><div class="ttdef"><b>Definition:</b> Operation.h:78</div></div>
+<div class="ttc" id="aclass_operation_html_a90fabc2cb47551b309e676489339a0a4"><div class="ttname"><a href="class_operation.html#a90fabc2cb47551b309e676489339a0a4">Operation::wax</a></div><div class="ttdeci">void wax(Vector&lt; T &gt;, int)</div><div class="ttdoc">Encerar.</div><div class="ttdef"><b>Definition:</b> Operation.h:67</div></div>
+<div class="ttc" id="aclass_utils_html_a7cc204cdb56c1a04c715e1a024ac0d4b"><div class="ttname"><a href="class_utils.html#a7cc204cdb56c1a04c715e1a024ac0d4b">Utils::random_int</a></div><div class="ttdeci">static int random_int(int, int)</div><div class="ttdoc">Generar randomicos.</div><div class="ttdef"><b>Definition:</b> Utils.cpp:20</div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> Vector.h:18</div></div>
+<div class="ttc" id="aclass_vector_html_a5dd53fedaf8fc8ae24eb37359b4b9c67"><div class="ttname"><a href="class_vector.html#a5dd53fedaf8fc8ae24eb37359b4b9c67">Vector::get_vector</a></div><div class="ttdeci">T * get_vector()</div><div class="ttdoc">Get the vector object.</div><div class="ttdef"><b>Definition:</b> Vector.h:54</div></div>
+<div class="ttc" id="aclass_vector_html_af80c3a0a69d865a9a6b8bb56daf3b85e"><div class="ttname"><a href="class_vector.html#af80c3a0a69d865a9a6b8bb56daf3b85e">Vector::set_vector</a></div><div class="ttdeci">void set_vector(T *)</div><div class="ttdoc">Set the vector object.</div><div class="ttdef"><b>Definition:</b> Vector.h:48</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

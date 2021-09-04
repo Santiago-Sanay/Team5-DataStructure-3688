@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ordenamieto_Pigeon_Hole: Fichero Fuente Bin_Sort_algoritm/List.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="metodo-de-ordenamiento-shell.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ordenamieto_Pigeon_Hole
+   &#160;<span id="projectnumber">Grupo_5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f2280f95ac11d4f46eb4583a9be4f3f8.html">Bin_Sort_algoritm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">List.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_list_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nodo_8h.html">Nodo.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_list.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_list.html">List</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_nodo.html">Nodo</a>* head=<span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_list.html#a4a072165453b73d50cc7e68b881738e6">   21</a></span>&#160;    <a class="code" href="class_list.html#a4a072165453b73d50cc7e68b881738e6">List</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list.html#a47043fbf26520bde67348776bbcd3ace">add</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list.html#a397e04de01f7a13691a7714a29e9b511">sort</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list.html#ac334b7866f8dd21f730442b2553df60f">print</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="ttc" id="a_nodo_8h_html"><div class="ttname"><a href="_nodo_8h.html">Nodo.h</a></div></div>
+<div class="ttc" id="aclass_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> List.h:17</div></div>
+<div class="ttc" id="aclass_list_html_a397e04de01f7a13691a7714a29e9b511"><div class="ttname"><a href="class_list.html#a397e04de01f7a13691a7714a29e9b511">List::sort</a></div><div class="ttdeci">void sort()</div><div class="ttdoc">ordena</div><div class="ttdef"><b>Definition:</b> List.cpp:43</div></div>
+<div class="ttc" id="aclass_list_html_a47043fbf26520bde67348776bbcd3ace"><div class="ttname"><a href="class_list.html#a47043fbf26520bde67348776bbcd3ace">List::add</a></div><div class="ttdeci">void add(int a, int b)</div><div class="ttdoc">suma al areeglo</div><div class="ttdef"><b>Definition:</b> List.cpp:16</div></div>
+<div class="ttc" id="aclass_list_html_a4a072165453b73d50cc7e68b881738e6"><div class="ttname"><a href="class_list.html#a4a072165453b73d50cc7e68b881738e6">List::List</a></div><div class="ttdeci">List()=default</div></div>
+<div class="ttc" id="aclass_list_html_ac334b7866f8dd21f730442b2553df60f"><div class="ttname"><a href="class_list.html#ac334b7866f8dd21f730442b2553df60f">List::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">imprime</div><div class="ttdef"><b>Definition:</b> List.cpp:89</div></div>
+<div class="ttc" id="aclass_nodo_html"><div class="ttname"><a href="class_nodo.html">Nodo</a></div><div class="ttdef"><b>Definition:</b> Nodo.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
