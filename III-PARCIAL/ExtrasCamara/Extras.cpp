@@ -17,13 +17,15 @@ void imprimirCoincidencia(string entrada, const char* palabra);
 void archivos();
 void busqueda();
 void fusionExt();
-void recursividad();
+void recursividad(float a, unsigned int b);
 
 int main()
 {
+
     //cadenasCaracteres();
     //archivos();
-    busqueda();
+    //busqueda();
+    recursividad(4,3);
 }
 
 void cadenasCaracteres()
@@ -109,6 +111,13 @@ void fusionExt()
 {
 }
 
-void recursividad()
+void recursividad(float a, unsigned int b)
 {
+
+    if (b <= 0)
+    {
+        return 1;
+    }
+
+    return (a * power(a, --b));
 }
