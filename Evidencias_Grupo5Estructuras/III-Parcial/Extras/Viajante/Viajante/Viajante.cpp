@@ -1,6 +1,18 @@
 // Viajante.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
 //
+/** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+*			INGENIERIA SOFTWARE
+*
+*
+*@author THEO ROSERO
+*@author YULLIANA ROMAN
+*@author JUNIOR JURADO
+*@author ALEX PAGUAY
+*@author SANTIAGO SA�AY
+*FECHA DE CREACION : 3 DE JUNIO DE 2021
+*FECHA DE MODIFICACION: 6 DE JUNIO 2021
+*/
 #include <iostream>
 #include<vector>
 #include "Respuesta1.h"

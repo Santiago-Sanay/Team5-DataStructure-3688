@@ -2,12 +2,8 @@
 *			INGENIERIA SOFTWARE
 *
 *
-*@author THEO ROSERO
-*@author YULLIANA ROMAN
-*@author JUNIOR JURADO
 *@author ALEX PAGUAY
 *@author SANTIAGO SA�AY
-*TEMA: Multiplicacion matriz dinamica
 *FECHA DE CREACION : 3 DE JUNIO DE 2021
 *FECHA DE MODIFICACION: 6 DE JUNIO 2021
 */
@@ -34,7 +30,7 @@ int main()
 
         if (op.suma_billete(vec2, n)) {
             cont++;
-            op.imprimir_vec2(vec2, 8);
+            //op.imprimir_vec2(vec2, 8);
         }
         op.next_vec_per2(vec2, 8, n, 7);
     }
