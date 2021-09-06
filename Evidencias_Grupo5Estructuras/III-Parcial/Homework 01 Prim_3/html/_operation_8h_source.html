@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ejercicio 23: Fichero Fuente Prim_3/Operation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ejercicio 23
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0b7dbbafce63ffc0cfc065c4ac67f246.html">Prim_3</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Operation.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_operation_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_matrix_8h.html">Matrix.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_operation.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_operation.html">Operation</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> **<a class="code hl_function" href="class_operation.html#ad3a919de1f20036eb0b6e983302bc309">segmentar</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#a1d42e45e42fca74dda31523d8eeb341d">encerar</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#a125e53f2c91addbb976cbeea464c214f">ingresar</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#a40e22ae014281173162edeed459b2f3d">calcular</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a>, <a class="code hl_class" href="class_matrix.html">Matrix</a>, <a class="code hl_class" href="class_matrix.html">Matrix</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#ac16a4b739990a5fcb8eaabfbb0caa8de">imprimir</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_operation.html#afc63b31d7af8a3f962b7bc215a75faa2">verificar_matrix_suma15</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a> matrix);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#ad8dbf5bded8edcc7efdbf982200fa5e1">vec_to_matrix</a>(<span class="keywordtype">int</span>*,  <a class="code hl_class" href="class_matrix.html">Matrix</a> matrix);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#abf138177bf69a1a90c0899879b7c4df6">swap</a>(<span class="keywordtype">int</span> *v, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#a183590f58678b185f03e03e2153b303a">perm</a>(<span class="keywordtype">int</span> *v, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> i,<a class="code hl_class" href="class_matrix.html">Matrix</a> matrix,<span class="keywordtype">int</span> &amp;sol);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#ac57098154f37a5723e634fa1c076b7f3">generar_tabla_aleatoria</a>(<a class="code hl_class" href="class_matrix.html">Matrix</a> matrix, <span class="keywordtype">int</span> dim,<span class="keywordtype">int</span> rango);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_operation.html#af29e12cd4ffb72cdb2e143a74866a3b0">permutacion</a>(<span class="keywordtype">string</span> aux, <span class="keywordtype">int</span>* items, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_operation.html#a86fcb3d71ec02ca04d9d36db66ac7e54">contar_colores</a>(<span class="keywordtype">int</span> n,<span class="keywordtype">int</span> *vec, <span class="keywordtype">int</span>** matrix);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_operation.html#aa3c5c4d9fb41866879489875826d31b7">process</a>(<span class="keywordtype">int</span>* vec,<span class="keywordtype">int</span> n, <span class="keywordtype">int</span>** matrix);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_operation.html#a741230198eb0f4189782baa9409eb4b5">adyacent</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j,<span class="keywordtype">int</span> **matrix);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_operation.html#a37563ac8006fb1e968dcaf534eb8d3a9">nextPermutation</a>(<span class="keywordtype">int</span>* vec, <span class="keywordtype">int</span> color,<span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="ttc" id="a_matrix_8h_html"><div class="ttname"><a href="_matrix_8h.html">Matrix.h</a></div></div>
+<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdef"><b>Definition:</b> Matrix.h:16</div></div>
+<div class="ttc" id="aclass_operation_html"><div class="ttname"><a href="class_operation.html">Operation</a></div><div class="ttdef"><b>Definition:</b> Operation.h:22</div></div>
+<div class="ttc" id="aclass_operation_html_a125e53f2c91addbb976cbeea464c214f"><div class="ttname"><a href="class_operation.html#a125e53f2c91addbb976cbeea464c214f">Operation::ingresar</a></div><div class="ttdeci">void ingresar(Matrix, int)</div><div class="ttdoc">Asigna Valores a la matriz.</div><div class="ttdef"><b>Definition:</b> Operation.cpp:38</div></div>
+<div class="ttc" id="aclass_operation_html_a183590f58678b185f03e03e2153b303a"><div class="ttname"><a href="class_operation.html#a183590f58678b185f03e03e2153b303a">Operation::perm</a></div><div class="ttdeci">void perm(int *v, int n, int i, Matrix matrix, int &amp;sol)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:131</div></div>
+<div class="ttc" id="aclass_operation_html_a1d42e45e42fca74dda31523d8eeb341d"><div class="ttname"><a href="class_operation.html#a1d42e45e42fca74dda31523d8eeb341d">Operation::encerar</a></div><div class="ttdeci">void encerar(Matrix, int)</div><div class="ttdoc">Inicializa la matriz en cero.</div><div class="ttdef"><b>Definition:</b> Operation.cpp:32</div></div>
+<div class="ttc" id="aclass_operation_html_a37563ac8006fb1e968dcaf534eb8d3a9"><div class="ttname"><a href="class_operation.html#a37563ac8006fb1e968dcaf534eb8d3a9">Operation::nextPermutation</a></div><div class="ttdeci">bool nextPermutation(int *vec, int color, int n)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:250</div></div>
+<div class="ttc" id="aclass_operation_html_a40e22ae014281173162edeed459b2f3d"><div class="ttname"><a href="class_operation.html#a40e22ae014281173162edeed459b2f3d">Operation::calcular</a></div><div class="ttdeci">void calcular(Matrix, Matrix, Matrix, int)</div><div class="ttdoc">Multiplicacion entre matrices.</div><div class="ttdef"><b>Definition:</b> Operation.cpp:47</div></div>
+<div class="ttc" id="aclass_operation_html_a741230198eb0f4189782baa9409eb4b5"><div class="ttname"><a href="class_operation.html#a741230198eb0f4189782baa9409eb4b5">Operation::adyacent</a></div><div class="ttdeci">bool adyacent(int i, int j, int **matrix)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:242</div></div>
+<div class="ttc" id="aclass_operation_html_a86fcb3d71ec02ca04d9d36db66ac7e54"><div class="ttname"><a href="class_operation.html#a86fcb3d71ec02ca04d9d36db66ac7e54">Operation::contar_colores</a></div><div class="ttdeci">int contar_colores(int n, int *vec, int **matrix)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:212</div></div>
+<div class="ttc" id="aclass_operation_html_aa3c5c4d9fb41866879489875826d31b7"><div class="ttname"><a href="class_operation.html#aa3c5c4d9fb41866879489875826d31b7">Operation::process</a></div><div class="ttdeci">bool process(int *vec, int n, int **matrix)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:231</div></div>
+<div class="ttc" id="aclass_operation_html_abf138177bf69a1a90c0899879b7c4df6"><div class="ttname"><a href="class_operation.html#abf138177bf69a1a90c0899879b7c4df6">Operation::swap</a></div><div class="ttdeci">void swap(int *v, int i, int j)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:122</div></div>
+<div class="ttc" id="aclass_operation_html_ac16a4b739990a5fcb8eaabfbb0caa8de"><div class="ttname"><a href="class_operation.html#ac16a4b739990a5fcb8eaabfbb0caa8de">Operation::imprimir</a></div><div class="ttdeci">void imprimir(Matrix, int)</div><div class="ttdoc">Impresion de la matriz.</div><div class="ttdef"><b>Definition:</b> Operation.cpp:57</div></div>
+<div class="ttc" id="aclass_operation_html_ac57098154f37a5723e634fa1c076b7f3"><div class="ttname"><a href="class_operation.html#ac57098154f37a5723e634fa1c076b7f3">Operation::generar_tabla_aleatoria</a></div><div class="ttdeci">void generar_tabla_aleatoria(Matrix matrix, int dim, int rango)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:181</div></div>
+<div class="ttc" id="aclass_operation_html_ad3a919de1f20036eb0b6e983302bc309"><div class="ttname"><a href="class_operation.html#ad3a919de1f20036eb0b6e983302bc309">Operation::segmentar</a></div><div class="ttdeci">int ** segmentar(int)</div><div class="ttdoc">Reserva memoria para la matriz.</div><div class="ttdef"><b>Definition:</b> Operation.cpp:23</div></div>
+<div class="ttc" id="aclass_operation_html_ad8dbf5bded8edcc7efdbf982200fa5e1"><div class="ttname"><a href="class_operation.html#ad8dbf5bded8edcc7efdbf982200fa5e1">Operation::vec_to_matrix</a></div><div class="ttdeci">void vec_to_matrix(int *, Matrix matrix)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:107</div></div>
+<div class="ttc" id="aclass_operation_html_af29e12cd4ffb72cdb2e143a74866a3b0"><div class="ttname"><a href="class_operation.html#af29e12cd4ffb72cdb2e143a74866a3b0">Operation::permutacion</a></div><div class="ttdeci">void permutacion(string aux, int *items, int n, int r)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:199</div></div>
+<div class="ttc" id="aclass_operation_html_afc63b31d7af8a3f962b7bc215a75faa2"><div class="ttname"><a href="class_operation.html#afc63b31d7af8a3f962b7bc215a75faa2">Operation::verificar_matrix_suma15</a></div><div class="ttdeci">bool verificar_matrix_suma15(Matrix matrix)</div><div class="ttdef"><b>Definition:</b> Operation.cpp:72</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

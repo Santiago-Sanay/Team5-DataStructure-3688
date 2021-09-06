@@ -2,14 +2,8 @@
 *			INGENIERIA SOFTWARE
 *
 *
-*@author THEO ROSERO
-*@author YULLIANA ROMAN
-*@author JUNIOR JURADO
 *@author ALEX PAGUAY
 *@author SANTIAGO SA�AY
-*TEMA: Multiplicacion matriz dinamica
-*FECHA DE CREACION : 3 DE JUNIO DE 2021
-*FECHA DE MODIFICACION: 6 DE JUNIO 2021
 */
 #include "Operation.h"
 #include <conio.h>
@@ -402,12 +396,7 @@ void Operation::next_vec_per2(int*& vec, int num_casillas, int range, int positi
 {
     if (range > 0 && position >= 0) {
         *(vec + position) = *(vec + position) + 1;
-        /*if (position == 8) {
-            if (*(vec + position) > range / 20) {
-                *(vec + position) = 0;
-                next_vec_per2(vec, num_casillas, range, position - 1);
-            }
-        }*/
+       
         if (position == 7) {
             if (*(vec + position) > range/10) {
                 *(vec + position) = 0;

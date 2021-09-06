@@ -2,9 +2,6 @@
 *			INGENIERIA SOFTWARE
 *
 *
-*@author THEO ROSERO
-*@author YULLIANA ROMAN
-*@author JUNIOR JURADO
 *@author ALEX PAGUAY
 *@author SANTIAGO SA�AY
 *TEMA: Multiplicacion matriz dinamica

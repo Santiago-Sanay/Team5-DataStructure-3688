@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Laberinto: Fichero Fuente Laberinto_Backtraking/Laberinto_Backtraking/List.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Laberinto
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_63866d886e00704772e647f72ffca150.html">Laberinto_Backtraking</a></li><li class="navelem"><a class="el" href="dir_e35df20b1d861f1d564238bcdd416425.html">Laberinto_Backtraking</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">List.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_list_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_nodo_8h.html">Nodo.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_list.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_list.html">List</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* primero;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* actual;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="class_list.html">List&lt;T&gt;</a>() ;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a3eb20c0c67ec3e425ae07de27e976513">insertar_por_la_cola</a>(T);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#aee1e9948793de4a655cad2ca750b384d">set_primero</a>(<a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>*);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* <a class="code hl_function" href="class_list.html#a973df094d96dc05db2285b9a0f9b6a27">get_primero</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad803fc45adb6bf92bdf093afa00ed966">set_actual</a>(<a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>*);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* <a class="code hl_function" href="class_list.html#a9ba9927ac6c967753e0fcadea06a8e21">get_actual</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a30c1bd697daf91ef426b6ff7ea594e4d">insertar_por_la_cabeza</a>(T);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a3f64b589df67fd2f432ff37fcd627551">borrar_por_la_cola</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a4188ef02328f0dd1629d3dbb5f1abf14">borrar_por_la_cabeza</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad3dee6237efc9365df61ce22690a19e0">mostrar</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad623075970b6630fb4812d7c2c7bd674">vaciar_lista</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_list.html#ae5b05a52a75a21b88d351ac238fb6115">listaVacia</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_list.html#ad3dee6237efc9365df61ce22690a19e0">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad3dee6237efc9365df61ce22690a19e0">List&lt;T&gt;::mostrar</a>()</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* temporal = this-&gt;primero;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">while</span> (temporal) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        cout &lt;&lt; temporal-&gt;<a class="code hl_function" href="class_nodo.html#a3de64adee05e899d89bb62e4283dd454">get_dato</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        temporal = temporal-&gt;<a class="code hl_function" href="class_nodo.html#a0b609ab697169fc75342a5dfe135d16b">get_siguiente</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    cout &lt;&lt; endl;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_list.html#ad623075970b6630fb4812d7c2c7bd674">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad623075970b6630fb4812d7c2c7bd674">List&lt;T&gt;::vaciar_lista</a>() {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">while</span> (listaVacia()) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        borrar_por_la_cola();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_list.html#ae5b05a52a75a21b88d351ac238fb6115">  127</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_list.html#ae5b05a52a75a21b88d351ac238fb6115">List&lt;T&gt;::listaVacia</a>()</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>{</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">return</span> (this-&gt;primero == NULL);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_list.html#a5c5e27671b21b3815d4e25b953c69454">  132</a></span><a class="code hl_function" href="class_list.html#a5c5e27671b21b3815d4e25b953c69454">List&lt;T&gt;::List</a>()</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    this-&gt;primero = NULL;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    this-&gt;actual = NULL;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_list.html#a3eb20c0c67ec3e425ae07de27e976513">  138</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a3eb20c0c67ec3e425ae07de27e976513">List&lt;T&gt;::insertar_por_la_cola</a>(T val)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* nuevo = <span class="keyword">new</span> <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>(val, NULL);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span> (listaVacia()) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        this-&gt;primero = nuevo;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        this-&gt;actual-&gt;<a class="code hl_function" href="class_nodo.html#a611c012bf5ebfab975ca7dc62e249a45">set_siguiente</a>(nuevo);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    this-&gt;actual = nuevo;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_list.html#aee1e9948793de4a655cad2ca750b384d">  150</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#aee1e9948793de4a655cad2ca750b384d">List&lt;T&gt;::set_primero</a>(<a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* new_primero) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    this-&gt;primero = new_primero;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_list.html#a973df094d96dc05db2285b9a0f9b6a27">  154</a></span><a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* <a class="code hl_function" href="class_list.html#a973df094d96dc05db2285b9a0f9b6a27">List&lt;T&gt;::get_primero</a>() {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">return</span> primero;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_list.html#ad803fc45adb6bf92bdf093afa00ed966">  158</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#ad803fc45adb6bf92bdf093afa00ed966">List&lt;T&gt;::set_actual</a>(<a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* new_actual) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    this-&gt;actual = new_actual;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_list.html#a9ba9927ac6c967753e0fcadea06a8e21">  162</a></span><a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* <a class="code hl_function" href="class_list.html#a9ba9927ac6c967753e0fcadea06a8e21">List&lt;T&gt;::get_actual</a>() {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> actual;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_list.html#a30c1bd697daf91ef426b6ff7ea594e4d">  166</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a30c1bd697daf91ef426b6ff7ea594e4d">List&lt;T&gt;::insertar_por_la_cabeza</a>(T val)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* nuevo = <span class="keyword">new</span> <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>(val, NULL);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (listaVacia()) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        this-&gt;actual = nuevo;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        nuevo-&gt;<a class="code hl_function" href="class_nodo.html#a611c012bf5ebfab975ca7dc62e249a45">set_siguiente</a>(this-&gt;primero);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    this-&gt;primero = nuevo;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="class_list.html#a3f64b589df67fd2f432ff37fcd627551">  179</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a3f64b589df67fd2f432ff37fcd627551">List&lt;T&gt;::borrar_por_la_cola</a>()</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>{</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> (!listaVacia()) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* temp = this-&gt;actual;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* temp1 = this-&gt;primero;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">while</span> (temp1-&gt;<a class="code hl_function" href="class_nodo.html#a0b609ab697169fc75342a5dfe135d16b">get_siguiente</a>()-&gt;get_siguiente() != NULL) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            temp1 = temp1-&gt;<a class="code hl_function" href="class_nodo.html#a0b609ab697169fc75342a5dfe135d16b">get_siguiente</a>();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        temp1-&gt;<a class="code hl_function" href="class_nodo.html#a611c012bf5ebfab975ca7dc62e249a45">set_siguiente</a>(NULL);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        this-&gt;actual = temp1;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        free(temp);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_list.html#a4188ef02328f0dd1629d3dbb5f1abf14">  193</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_list.html#a4188ef02328f0dd1629d3dbb5f1abf14">List&lt;T&gt;::borrar_por_la_cabeza</a>()</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>{</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">if</span> (!listaVacia()) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_class" href="class_nodo.html">Nodo&lt;T&gt;</a>* temp;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        temp = this-&gt;primero;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        this-&gt;primero = this-&gt;primero-&gt;<a class="code hl_function" href="class_nodo.html#a0b609ab697169fc75342a5dfe135d16b">get_siguiente</a>();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        free(temp);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="ttc" id="a_nodo_8h_html"><div class="ttname"><a href="_nodo_8h.html">Nodo.h</a></div></div>
+<div class="ttc" id="aclass_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> List.h:23</div></div>
+<div class="ttc" id="aclass_list_html_a30c1bd697daf91ef426b6ff7ea594e4d"><div class="ttname"><a href="class_list.html#a30c1bd697daf91ef426b6ff7ea594e4d">List::insertar_por_la_cabeza</a></div><div class="ttdeci">void insertar_por_la_cabeza(T)</div><div class="ttdoc">Insertar por cabeza.</div><div class="ttdef"><b>Definition:</b> List.h:166</div></div>
+<div class="ttc" id="aclass_list_html_a3eb20c0c67ec3e425ae07de27e976513"><div class="ttname"><a href="class_list.html#a3eb20c0c67ec3e425ae07de27e976513">List::insertar_por_la_cola</a></div><div class="ttdeci">void insertar_por_la_cola(T)</div><div class="ttdoc">Insertar por cola.</div><div class="ttdef"><b>Definition:</b> List.h:138</div></div>
+<div class="ttc" id="aclass_list_html_a3f64b589df67fd2f432ff37fcd627551"><div class="ttname"><a href="class_list.html#a3f64b589df67fd2f432ff37fcd627551">List::borrar_por_la_cola</a></div><div class="ttdeci">void borrar_por_la_cola()</div><div class="ttdoc">Borrar cola.</div><div class="ttdef"><b>Definition:</b> List.h:179</div></div>
+<div class="ttc" id="aclass_list_html_a4188ef02328f0dd1629d3dbb5f1abf14"><div class="ttname"><a href="class_list.html#a4188ef02328f0dd1629d3dbb5f1abf14">List::borrar_por_la_cabeza</a></div><div class="ttdeci">void borrar_por_la_cabeza()</div><div class="ttdoc">Borrar cabeza.</div><div class="ttdef"><b>Definition:</b> List.h:193</div></div>
+<div class="ttc" id="aclass_list_html_a5c5e27671b21b3815d4e25b953c69454"><div class="ttname"><a href="class_list.html#a5c5e27671b21b3815d4e25b953c69454">List::List</a></div><div class="ttdeci">List()</div><div class="ttdoc">Devuelve true si esta vacio.</div><div class="ttdef"><b>Definition:</b> List.h:132</div></div>
+<div class="ttc" id="aclass_list_html_a973df094d96dc05db2285b9a0f9b6a27"><div class="ttname"><a href="class_list.html#a973df094d96dc05db2285b9a0f9b6a27">List::get_primero</a></div><div class="ttdeci">Nodo&lt; T &gt; * get_primero()</div><div class="ttdoc">Get the primero object.</div><div class="ttdef"><b>Definition:</b> List.h:154</div></div>
+<div class="ttc" id="aclass_list_html_a9ba9927ac6c967753e0fcadea06a8e21"><div class="ttname"><a href="class_list.html#a9ba9927ac6c967753e0fcadea06a8e21">List::get_actual</a></div><div class="ttdeci">Nodo&lt; T &gt; * get_actual()</div><div class="ttdoc">Get the actual object.</div><div class="ttdef"><b>Definition:</b> List.h:162</div></div>
+<div class="ttc" id="aclass_list_html_ad3dee6237efc9365df61ce22690a19e0"><div class="ttname"><a href="class_list.html#ad3dee6237efc9365df61ce22690a19e0">List::mostrar</a></div><div class="ttdeci">void mostrar()</div><div class="ttdoc">Muestra.</div><div class="ttdef"><b>Definition:</b> List.h:110</div></div>
+<div class="ttc" id="aclass_list_html_ad623075970b6630fb4812d7c2c7bd674"><div class="ttname"><a href="class_list.html#ad623075970b6630fb4812d7c2c7bd674">List::vaciar_lista</a></div><div class="ttdeci">void vaciar_lista()</div><div class="ttdoc">Vacia la lista.</div><div class="ttdef"><b>Definition:</b> List.h:121</div></div>
+<div class="ttc" id="aclass_list_html_ad803fc45adb6bf92bdf093afa00ed966"><div class="ttname"><a href="class_list.html#ad803fc45adb6bf92bdf093afa00ed966">List::set_actual</a></div><div class="ttdeci">void set_actual(Nodo&lt; T &gt; *)</div><div class="ttdoc">Set the actual object.</div><div class="ttdef"><b>Definition:</b> List.h:158</div></div>
+<div class="ttc" id="aclass_list_html_ae5b05a52a75a21b88d351ac238fb6115"><div class="ttname"><a href="class_list.html#ae5b05a52a75a21b88d351ac238fb6115">List::listaVacia</a></div><div class="ttdeci">bool listaVacia()</div><div class="ttdef"><b>Definition:</b> List.h:127</div></div>
+<div class="ttc" id="aclass_list_html_aee1e9948793de4a655cad2ca750b384d"><div class="ttname"><a href="class_list.html#aee1e9948793de4a655cad2ca750b384d">List::set_primero</a></div><div class="ttdeci">void set_primero(Nodo&lt; T &gt; *)</div><div class="ttdoc">Set the primero object.</div><div class="ttdef"><b>Definition:</b> List.h:150</div></div>
+<div class="ttc" id="aclass_nodo_html"><div class="ttname"><a href="class_nodo.html">Nodo</a></div><div class="ttdef"><b>Definition:</b> Nodo.h:20</div></div>
+<div class="ttc" id="aclass_nodo_html_a0b609ab697169fc75342a5dfe135d16b"><div class="ttname"><a href="class_nodo.html#a0b609ab697169fc75342a5dfe135d16b">Nodo::get_siguiente</a></div><div class="ttdeci">Nodo&lt; T &gt; * get_siguiente()</div><div class="ttdoc">Get the siguiente object.</div><div class="ttdef"><b>Definition:</b> Nodo.h:77</div></div>
+<div class="ttc" id="aclass_nodo_html_a3de64adee05e899d89bb62e4283dd454"><div class="ttname"><a href="class_nodo.html#a3de64adee05e899d89bb62e4283dd454">Nodo::get_dato</a></div><div class="ttdeci">T get_dato()</div><div class="ttdoc">Get the dato object.</div><div class="ttdef"><b>Definition:</b> Nodo.h:64</div></div>
+<div class="ttc" id="aclass_nodo_html_a611c012bf5ebfab975ca7dc62e249a45"><div class="ttname"><a href="class_nodo.html#a611c012bf5ebfab975ca7dc62e249a45">Nodo::set_siguiente</a></div><div class="ttdeci">void set_siguiente(Nodo *)</div><div class="ttdoc">Set the siguiente object.</div><div class="ttdef"><b>Definition:</b> Nodo.h:82</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
